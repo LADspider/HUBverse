@@ -15,9 +15,9 @@
             color: #333;
         }
         .hero-section {
-            background-color: #111827; 
-            position: relative; 
-            overflow: hidden; 
+            background-color: #111827; /* Dark background for night sky */
+            position: relative;
+            overflow: hidden;
         }
         #hero-3d-canvas {
             position: absolute;
@@ -25,11 +25,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0; 
-            opacity: 0.4; 
+            z-index: 0;
+            opacity: 0.8; /* Slightly more opaque for stars */
         }
         .hero-content {
-            position: relative; 
+            position: relative;
             z-index: 1;
         }
 
@@ -79,11 +79,11 @@
             transform: scale(1.05);
         }
         .hero-section .btn-cta {
-            background-color: #ffffff; 
-            color: #111827; 
+            background-color: #ffffff;
+            color: #111827;
         }
          .hero-section .btn-cta:hover {
-            background-color: #f0f0f0; 
+            background-color: #f0f0f0;
         }
 
 
@@ -93,16 +93,16 @@
             color: #023e8a;
             border-bottom: 3px solid #fb8500;
         }
-        .subsection-title { 
+        .subsection-title {
             font-family: 'Quicksand', 'Helvetica Neue', Arial, sans-serif;
             font-weight: 600;
             color: #0077b6;
-            margin-bottom: 1.5rem; 
+            margin-bottom: 1.5rem;
         }
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
         }
-        .hero-section h1, .hubverse-title, .section-title { 
+        .hero-section h1, .hubverse-title, .section-title {
              font-family: 'Quicksand', 'Helvetica Neue', Arial, sans-serif;
         }
 
@@ -165,15 +165,15 @@
         .btn-add-to-cart:hover { background-color: #21867a; }
 
         .library-main-specialization-tabs, .library-sub-specialization-tabs-container,
-        .main-specialization-tabs, .sub-specialization-tabs-container { 
+        .main-specialization-tabs, .sub-specialization-tabs-container {
             display: none; padding-top: 0.75rem; margin-top: 0.75rem;
         }
         .library-main-specialization-tabs.active, .library-sub-specialization-tabs-container.active,
-        .main-specialization-tabs.active, .sub-specialization-tabs-container.active { 
+        .main-specialization-tabs.active, .sub-specialization-tabs-container.active {
             display: flex; flex-wrap: wrap; gap: 0.5rem;
         }
         .library-main-specialization-tabs, .main-specialization-tabs { border-top: 1px solid #e5e7eb; }
-        
+
         .library-sub-specialization-tabs-container { margin-left: 1rem; padding-left: 1rem; border-left: 2px solid #22d3ee; }
         .sub-specialization-tabs-container { margin-left: 1rem; padding-left: 1rem; border-left: 2px solid #fbbf24; }
 
@@ -181,13 +181,13 @@
         .library-sub-specialization-tabs.active, .sub-specialization-tabs.active { display: flex; }
 
         .library-category-tab-item, .library-sub-category-tab-item,
-        .category-tab-item, .sub-category-tab-item { 
-            padding: 0.5rem 1rem; 
+        .category-tab-item, .sub-category-tab-item {
+            padding: 0.5rem 1rem;
             border-radius: 9999px; font-size: 0.875rem; font-weight: 500; cursor: pointer;
             transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
         }
         .library-category-tab-item, .library-sub-category-tab-item {
-             border: 1px solid #22d3ee; color: #0891b2; background-color: #cffafe; 
+             border: 1px solid #22d3ee; color: #0891b2; background-color: #cffafe;
         }
         .library-category-tab-item:hover, .library-category-tab-item.active-tab,
         .library-sub-category-tab-item:hover, .library-sub-category-tab-item.active-tab {
@@ -204,7 +204,7 @@
         .sub-category-tab-item:hover, .sub-category-tab-item.active-tab {
             background-color: #fbbf24; color: #78350f; border-color: #f59e0b;
         }
-        .sub-category-tab-item { 
+        .sub-category-tab-item {
              border-color: #fcd34d; background-color: #fffbeb;
         }
          .sub-category-tab-item:hover, .sub-category-tab-item.active-tab {
@@ -219,34 +219,34 @@
         .news-events-tabs-menu {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.75rem; 
-            margin-bottom: 2rem; 
-            padding-bottom: 1rem; 
-            border-bottom: 2px solid #e5e7eb; 
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e5e7eb;
         }
         .news-event-tab-button {
-            padding: 0.625rem 1.25rem; 
+            padding: 0.625rem 1.25rem;
             font-weight: 500;
-            color: #4b5563; 
-            background-color: #f3f4f6; 
-            border-radius: 0.5rem; 
+            color: #4b5563;
+            background-color: #f3f4f6;
+            border-radius: 0.5rem;
             cursor: pointer;
             transition: all 0.2s ease-in-out;
             border: 1px solid transparent;
         }
         .news-event-tab-button:hover {
-            background-color: #e5e7eb; 
-            color: #1f2937; 
+            background-color: #e5e7eb;
+            color: #1f2937;
         }
-        .news-event-tab-button.active-news-tab { 
-            background-color: #fbbf24; 
-            color: #78350f; 
+        .news-event-tab-button.active-news-tab {
+            background-color: #fbbf24;
+            color: #78350f;
             font-weight: 600;
-            border-color: #f59e0b; 
+            border-color: #f59e0b;
         }
-        .news-event-content-pane { 
+        .news-event-content-pane {
             display: none;
-            padding-top: 1rem; 
+            padding-top: 1rem;
         }
         .news-event-content-pane.active {
             display: block;
@@ -267,12 +267,12 @@
             border-radius: 1rem;
             box-shadow: 0 0 0 1px rgba(0,0,0,.1),0 2px 3px rgba(0,0,0,.1),0 4px 12px rgba(0,0,0,.1);
             padding: 1.5rem;
-            max-width: 800px; 
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
         .gemini-chat-messages {
-            height: 450px; 
+            height: 450px;
             overflow-y: auto;
             padding: 1rem;
             margin-bottom: 1rem;
@@ -282,12 +282,12 @@
         }
         .gemini-chat-bubble {
             display: flex;
-            gap: 0.75rem; 
+            gap: 0.75rem;
             align-items: flex-start;
-            max-width: 90%; 
+            max-width: 90%;
         }
         .gemini-chat-bubble .avatar {
-            width: 2.25rem; 
+            width: 2.25rem;
             height: 2.25rem;
             border-radius: 50%;
             display: flex;
@@ -297,31 +297,31 @@
             flex-shrink: 0;
         }
         .gemini-chat-bubble .avatar-user {
-            background-color: #cce7ff; 
+            background-color: #cce7ff;
             color: #00529b;
         }
         .gemini-chat-bubble .avatar-ai {
-            background-color: #d1fae5; 
+            background-color: #d1fae5;
             color: #065f46;
         }
         .gemini-chat-bubble .message-content {
-            background-color: #f3f4f6; 
+            background-color: #f3f4f6;
             padding: 0.75rem 1rem;
-            border-radius: 0.75rem; 
+            border-radius: 0.75rem;
             line-height: 1.6;
-            font-size: 0.95rem; 
+            font-size: 0.95rem;
         }
         .gemini-chat-bubble.user .message-content {
-            background-color: #e0f2fe; 
+            background-color: #e0f2fe;
             border-top-left-radius: 0.25rem;
         }
         .gemini-chat-bubble.ai .message-content {
-            background-color: #f0fdf4; 
+            background-color: #f0fdf4;
             border-top-right-radius: 0.25rem;
         }
         .gemini-chat-bubble.user {
-            margin-left: auto; 
-            flex-direction: row-reverse; 
+            margin-left: auto;
+            flex-direction: row-reverse;
         }
          .gemini-chat-bubble.user .message-content {
             border-top-right-radius: 0.25rem;
@@ -332,24 +332,24 @@
             display: flex;
             gap: 0.75rem;
             padding: 0.75rem;
-            background-color: #f9fafb; 
+            background-color: #f9fafb;
             border-radius: 0.75rem;
             box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
         }
         .gemini-chat-input {
             flex-grow: 1;
             padding: 0.75rem 1rem;
-            border: 1px solid #d1d5db; 
-            border-radius: 0.5rem; 
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
             font-size: 1rem;
         }
         .gemini-chat-input:focus {
             outline: none;
-            border-color: #2563eb; 
+            border-color: #2563eb;
             box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
         }
         .gemini-send-button {
-            background-color: #2563eb; 
+            background-color: #2563eb;
             color: white;
             padding: 0.75rem 1.25rem;
             border-radius: 0.5rem;
@@ -358,34 +358,34 @@
             transition: background-color 0.2s;
         }
         .gemini-send-button:hover {
-            background-color: #1d4ed8; 
+            background-color: #1d4ed8;
         }
 
         .insta-post-card {
             background-color: #fff;
             border: 1px solid #dbdbdb;
             border-radius: 8px;
-            margin-bottom: 1.5rem; 
+            margin-bottom: 1.5rem;
         }
         .insta-post-header {
             display: flex;
             align-items: center;
-            padding: 0.75rem 1rem; 
+            padding: 0.75rem 1rem;
         }
         .insta-post-header .avatar {
-            width: 2.5rem; height: 2.5rem; 
+            width: 2.5rem; height: 2.5rem;
             border-radius: 50%;
-            margin-right: 0.75rem; 
+            margin-right: 0.75rem;
             border: 2px solid transparent;
             background: linear-gradient(white, white) padding-box,
-                        linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7) border-box; 
+                                 linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7) border-box;
         }
         .insta-post-header .username {
             font-weight: 600;
             color: #262626;
         }
         .insta-post-header .location {
-            font-size: 0.75rem; 
+            font-size: 0.75rem;
             color: #8e8e8e;
         }
         .insta-post-header .options-btn {
@@ -394,7 +394,7 @@
         }
         .insta-post-image {
             width: 100%;
-            max-height: 600px; 
+            max-height: 600px;
             object-fit: cover;
             border-top: 1px solid #efefef;
             border-bottom: 1px solid #efefef;
@@ -402,45 +402,45 @@
         .insta-post-actions {
             display: flex;
             align-items: center;
-            padding: 0.5rem 1rem; 
+            padding: 0.5rem 1rem;
         }
         .insta-post-actions button {
             background: none; border: none; cursor: pointer;
-            font-size: 1.5rem; 
+            font-size: 1.5rem;
             color: #262626;
-            margin-right: 1rem; 
+            margin-right: 1rem;
             transition: color 0.2s;
         }
         .insta-post-actions button.liked .fa-heart {
-            color: #ed4956; 
-            font-weight: 900; 
+            color: #ed4956;
+            font-weight: 900;
         }
         .insta-post-actions button:hover { color: #8e8e8e; }
         .insta-post-actions .save-btn { margin-left: auto; margin-right: 0; }
         .insta-post-actions .save-btn.saved .fa-bookmark {
-            color: #f5c601; 
-            font-weight: 900; 
+            color: #f5c601;
+            font-weight: 900;
         }
         .insta-post-likes {
-            padding: 0 1rem; 
+            padding: 0 1rem;
             font-weight: 600;
-            font-size: 0.875rem; 
+            font-size: 0.875rem;
             color: #262626;
         }
         .insta-post-caption {
-            padding: 0.5rem 1rem; 
+            padding: 0.5rem 1rem;
             font-size: 0.875rem;
             color: #262626;
         }
         .insta-post-caption .username { font-weight: 600; margin-right: 0.25rem; }
         .insta-post-comments-link {
-            padding: 0 1rem 0.5rem; 
+            padding: 0 1rem 0.5rem;
             font-size: 0.875rem;
             color: #8e8e8e;
             cursor: pointer;
         }
          .insta-post-comments-section {
-            display: none; 
+            display: none;
             padding: 0.5rem 1rem;
             border-top: 1px solid #efefef;
         }
@@ -450,7 +450,7 @@
         .insta-post-add-comment {
             display: flex;
             align-items: center;
-            padding: 0.5rem 1rem; 
+            padding: 0.5rem 1rem;
             border-top: 1px solid #efefef;
         }
         .insta-post-add-comment input {
@@ -466,10 +466,10 @@
             cursor: pointer;
         }
         .insta-sidebar-profile .avatar {
-            width: 3.5rem; height: 3.5rem; 
+            width: 3.5rem; height: 3.5rem;
              border: 2px solid transparent;
             background: linear-gradient(white, white) padding-box,
-                        linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7) border-box;
+                                 linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7) border-box;
         }
 
 
@@ -479,19 +479,19 @@
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 3;
         }
-        
-        .main-specialization-tabs { 
-            display: none; 
-            padding-top: 0.75rem; 
-            margin-top: 0.75rem; 
-            border-top: 1px solid #e5e7eb; 
+
+        .main-specialization-tabs {
+            display: none;
+            padding-top: 0.75rem;
+            margin-top: 0.75rem;
+            border-top: 1px solid #e5e7eb;
         }
         .main-specialization-tabs.active {
-            display: flex; 
+            display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem; 
+            gap: 0.5rem;
         }
-        .category-tab-item { 
+        .category-tab-item {
             padding: 0.5rem 1rem; border: 1px solid #fbbf24;
             color: #b45309; background-color: #fef3c7;
             border-radius: 9999px; font-size: 0.875rem; font-weight: 500; cursor: pointer;
@@ -500,29 +500,29 @@
         .category-tab-item:hover, .category-tab-item.active-tab {
             background-color: #fbbf24; color: #78350f; border-color: #f59e0b;
         }
-        
-        .sub-specialization-tabs-container { 
-            display: none; 
-            margin-top: 0.75rem; 
-            padding-top: 0.75rem; 
-            margin-left: 1rem; 
+
+        .sub-specialization-tabs-container {
+            display: none;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            margin-left: 1rem;
             padding-left: 1rem;
-            border-left: 2px solid #fbbf24; 
+            border-left: 2px solid #fbbf24;
         }
         .sub-specialization-tabs-container.active {
-             display: block; 
+             display: block;
         }
-        .sub-specialization-tabs { 
-            display: none; 
+        .sub-specialization-tabs {
+            display: none;
             flex-wrap: wrap;
             gap: 0.5rem;
         }
         .sub-specialization-tabs.active {
-            display: flex; 
+            display: flex;
         }
-        .sub-category-tab-item { 
-            padding: 0.5rem 1rem; border: 1px solid #fcd34d; 
-            color: #92400e;  background-color: #fffbeb; 
+        .sub-category-tab-item {
+            padding: 0.5rem 1rem; border: 1px solid #fcd34d;
+            color: #92400e;  background-color: #fffbeb;
             border-radius: 9999px; font-size: 0.875rem; font-weight: 500; cursor: pointer;
             transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
         }
@@ -553,7 +553,7 @@
         .modal-content {
             background-color: white;
             padding: 2rem;
-            border-radius: 0.75rem; 
+            border-radius: 0.75rem;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             width: 90%;
             max-width: 500px;
@@ -566,36 +566,36 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: #6b7280; 
+            color: #6b7280;
             cursor: pointer;
         }
         .modal-close-btn:hover {
-            color: #1f2937; 
+            color: #1f2937;
         }
         .form-input {
             width: 100%;
             padding: 0.75rem 1rem;
-            border: 1px solid #d1d5db; 
-            border-radius: 0.5rem; 
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
             margin-bottom: 1rem;
             font-size: 0.9rem;
         }
         .form-input:focus {
             outline: none;
-            border-color: #0077b6; 
+            border-color: #0077b6;
             box-shadow: 0 0 0 2px rgba(0, 119, 182, 0.2);
         }
         .form-label {
             display: block;
             margin-bottom: 0.25rem;
-            font-size: 0.875rem; 
+            font-size: 0.875rem;
             font-weight: 500;
-            color: #374151; 
+            color: #374151;
         }
         .form-button {
             width: 100%;
             padding: 0.75rem;
-            background-color: #00b4d8; 
+            background-color: #00b4d8;
             color: white;
             border: none;
             border-radius: 0.5rem;
@@ -618,6 +618,78 @@
             display: block;
         }
 
+        /* New styles for magic effect */
+        .btn-cta.magic-effect {
+            position: relative;
+            overflow: hidden;
+            z-index: 1; /* Ensure pseudo-element is behind content but above other elements */
+        }
+
+        .btn-cta.magic-effect::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            animation: magicLight 0.8s forwards; /* Animation duration */
+            z-index: -1; /* Place behind button text */
+        }
+
+        @keyframes magicLight {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 0.8;
+            }
+            100% {
+                width: 300%; /* Expand significantly */
+                height: 300%;
+                opacity: 0;
+            }
+        }
+
+        /* Share Modal Specific Styles */
+        .share-friend-list {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .share-friend-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 0.375rem;
+            transition: background-color 0.2s ease;
+        }
+        .share-friend-item:hover {
+            background-color: #f3f4f6;
+        }
+        .share-friend-item input[type="checkbox"] {
+            margin-right: 0.75rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            accent-color: #db2777; /* Pink color for checkbox */
+        }
+        .share-friend-item .avatar {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+            object-fit: cover;
+        }
+        .share-friend-item .username {
+            font-weight: 500;
+            color: #374151;
+        }
     </style>
 </head>
 <body class="text-gray-700">
@@ -639,13 +711,14 @@
             </button>
         </div>
     </header>
-    
+
     <main id="main-content-area">
         <section id="hero-section" class="hero-section text-white py-24 md:py-40 page-content-section">
             <div class="hero-content container mx-auto px-6 text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">HUBverse</h1>
-                <p class="text-lg md:text-2xl mb-10 max-w-2xl mx-auto leading-relaxed">Gì cũng có, ngoại trừ bồ cũ của crush bạn.</p>
-                <a href="#features-overview" class="btn-cta text-lg page-router-link" data-target-page="home">Khám Phá Ngay <i class="fas fa-rocket ml-2"></i></a>
+                <p class="text-lg md:text-2xl mb-10 max-w-2xl mx-auto leading-relaxed">Tắt lơ ngơ, bật HUBverse</p>
+                <!-- Added id="explore-now-btn" and removed page-router-link class to handle click behavior separately -->
+                <a href="#features-overview" id="explore-now-btn" class="btn-cta text-lg">Khám Phá Ngay <i class="fas fa-rocket ml-2"></i></a>
             </div>
             <canvas id="hero-3d-canvas"></canvas>
         </section>
@@ -674,7 +747,7 @@
                         <div class="md:col-span-2"><label for="search-marketplace" class="block text-sm font-medium text-gray-700 mb-1">Tìm kiếm (sách, đồ dùng, mã môn,...)</label><input type="text" id="search-marketplace" placeholder="VD: Giáo trình Vi mô, tai nghe cũ..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500"></div>
                         <div><label for="filter-main-category" class="block text-sm font-medium text-gray-700 mb-1">Danh mục chính</label><select id="filter-main-category" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500"><option value="all" selected>Tất cả</option><option value="dai-cuong">Môn đại cương</option><option value="chuyen-nganh">Môn chuyên ngành</option><option value="do-dung">Đồ dùng</option></select></div>
                     </div>
-                    <div id="main-specialization-tabs-container" class="main-specialization-tabs mt-4"> 
+                    <div id="main-specialization-tabs-container" class="main-specialization-tabs mt-4">
                         <button class="category-tab-item active-tab" data-main-spec="all-main-specs">Tất cả ngành</button>
                         <button class="category-tab-item" data-main-spec="tcnh" data-has-subs="true">Tài chính - Ngân hàng</button>
                         <button class="category-tab-item" data-main-spec="qtkd" data-has-subs="true">Quản trị kinh doanh</button>
@@ -684,7 +757,7 @@
                         <button class="category-tab-item" data-main-spec="nnanh" data-has-subs="true">Ngôn ngữ Anh</button>
                         <button class="category-tab-item" data-main-spec="ktkt" data-has-subs="true">Kế toán - Kiểm toán</button>
                     </div>
-                     <div id="sub-specialization-tabs-container" class="sub-specialization-tabs-container mt-3"> 
+                    <div id="sub-specialization-tabs-container" class="sub-specialization-tabs-container mt-3">
                         <div id="subs-tcnh" class="sub-specialization-tabs"><button class="sub-category-tab-item active-tab" data-sub-spec="all-tcnh-subs">Tất cả TCNH</button><button class="sub-category-tab-item" data-sub-spec="tai-chinh">Tài chính</button><button class="sub-category-tab-item" data-sub-spec="ngan-hang">Ngân hàng</button></div>
                         <div id="subs-qtkd" class="sub-specialization-tabs"><button class="sub-category-tab-item active-tab" data-sub-spec="all-qtkd-subs">Tất cả QTKD</button><button class="sub-category-tab-item" data-sub-spec="quan-tri-kinh-doanh">Quản trị kinh doanh</button><button class="sub-category-tab-item" data-sub-spec="digital-marketing">Digital Marketing</button><button class="sub-category-tab-item" data-sub-spec="logistics">Logistics</button></div>
                         <div id="subs-ktqt" class="sub-specialization-tabs"><button class="sub-category-tab-item active-tab" data-sub-spec="all-ktqt-subs">Tất cả KTQT</button><button class="sub-category-tab-item" data-sub-spec="kinh-te-quoc-te">Kinh tế quốc tế</button><button class="sub-category-tab-item" data-sub-spec="kinh-te-kd-so">Kinh tế - KD số</button></div>
@@ -696,11 +769,18 @@
                     <div class="mt-6 flex justify-end"><button id="filter-results-button" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 text-base"><i class="fas fa-filter mr-2"></i>Lọc Kết Quả</button></div>
                 </div>
                 <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                    <div class="product-card flex flex-col" data-category="dai-cuong"><img src="https://placehold.co/400x300/FFEDD5/F97316?text=Triết+Học" alt="Giáo trình Triết học Mác-Lênin" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/400x300/E2E8F0/2D3748?text=Lỗi+Ảnh';"><div class="p-5 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800">Giáo trình Triết học Mác-Lênin</h3><p class="price text-xl mb-2">75.000 VNĐ</p><p class="text-xs text-gray-500 mb-1"><i class="fas fa-user-circle mr-1"></i> Trần Văn Đức</p><p class="text-xs text-gray-500 mb-3"><i class="fas fa-tag mr-1"></i> Môn đại cương</p><p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">Sách còn mới, highlight vài chỗ quan trọng.</p><button class="mt-auto w-full btn-add-to-cart font-semibold py-2.5 px-4 rounded-lg text-sm"><i class="fas fa-cart-plus mr-2"></i>Thêm vào giỏ</button></div></div>
-                    <div class="product-card flex flex-col" data-category="chuyen-nganh" data-main-spec-tag="ktkt" data-sub-spec-tag="ke-toan"><img src="https://placehold.co/400x300/FFEDD5/F97316?text=Kế+Toán+TC" alt="Giáo trình Kế toán tài chính 1" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/400x300/E2E8F0/2D3748?text=Lỗi+Ảnh';"><div class="p-5 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800">Kế toán Tài chính 1</h3><p class="price text-xl mb-2">110.000 VNĐ</p><p class="text-xs text-gray-500 mb-1"><i class="fas fa-user-circle mr-1"></i> Lê Thị Hoa</p><p class="text-xs text-gray-500 mb-3"><i class="fas fa-tag mr-1"></i> KT-KT / Kế toán</p><p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">Sách gốc, có bài tập giải sẵn.</p><button class="mt-auto w-full btn-add-to-cart font-semibold py-2.5 px-4 rounded-lg text-sm"><i class="fas fa-cart-plus mr-2"></i>Thêm vào giỏ</button></div></div>
-                    <div class="product-card flex flex-col" data-category="do-dung"><img src="https://placehold.co/400x300/FFEDD5/F97316?text=Máy+Tính+Casio" alt="Máy tính Casio" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/400x300/E2E8F0/2D3748?text=Lỗi+Ảnh';"><div class="p-5 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800">Máy tính Casio FX-580VN X</h3><p class="price text-xl mb-2">350.000 VNĐ</p><p class="text-xs text-gray-500 mb-1"><i class="fas fa-user-circle mr-1"></i> Phạm Gia Huy</p><p class="text-xs text-gray-500 mb-3"><i class="fas fa-tag mr-1"></i> Đồ dùng</p><p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">Còn mới, full chức năng, hết bảo hành.</p><button class="mt-auto w-full btn-add-to-cart font-semibold py-2.5 px-4 rounded-lg text-sm"><i class="fas fa-cart-plus mr-2"></i>Thêm vào giỏ</button></div></div>
-                    <div class="product-card flex flex-col" data-category="chuyen-nganh" data-main-spec-tag="qtkd" data-sub-spec-tag="digital-marketing"><img src="https://placehold.co/400x300/FFEDD5/F97316?text=Digital+MKT" alt="Sách Digital Marketing" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/400x300/E2E8F0/2D3748?text=Lỗi+Ảnh';"><div class="p-5 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800">Digital Marketing từ A-Z</h3><p class="price text-xl mb-2">190.000 VNĐ</p><p class="text-xs text-gray-500 mb-1"><i class="fas fa-user-circle mr-1"></i> CLB Marketing HUB</p><p class="text-xs text-gray-500 mb-3"><i class="fas fa-tag mr-1"></i> QTKD / Digital Marketing</p><p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">Cẩm nang toàn diện cho người mới bắt đầu.</p><button class="mt-auto w-full btn-add-to-cart font-semibold py-2.5 px-4 rounded-lg text-sm"><i class="fas fa-cart-plus mr-2"></i>Thêm vào giỏ</button></div></div>
-                    <div class="product-card flex flex-col" data-category="chuyen-nganh" data-main-spec-tag="htttql" data-sub-spec-tag="khoa-hoc-du-lieu"><img src="https://placehold.co/400x300/FFEDD5/F97316?text=Data+Science" alt="Sách Khoa học dữ liệu" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/400x300/E2E8F0/2D3748?text=Lỗi+Ảnh';"><div class="p-5 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800">Python cho Khoa học Dữ liệu</h3><p class="price text-xl mb-2">250.000 VNĐ</p><p class="text-xs text-gray-500 mb-1"><i class="fas fa-user-circle mr-1"></i> Nhóm SV Nghiên cứu</p><p class="text-xs text-gray-500 mb-3"><i class="fas fa-tag mr-1"></i> HTTTQL / Khoa học dữ liệu</p><p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">Thực hành với các thư viện phổ biến.</p><button class="mt-auto w-full btn-add-to-cart font-semibold py-2.5 px-4 rounded-lg text-sm"><i class="fas fa-cart-plus mr-2"></i>Thêm vào giỏ</button></div></div>
+                    <!-- Existing Products -->
+                    <div class="product-card flex flex-col" data-category="dai-cuong"><img src="https://placehold.co/400x300/FFEDD5/F97316?text=Triết+Học" alt="Giáo trình Triết học Mác-Lênin" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/400x300/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div class="p-5 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800">Giáo trình Triết học Mác-Lênin</h3><p class="price text-xl mb-2">75.000 VNĐ</p><p class="text-xs text-gray-500 mb-1"><i class="fas fa-user-circle mr-1"></i> Trần Văn Đức</p><p class="text-xs text-gray-500 mb-3"><i class="fas fa-tag mr-1"></i> Môn đại cương</p><p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">Sách còn mới, highlight vài chỗ quan trọng.</p><button class="mt-auto w-full btn-add-to-cart font-semibold py-2.5 px-4 rounded-lg text-sm"><i class="fas fa-cart-plus mr-2"></i>Thêm vào giỏ</button></div></div>
+                    <div class="product-card flex flex-col" data-category="chuyen-nganh" data-main-spec-tag="ktkt" data-sub-spec-tag="ke-toan"><img src="https://placehold.co/400x300/FFEDD5/F97316?text=Kế+Toán+TC" alt="Giáo trình Kế toán tài chính 1" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/400x300/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div class="p-5 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800">Kế toán Tài chính 1</h3><p class="price text-xl mb-2">110.000 VNĐ</p><p class="text-xs text-gray-500 mb-1"><i class="fas fa-user-circle mr-1"></i> Lê Thị Hoa</p><p class="text-xs text-gray-500 mb-3"><i class="fas fa-tag mr-1"></i> KT-KT / Kế toán</p><p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">Sách gốc, có bài tập giải sẵn.</p><button class="mt-auto w-full btn-add-to-cart font-semibold py-2.5 px-4 rounded-lg text-sm"><i class="fas fa-cart-plus mr-2"></i>Thêm vào giỏ</button></div></div>
+                    <div class="product-card flex flex-col" data-category="do-dung"><img src="https://placehold.co/400x300/FFEDD5/F97316?text=Máy+Tính+Casio" alt="Máy tính Casio" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/400x300/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div class="p-5 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800">Máy tính Casio FX-580VN X</h3><p class="price text-xl mb-2">350.000 VNĐ</p><p class="text-xs text-gray-500 mb-1"><i class="fas fa-user-circle mr-1"></i> Phạm Gia Huy</p><p class="text-xs text-gray-500 mb-3"><i class="fas fa-tag mr-1"></i> Đồ dùng</p><p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">Còn mới, full chức năng, hết bảo hành.</p><button class="mt-auto w-full btn-add-to-cart font-semibold py-2.5 px-4 rounded-lg text-sm"><i class="fas fa-cart-plus mr-2"></i>Thêm vào giỏ</button></div></div>
+                    <div class="product-card flex flex-col" data-category="chuyen-nganh" data-main-spec-tag="qtkd" data-sub-spec-tag="digital-marketing"><img src="https://placehold.co/400x300/FFEDD5/F97316?text=Digital+MKT" alt="Sách Digital Marketing" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/400x300/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div class="p-5 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800">Digital Marketing từ A-Z</h3><p class="price text-xl mb-2">190.000 VNĐ</p><p class="text-xs text-gray-500 mb-1"><i class="fas fa-user-circle mr-1"></i> CLB Marketing HUB</p><p class="text-xs text-gray-500 mb-3"><i class="fas fa-tag mr-1"></i> QTKD / Digital Marketing</p><p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">Cẩm nang toàn diện cho người mới bắt đầu.</p><button class="mt-auto w-full btn-add-to-cart font-semibold py-2.5 px-4 rounded-lg text-sm"><i class="fas fa-cart-plus mr-2"></i>Thêm vào giỏ</button></div></div>
+                    <div class="product-card flex flex-col" data-category="chuyen-nganh" data-main-spec-tag="htttql" data-sub-spec-tag="khoa-hoc-du-lieu"><img src="https://placehold.co/400x300/FFEDD5/F97316?text=Data+Science" alt="Sách Khoa học dữ liệu" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/400x300/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div class="p-5 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800">Python cho Khoa học Dữ liệu</h3><p class="price text-xl mb-2">250.000 VNĐ</p><p class="text-xs text-gray-500 mb-1"><i class="fas fa-user-circle mr-1"></i> Nhóm SV Nghiên cứu</p><p class="text-xs text-gray-500 mb-3"><i class="fas fa-tag mr-1"></i> HTTTQL / Khoa học dữ liệu</p><p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">Thực hành với các thư viện phổ biến.</p><button class="mt-auto w-full btn-add-to-cart font-semibold py-2.5 px-4 rounded-lg text-sm"><i class="fas fa-cart-plus mr-2"></i>Thêm vào giỏ</button></div></div>
+
+                    <!-- New Marketplace Products -->
+                    <div class="product-card flex flex-col" data-category="dai-cuong"><img src="https://placehold.co/400x300/FFEDD5/F97316?text=Kinh+Tế+Vĩ+Mô" alt="Giáo trình Kinh tế vĩ mô" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/400x300/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div class="p-5 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800">Giáo trình Kinh tế vĩ mô</h3><p class="price text-xl mb-2">90.000 VNĐ</p><p class="text-xs text-gray-500 mb-1"><i class="fas fa-user-circle mr-1"></i> Nguyễn Văn An</p><p class="text-xs text-gray-500 mb-3"><i class="fas fa-tag mr-1"></i> Môn đại cương</p><p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">Sách mới 99%, không highlight.</p><button class="mt-auto w-full btn-add-to-cart font-semibold py-2.5 px-4 rounded-lg text-sm"><i class="fas fa-cart-plus mr-2"></i>Thêm vào giỏ</button></div></div>
+                    <div class="product-card flex flex-col" data-category="chuyen-nganh" data-main-spec-tag="nnanh" data-sub-spec-tag="tieng-anh-thuong-mai"><img src="https://placehold.co/400x300/FFEDD5/F97316?text=Tiếng+Anh+TM" alt="Sách Tiếng Anh thương mại" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/400x300/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div class="p-5 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800">Tiếng Anh Thương Mại Quốc Tế</h3><p class="price text-xl mb-2">150.000 VNĐ</p><p class="text-xs text-gray-500 mb-1"><i class="fas fa-user-circle mr-1"></i> Trương Thị Bích</p><p class="text-xs text-gray-500 mb-3"><i class="fas fa-tag mr-1"></i> Ngôn ngữ Anh / Tiếng Anh thương mại</p><p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">Sách có bài tập và CD nghe.</p><button class="mt-auto w-full btn-add-to-cart font-semibold py-2.5 px-4 rounded-lg text-sm"><i class="fas fa-cart-plus mr-2"></i>Thêm vào giỏ</button></div></div>
+                    <div class="product-card flex flex-col" data-category="do-dung"><img src="https://placehold.co/400x300/FFEDD5/F97316?text=Bút+Chì+Màu" alt="Bộ bút chì màu" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/400x300/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div class="p-5 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800">Bộ bút chì màu Faber-Castell 36 màu</h3><p class="price text-xl mb-2">120.000 VNĐ</p><p class="text-xs text-gray-500 mb-1"><i class="fas fa-user-circle mr-1"></i> Lê Minh Thư</p><p class="text-xs text-gray-500 mb-3"><i class="fas fa-tag mr-1"></i> Đồ dùng</p><p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">Mới dùng vài lần, màu sắc đẹp.</p><button class="mt-auto w-full btn-add-to-cart font-semibold py-2.5 px-4 rounded-lg text-sm"><i class="fas fa-cart-plus mr-2"></i>Thêm vào giỏ</button></div></div>
+                    <div class="product-card flex flex-col" data-category="chuyen-nganh" data-main-spec-tag="tcnh" data-sub-spec-tag="tai-chinh"><img src="https://placehold.co/400x300/FFEDD5/F97316?text=Tài+Chính+DN" alt="Sách Tài chính doanh nghiệp" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/400x300/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div class="p-5 flex flex-col flex-grow"><h3 class="text-lg font-semibold mb-2 text-gray-800">Giáo trình Tài chính doanh nghiệp</h3><p class="price text-xl mb-2">130.000 VNĐ</p><p class="text-xs text-gray-500 mb-1"><i class="fas fa-user-circle mr-1"></i> Nguyễn Hoàng Nam</p><p class="text-xs text-gray-500 mb-3"><i class="fas fa-tag mr-1"></i> TCNH / Tài chính</p><p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">Phiên bản mới nhất, có bài tập thực hành.</p><button class="mt-auto w-full btn-add-to-cart font-semibold py-2.5 px-4 rounded-lg text-sm"><i class="fas fa-cart-plus mr-2"></i>Thêm vào giỏ</button></div></div>
                 </div>
                 <div class="mt-16 flex justify-center"><a href="#" class="btn-cta bg-orange-500 hover:bg-orange-600 text-base">Xem Thêm Sản Phẩm <i class="fas fa-chevron-down ml-2"></i></a></div>
             </div>
@@ -710,7 +790,7 @@
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 section-title" style="border-color: #0ea5e9;">Thư Viện Tri Thức HUB</h2>
                 <p class="text-center text-gray-600 mb-12 md:mb-16 max-w-xl mx-auto text-lg">Nguồn tài liệu học thuật vô tận, từ bài giảng, sách chuyên khảo đến nghiên cứu khoa học mới nhất.</p>
-                
+
                 <div class="mb-12 p-6 bg-white rounded-xl shadow-md">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
                         <div class="md:col-span-2">
@@ -733,7 +813,7 @@
                         <button class="library-category-tab-item" data-main-spec="tcnh" data-has-subs="true">Tài chính - Ngân hàng</button>
                         <button class="library-category-tab-item" data-main-spec="qtkd" data-has-subs="true">Quản trị kinh doanh</button>
                         <button class="library-category-tab-item" data-main-spec="ktqt" data-has-subs="true">Kinh tế quốc tế</button>
-                        <button class="library-category-tab-item" data-main-spec="htttql" data-has-subs="true">Hệ thống Thông tin Quản lý</button> 
+                        <button class="library-category-tab-item" data-main-spec="htttql" data-has-subs="true">Hệ thống Thông tin Quản lý</button>
                         <button class="library-category-tab-item" data-main-spec="luatkt" data-has-subs="true">Luật kinh tế</button>
                         <button class="library-category-tab-item" data-main-spec="nnanh" data-has-subs="true">Ngôn ngữ Anh</button>
                         <button class="library-category-tab-item" data-main-spec="ktkt" data-has-subs="true">Kế toán - Kiểm toán</button>
@@ -752,19 +832,26 @@
                 </div>
 
                 <div id="document-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                    <div class="document-card p-6 text-center hover:shadow-sky-200/50" data-category="chuyen-nganh" data-main-spec-tag="ktkt" data-sub-spec-tag="ke-toan"><img src="https://placehold.co/150x200/E0F2FE/0EA5E9?text=PDF" alt="Bài giảng PDF" class="w-24 h-32 object-contain rounded-lg mb-4 mx-auto" onerror="this.src='https://placehold.co/150x200/E2E8F0/2D3748?text=Lỗi';"><h3 class="text-lg font-semibold mb-2 text-gray-800">Bài giảng Kế toán Ngân hàng</h3><p class="text-xs text-gray-500 mb-1">Khoa Kế toán - Kiểm toán</p><p class="text-xs text-gray-500 mb-3"><span class="bg-sky-100 text-sky-700 py-0.5 px-2 rounded-full">PDF</span></p><a href="#" class="w-full block btn-view-doc font-semibold py-2 px-4 rounded-lg text-sm"><i class="fas fa-eye mr-2"></i>Xem / Tải</a></div>
-                    <div class="document-card p-6 text-center hover:shadow-sky-200/50" data-category="mo-rong"><img src="https://placehold.co/150x200/E0F2FE/0EA5E9?text=Ebook" alt="Ebook NCKH" class="w-24 h-32 object-contain rounded-lg mb-4 mx-auto" onerror="this.src='https://placehold.co/150x200/E2E8F0/2D3748?text=Lỗi';"><h3 class="text-lg font-semibold mb-2 text-gray-800">Tuyển tập NCKH Sinh viên 2025</h3><p class="text-xs text-gray-500 mb-1">Phòng QL Khoa học</p><p class="text-xs text-gray-500 mb-3"><span class="bg-sky-100 text-sky-700 py-0.5 px-2 rounded-full">Ebook</span></p><a href="#" class="w-full block btn-view-doc font-semibold py-2 px-4 rounded-lg text-sm"><i class="fas fa-book-reader mr-2"></i>Đọc Ngay</a></div>
-                    <div class="document-card p-6 text-center hover:shadow-sky-200/50" data-category="chuyen-nganh" data-main-spec-tag="tcnh" data-sub-spec-tag="tai-chinh"><img src="https://placehold.co/150x200/E0F2FE/0EA5E9?text=Video" alt="Video bài giảng" class="w-24 h-32 object-contain rounded-lg mb-4 mx-auto" onerror="this.src='https://placehold.co/150x200/E2E8F0/2D3748?text=Lỗi';"><h3 class="text-lg font-semibold mb-2 text-gray-800">Video: Phân tích Thị trường</h3><p class="text-xs text-gray-500 mb-1">Khoa Tài chính</p><p class="text-xs text-gray-500 mb-3"><span class="bg-red-100 text-red-700 py-0.5 px-2 rounded-full">Video</span></p><a href="#" class="w-full block btn-view-doc font-semibold py-2 px-4 rounded-lg text-sm bg-red-500 hover:bg-red-600"><i class="fas fa-play-circle mr-2"></i>Xem Video</a></div>
-                    <div class="document-card p-6 text-center hover:shadow-sky-200/50" data-category="dai-cuong"><img src="https://placehold.co/150x200/E0F2FE/0EA5E9?text=Quy+Chế" alt="Quy chế học vụ" class="w-24 h-32 object-contain rounded-lg mb-4 mx-auto" onerror="this.src='https://placehold.co/150x200/E2E8F0/2D3748?text=Lỗi';"><h3 class="text-lg font-semibold mb-2 text-gray-800">Quy chế học vụ (Mới nhất)</h3><p class="text-xs text-gray-500 mb-1">Phòng Đào tạo</p><p class="text-xs text-gray-500 mb-3"><span class="bg-gray-200 text-gray-700 py-0.5 px-2 rounded-full">Văn bản</span></p><a href="#" class="w-full block btn-view-doc font-semibold py-2 px-4 rounded-lg text-sm"><i class="fas fa-file-alt mr-2"></i>Xem Chi Tiết</a></div>
+                    <!-- Existing Documents -->
+                    <div class="document-card p-6 text-center hover:shadow-sky-200/50" data-category="chuyen-nganh" data-main-spec-tag="ktkt" data-sub-spec-tag="ke-toan"><img src="https://placehold.co/150x200/E0F2FE/0EA5E9?text=PDF" alt="Bài giảng PDF" class="w-24 h-32 object-contain rounded-lg mb-4 mx-auto" onerror="this.src='https://placehold.co/150x200/E2E8F0/2D3748?text=Ảnh+Lỗi';"><h3 class="text-lg font-semibold mb-2 text-gray-800">Bài giảng Kế toán Ngân hàng</h3><p class="text-xs text-gray-500 mb-1">Khoa Kế toán - Kiểm toán</p><p class="text-xs text-gray-500 mb-3"><span class="bg-sky-100 text-sky-700 py-0.5 px-2 rounded-full">PDF</span></p><a href="#" class="w-full block btn-view-doc font-semibold py-2 px-4 rounded-lg text-sm"><i class="fas fa-eye mr-2"></i>Xem / Tải</a></div>
+                    <div class="document-card p-6 text-center hover:shadow-sky-200/50" data-category="mo-rong"><img src="https://placehold.co/150x200/E0F2FE/0EA5E9?text=Ebook" alt="Ebook NCKH" class="w-24 h-32 object-contain rounded-lg mb-4 mx-auto" onerror="this.src='https://placehold.co/150x200/E2E8F0/2D3748?text=Ảnh+Lỗi';"><h3 class="text-lg font-semibold mb-2 text-gray-800">Tuyển tập NCKH Sinh viên 2025</h3><p class="text-xs text-gray-500 mb-1">Phòng QL Khoa học</p><p class="text-xs text-gray-500 mb-3"><span class="bg-sky-100 text-sky-700 py-0.5 px-2 rounded-full">Ebook</span></p><a href="#" class="w-full block btn-view-doc font-semibold py-2 px-4 rounded-lg text-sm"><i class="fas fa-book-reader mr-2"></i>Đọc Ngay</a></div>
+                    <div class="document-card p-6 text-center hover:shadow-sky-200/50" data-category="chuyen-nganh" data-main-spec-tag="tcnh" data-sub-spec-tag="tai-chinh"><img src="https://placehold.co/150x200/E0F2FE/0EA5E9?text=Video" alt="Video bài giảng" class="w-24 h-32 object-contain rounded-lg mb-4 mx-auto" onerror="this.src='https://placehold.co/150x200/E2E8F0/2D3748?text=Ảnh+Lỗi';"><h3 class="text-lg font-semibold mb-2 text-gray-800">Video: Phân tích Thị trường</h3><p class="text-xs text-gray-500 mb-1">Khoa Tài chính</p><p class="text-xs text-gray-500 mb-3"><span class="bg-red-100 text-red-700 py-0.5 px-2 rounded-full">Video</span></p><a href="#" class="w-full block btn-view-doc font-semibold py-2 px-4 rounded-lg text-sm bg-red-500 hover:bg-red-600"><i class="fas fa-play-circle mr-2"></i>Xem Video</a></div>
+                    <div class="document-card p-6 text-center hover:shadow-sky-200/50" data-category="dai-cuong"><img src="https://placehold.co/150x200/E0F2FE/0EA5E9?text=Quy+Chế" alt="Quy chế học vụ" class="w-24 h-32 object-contain rounded-lg mb-4 mx-auto" onerror="this.src='https://placehold.co/150x200/E2E8F0/2D3748?text=Ảnh+Lỗi';"><h3 class="text-lg font-semibold mb-2 text-gray-800">Quy chế học vụ (Mới nhất)</h3><p class="text-xs text-gray-500 mb-1">Phòng Đào tạo</p><p class="text-xs text-gray-500 mb-3"><span class="bg-gray-200 text-gray-700 py-0.5 px-2 rounded-full">Văn bản</span></p><a href="#" class="w-full block btn-view-doc font-semibold py-2 px-4 rounded-lg text-sm"><i class="fas fa-file-alt mr-2"></i>Xem Chi Tiết</a></div>
+
+                    <!-- New Digital Library Documents -->
+                    <div class="document-card p-6 text-center hover:shadow-sky-200/50" data-category="dai-cuong"><img src="https://placehold.co/150x200/E0F2FE/0EA5E9?text=PPT" alt="Bài giảng Marketing căn bản" class="w-24 h-32 object-contain rounded-lg mb-4 mx-auto" onerror="this.src='https://placehold.co/150x200/E2E8F0/2D3748?text=Ảnh+Lỗi';"><h3 class="text-lg font-semibold mb-2 text-gray-800">Bài tập lớn Marketing căn bản</h3><p class="text-xs text-gray-500 mb-1">Khoa QTKD</p><p class="text-xs text-gray-500 mb-3"><span class="bg-purple-100 text-purple-700 py-0.5 px-2 rounded-full">PPT</span></p><a href="#" class="w-full block btn-view-doc font-semibold py-2 px-4 rounded-lg text-sm bg-purple-500 hover:bg-purple-600"><i class="fas fa-file-powerpoint mr-2"></i>Xem Slide</a></div>
+                    <div class="document-card p-6 text-center hover:shadow-sky-200/50" data-category="chuyen-nganh" data-main-spec-tag="luatkt" data-sub-spec-tag="luat-doanh-nghiep"><img src="https://placehold.co/150x200/E0F2FE/0EA5E9?text=Luận+Văn" alt="Luận văn tốt nghiệp" class="w-24 h-32 object-contain rounded-lg mb-4 mx-auto" onerror="this.src='https://placehold.co/150x200/E2E8F0/2D3748?text=Ảnh+Lỗi';"><h3 class="text-lg font-semibold mb-2 text-gray-800">Luận văn: Pháp lý trong Startup</h3><p class="text-xs text-gray-500 mb-1">Khoa Luật Kinh tế</p><p class="text-xs text-gray-500 mb-3"><span class="bg-yellow-100 text-yellow-700 py-0.5 px-2 rounded-full">Luận văn</span></p><a href="#" class="w-full block btn-view-doc font-semibold py-2 px-4 rounded-lg text-sm bg-yellow-500 hover:bg-yellow-600"><i class="fas fa-scroll mr-2"></i>Đọc Luận Văn</a></div>
+                    <div class="document-card p-6 text-center hover:shadow-sky-200/50" data-category="mo-rong"><img src="https://placehold.co/150x200/E0F2FE/0EA5E9?text=Video" alt="Video hướng dẫn phần mềm" class="w-24 h-32 object-contain rounded-lg mb-4 mx-auto" onerror="this.src='https://placehold.co/150x200/E2E8F0/2D3748?text=Ảnh+Lỗi';"><h3 class="text-lg font-semibold mb-2 text-gray-800">Video: Hướng dẫn sử dụng SAP</h3><p class="text-xs text-gray-500 mb-1">CLB Kế toán trẻ</p><p class="text-xs text-gray-500 mb-3"><span class="bg-red-100 text-red-700 py-0.5 px-2 rounded-full">Video</span></p><a href="#" class="w-full block btn-view-doc font-semibold py-2 px-4 rounded-lg text-sm bg-red-500 hover:bg-red-600"><i class="fas fa-play-circle mr-2"></i>Xem Video</a></div>
+                    <div class="document-card p-6 text-center hover:shadow-sky-200/50" data-category="mo-rong"><img src="https://placehold.co/150x200/E0F2FE/0EA5E9?text=Ebook" alt="Ebook Kỹ năng mềm" class="w-24 h-32 object-contain rounded-lg mb-4 mx-auto" onerror="this.src='https://placehold.co/150x200/E2E8F0/2D3748?text=Ảnh+Lỗi';"><h3 class="text-lg font-semibold mb-2 text-gray-800">Ebook: Kỹ năng mềm cho sinh viên 4.0</h3><p class="text-xs text-gray-500 mb-1">Trung tâm Hỗ trợ SV</p><p class="text-xs text-gray-500 mb-3"><span class="bg-sky-100 text-sky-700 py-0.5 px-2 rounded-full">Ebook</span></p><a href="#" class="w-full block btn-view-doc font-semibold py-2 px-4 rounded-lg text-sm"><i class="fas fa-book-reader mr-2"></i>Đọc Ngay</a></div>
                 </div>
-                 <div class="mt-16 flex justify-center"><a href="#" class="btn-cta bg-sky-500 hover:bg-sky-600 text-base">Khám Phá Thêm Tài Liệu <i class="fas fa-search-plus ml-2"></i></a></div>
+                   <div class="mt-16 flex justify-center"><a href="#" class="btn-cta bg-sky-500 hover:bg-sky-600 text-base">Khám Phá Thêm Tài Liệu <i class="fas fa-search-plus ml-2"></i></a></div>
             </div>
         </section>
 
         <section id="news-events" class="py-16 md:py-24 bg-yellow-50 page-content-section">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 section-title" style="border-color: #f59e0b;">HUB News & Events Feed</h2>
-                
+
                 <div id="news-events-tabs-menu" class="news-events-tabs-menu">
                     <button class="news-event-tab-button active-news-tab" data-target="available-activities-content"><i class="fas fa-calendar-check mr-2"></i>Hoạt Động Đang Diễn Ra</button>
                     <button class="news-event-tab-button" data-target="volunteer-activities-content"><i class="fas fa-hands-helping mr-2"></i>Hoạt Động Tình Nguyện</button>
@@ -775,27 +862,27 @@
                 <div id="available-activities-content" class="news-event-content-pane active">
                     <h3 class="text-2xl md:text-3xl font-semibold mb-8 subsection-title text-sky-600">Hoạt Động Đang Diễn Ra</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="event-card hover:shadow-amber-200/50"><img src="https://placehold.co/400x220/FEF3C7/D97706?text=Workshop" alt="Workshop Kỹ năng" class="w-full h-48 object-cover rounded-t-xl" onerror="this.src='https://placehold.co/400x220/E2E8F0/2D3748?text=Lỗi+Ảnh';"><div class="p-6"><span class="event-tag tag-workshop mb-2 inline-block">Workshop</span><h4 class="text-xl font-semibold mb-2 text-gray-800">Kỹ Năng Phỏng Vấn Chinh Phục Nhà Tuyển Dụng</h4><p class="text-gray-600 text-sm mb-3"><i class="fas fa-clock mr-1"></i> 09:00, 15/07 - Hội trường A1</p><p class="text-gray-700 text-sm mb-4 line-clamp-3">Rèn luyện kỹ năng phỏng vấn với chuyên gia nhân sự, tự tin ứng tuyển mọi vị trí.</p><a href="#" class="font-semibold text-amber-600 hover:text-amber-700">Đăng ký <i class="fas fa-arrow-right ml-1"></i></a></div></div>
-                        <div class="event-card hover:shadow-amber-200/50"><img src="https://placehold.co/400x220/FEF3C7/D97706?text=Job+Fair" alt="Ngày hội việc làm" class="w-full h-48 object-cover rounded-t-xl" onerror="this.src='https://placehold.co/400x220/E2E8F0/2D3748?text=Lỗi+Ảnh';"><div class="p-6"><span class="event-tag tag-event mb-2 inline-block">Sự kiện lớn</span><h4 class="text-xl font-semibold mb-2 text-gray-800">Ngày Hội Việc Làm HUB Connect 2025</h4><p class="text-gray-600 text-sm mb-3"><i class="fas fa-calendar-day mr-1"></i> Cả ngày, 20/07 - Sân vận động trường</p><p class="text-gray-700 text-sm mb-4 line-clamp-3">Hàng ngàn cơ hội việc làm từ các doanh nghiệp hàng đầu. Đừng bỏ lỡ!</p><a href="#" class="font-semibold text-amber-600 hover:text-amber-700">Xem chi tiết <i class="fas fa-arrow-right ml-1"></i></a></div></div>
+                        <div class="event-card hover:shadow-amber-200/50"><img src="https://placehold.co/400x220/FEF3C7/D97706?text=Workshop" alt="Workshop Kỹ năng" class="w-full h-48 object-cover rounded-t-xl" onerror="this.src='https://placehold.co/400x220/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div class="p-6"><span class="event-tag tag-workshop mb-2 inline-block">Workshop</span><h4 class="text-xl font-semibold mb-2 text-gray-800">Kỹ Năng Phỏng Vấn Chinh Phục Nhà Tuyển Dụng</h4><p class="text-gray-600 text-sm mb-3"><i class="fas fa-clock mr-1"></i> 09:00, 15/07 - Hội trường A1</p><p class="text-gray-700 text-sm mb-4 line-clamp-3">Rèn luyện kỹ năng phỏng vấn với chuyên gia nhân sự, tự tin ứng tuyển mọi vị trí.</p><a href="#" class="font-semibold text-amber-600 hover:text-amber-700">Đăng ký <i class="fas fa-arrow-right ml-1"></i></a></div></div>
+                        <div class="event-card hover:shadow-amber-200/50"><img src="https://placehold.co/400x220/FEF3C7/D97706?text=Job+Fair" alt="Ngày hội việc làm" class="w-full h-48 object-cover rounded-t-xl" onerror="this.src='https://placehold.co/400x220/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div class="p-6"><span class="event-tag tag-event mb-2 inline-block">Sự kiện lớn</span><h4 class="text-xl font-semibold mb-2 text-gray-800">Ngày Hội Việc Làm HUB Connect 2025</h4><p class="text-gray-600 text-sm mb-3"><i class="fas fa-calendar-day mr-1"></i> Cả ngày, 20/07 - Sân vận động trường</p><p class="text-gray-700 text-sm mb-4 line-clamp-3">Hàng ngàn cơ hội việc làm từ các doanh nghiệp hàng đầu. Đừng bỏ lỡ!</p><a href="#" class="font-semibold text-amber-600 hover:text-amber-700">Xem chi tiết <i class="fas fa-arrow-right ml-1"></i></a></div></div>
                     </div>
                 </div>
                 <div id="volunteer-activities-content" class="news-event-content-pane">
                     <h3 class="text-2xl md:text-3xl font-semibold mb-8 subsection-title text-emerald-600">Hoạt Động Tình Nguyện</h3>
-                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="event-card hover:shadow-green-200/50"><img src="https://placehold.co/400x220/D1FAE5/059669?text=Mùa+Hè+Xanh" alt="Mùa hè xanh" class="w-full h-48 object-cover rounded-t-xl" onerror="this.src='https://placehold.co/400x220/E2E8F0/2D3748?text=Lỗi+Ảnh';"><div class="p-6"><span class="event-tag tag-volunteer mb-2 inline-block">Tình nguyện</span><h4 class="text-xl font-semibold mb-2 text-gray-800">Chiến dịch Mùa Hè Xanh 2025</h4><p class="text-gray-600 text-sm mb-3"><i class="fas fa-users mr-1"></i> Đoàn Thanh niên - Hội Sinh viên</p><p class="text-gray-700 text-sm mb-4 line-clamp-3">Chung tay xây dựng cộng đồng, mang lại giá trị cho xã hội.</p><a href="#" class="font-semibold text-green-600 hover:text-green-700">Tìm hiểu thêm <i class="fas fa-arrow-right ml-1"></i></a></div></div>
-                        <div class="event-card hover:shadow-red-200/50"><img src="https://placehold.co/400x220/FEE2E2/B91C1C?text=Hiến+Máu" alt="Hiến máu nhân đạo" class="w-full h-48 object-cover rounded-t-xl" onerror="this.src='https://placehold.co/400x220/E2E8F0/2D3748?text=Lỗi+Ảnh';"><div class="p-6"><span class="event-tag tag-humanitarian mb-2 inline-block">Nhân đạo</span><h4 class="text-xl font-semibold mb-2 text-gray-800">Ngày hội Hiến Máu Nhân Đạo</h4><p class="text-gray-600 text-sm mb-3"><i class="fas fa-heartbeat mr-1"></i> CLB Sức Khỏe Cộng Đồng</p><p class="text-gray-700 text-sm mb-4 line-clamp-3">Mỗi giọt máu cho đi, một cuộc đời ở lại. Hãy tham gia!</p><a href="#" class="font-semibold text-red-600 hover:text-red-700">Đăng ký hiến máu <i class="fas fa-arrow-right ml-1"></i></a></div></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="event-card hover:shadow-green-200/50"><img src="https://placehold.co/400x220/D1FAE5/059669?text=Mùa+Hè+Xanh" alt="Mùa hè xanh" class="w-full h-48 object-cover rounded-t-xl" onerror="this.src='https://placehold.co/400x220/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div class="p-6"><span class="event-tag tag-volunteer mb-2 inline-block">Tình nguyện</span><h4 class="text-xl font-semibold mb-2 text-gray-800">Chiến dịch Mùa Hè Xanh 2025</h4><p class="text-gray-600 text-sm mb-3"><i class="fas fa-users mr-1"></i> Đoàn Thanh niên - Hội Sinh viên</p><p class="text-gray-700 text-sm mb-4 line-clamp-3">Chung tay xây dựng cộng đồng, mang lại giá trị cho xã hội.</p><a href="#" class="font-semibold text-green-600 hover:text-green-700">Tìm hiểu thêm <i class="fas fa-arrow-right ml-1"></i></a></div></div>
+                        <div class="event-card hover:shadow-red-200/50"><img src="https://placehold.co/400x220/FEE2E2/B91C1C?text=Hiến+Máu" alt="Hiến máu nhân đạo" class="w-full h-48 object-cover rounded-t-xl" onerror="this.src='https://placehold.co/400x220/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div class="p-6"><span class="event-tag tag-humanitarian mb-2 inline-block">Nhân đạo</span><h4 class="text-xl font-semibold mb-2 text-gray-800">Ngày hội Hiến Máu Nhân Đạo</h4><p class="text-gray-600 text-sm mb-3"><i class="fas fa-heartbeat mr-1"></i> CLB Sức Khỏe Cộng Đồng</p><p class="text-gray-700 text-sm mb-4 line-clamp-3">Mỗi giọt máu cho đi, một cuộc đời ở lại. Hãy tham gia!</p><a href="#" class="font-semibold text-red-600 hover:text-red-700">Đăng ký hiến máu <i class="fas fa-arrow-right ml-1"></i></a></div></div>
                     </div>
                 </div>
                 <div id="academic-competitions-content" class="news-event-content-pane">
                     <h3 class="text-2xl md:text-3xl font-semibold mb-8 subsection-title text-violet-600">Cuộc Thi Học Thuật</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="event-card hover:shadow-purple-200/50"><img src="https://placehold.co/400x220/F3E8FF/8B5CF6?text=Olympic" alt="Olympic Kinh tế" class="w-full h-48 object-cover rounded-t-xl" onerror="this.src='https://placehold.co/400x220/E2E8F0/2D3748?text=Lỗi+Ảnh';"><div class="p-6"><span class="event-tag tag-academic mb-2 inline-block">Học thuật</span><h4 class="text-xl font-semibold mb-2">Olympic Kinh Tế Học HUB Lần V</h4><p class="text-gray-600 text-sm mb-3"><i class="fas fa-university mr-1"></i> Khoa Kinh tế & CLB Học thuật</p><p class="text-gray-700 text-sm mb-4 line-clamp-3">Sân chơi trí tuệ đỉnh cao, khẳng định tài năng kinh tế của bạn.</p><a href="#" class="font-semibold text-purple-600 hover:text-purple-700">Thể lệ & Đăng ký <i class="fas fa-arrow-right ml-1"></i></a></div></div>
+                        <div class="event-card hover:shadow-purple-200/50"><img src="https://placehold.co/400x220/F3E8FF/8B5CF6?text=Olympic" alt="Olympic Kinh tế" class="w-full h-48 object-cover rounded-t-xl" onerror="this.src='https://placehold.co/400x220/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div class="p-6"><span class="event-tag tag-academic mb-2 inline-block">Học thuật</span><h4 class="text-xl font-semibold mb-2">Olympic Kinh Tế Học HUB Lần V</h4><p class="text-gray-600 text-sm mb-3"><i class="fas fa-university mr-1"></i> Khoa Kinh tế & CLB Học thuật</p><p class="text-gray-700 text-sm mb-4 line-clamp-3">Sân chơi trí tuệ đỉnh cao, khẳng định tài năng kinh tế của bạn.</p><a href="#" class="font-semibold text-purple-600 hover:text-purple-700">Thể lệ & Đăng ký <i class="fas fa-arrow-right ml-1"></i></a></div></div>
                     </div>
                 </div>
                 <div id="minigames-content" class="news-event-content-pane">
                     <h3 class="text-2xl md:text-3xl font-semibold mb-8 subsection-title text-pink-600">Minigames & Điểm Rèn Luyện</h3>
-                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="event-card hover:shadow-pink-200/50"><img src="https://placehold.co/400x220/FCE7F3/DB2777?text=Minigame" alt="Minigame Facebook" class="w-full h-48 object-cover rounded-t-xl" onerror="this.src='https://placehold.co/400x220/E2E8F0/2D3748?text=Lỗi+Ảnh';"><div class="p-6"><span class="event-tag tag-online mb-2 inline-block">Online</span><h4 class="text-xl font-semibold mb-2">Minigame "HUBer Thông Thái" - Rinh Quà Khủng</h4><p class="text-gray-600 text-sm mb-3"><i class="fab fa-facebook-square mr-1"></i> Fanpage HUBverse & Đoàn Trường</p><p class="text-gray-700 text-sm mb-4 line-clamp-3">Tham gia minigame hàng tuần, giải trí và nhận điểm rèn luyện cực chất.</p><a href="#" class="font-semibold text-pink-600 hover:text-pink-700">Chơi Ngay! <i class="fas fa-gamepad ml-1"></i></a></div></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="event-card hover:shadow-pink-200/50"><img src="https://placehold.co/400x220/FCE7F3/DB2777?text=Minigame" alt="Minigame Facebook" class="w-full h-48 object-cover rounded-t-xl" onerror="this.src='https://placehold.co/400x220/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div class="p-6"><span class="event-tag tag-online mb-2 inline-block">Online</span><h4 class="text-xl font-semibold mb-2">Minigame "HUBer Thông Thái" - Rinh Quà Khủng</h4><p class="text-gray-600 text-sm mb-3"><i class="fab fa-facebook-square mr-1"></i> Fanpage HUBverse & Đoàn Trường</p><p class="text-gray-700 text-sm mb-4 line-clamp-3">Tham gia minigame hàng tuần, giải trí và nhận điểm rèn luyện cực chất.</p><a href="#" class="font-semibold text-pink-600 hover:text-pink-700">Chơi Ngay! <i class="fas fa-gamepad ml-1"></i></a></div></div>
                     </div>
                 </div>
                 <div class="mt-16 flex justify-center">
@@ -828,15 +915,16 @@
                 <p class="text-center text-gray-600 mb-12 md:mb-16 max-w-xl mx-auto text-lg">Nơi chia sẻ, kết nối và lan tỏa những điều tuyệt vời của đời sống sinh viên HUB.</p>
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
                     <div class="md:col-span-8 space-y-6">
-                        <div class="bg-white p-4 rounded-lg shadow border border-gray-200"><div class="flex items-center"><img src="https://placehold.co/40x40/FFE4E6/DC2626?text=Me" alt="User Avatar" class="w-10 h-10 rounded-full mr-3" onerror="this.src='https://placehold.co/40x40/E2E8F0/2D3748?text=Lỗi';"><input type="text" placeholder="Bạn đang nghĩ gì, [Tên sinh viên]?" class="w-full p-2 border border-gray-300 rounded-full focus:ring-pink-500 focus:border-pink-500 text-sm bg-gray-50"></div><div class="flex justify-end mt-3 pt-3 border-t border-gray-200"><button class="text-pink-600 hover:bg-pink-100 py-2 px-3 rounded-md text-sm mr-2"><i class="fas fa-image mr-1"></i> Ảnh/Video</button><button class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-md text-sm">Đăng</button></div></div>
-                        
+                        <div class="bg-white p-4 rounded-lg shadow border border-gray-200"><div class="flex items-center"><img src="https://placehold.co/40x40/FFE4E6/DC2626?text=Me" alt="User Avatar" class="w-10 h-10 rounded-full mr-3" onerror="this.src='https://placehold.co/40x40/E2E8F0/2D3748?text=Ảnh+Lỗi';"><input type="text" placeholder="Bạn đang nghĩ gì, [Tên sinh viên]?" class="w-full p-2 border border-gray-300 rounded-full focus:ring-pink-500 focus:border-pink-500 text-sm bg-gray-50"></div><div class="flex justify-end mt-3 pt-3 border-t border-gray-200"><button class="text-pink-600 hover:bg-pink-100 py-2 px-3 rounded-md text-sm mr-2"><i class="fas fa-image mr-1"></i> Ảnh/Video</button><button class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-md text-sm">Đăng</button></div></div>
+
+                        <!-- Existing Posts -->
                         <article class="insta-post-card">
                             <header class="insta-post-header">
-                                <img src="https://placehold.co/40x40/FBCFE8/9D174D?text=Linh" alt="Linh Avatar" class="avatar" onerror="this.src='https://placehold.co/40x40/E2E8F0/2D3748?text=Lỗi';">
+                                <img src="https://placehold.co/40x40/FBCFE8/9D174D?text=Linh" alt="Linh Avatar" class="avatar" onerror="this.src='https://placehold.co/40x40/E2E8F0/2D3748?text=Ảnh+Lỗi';">
                                 <div><a href="#" class="username">linh.hoai_hub</a><div class="location">Trường Đại học Ngân hàng TP.HCM</div></div>
                                 <button class="options-btn"><i class="fas fa-ellipsis-h"></i></button>
                             </header>
-                            <img src="https://placehold.co/600x750/FCE7F3/DB2777?text=Team+Building" alt="Ảnh hoạt động team building" class="insta-post-image" onerror="this.src='https://placehold.co/600x750/E2E8F0/2D3748?text=Lỗi+Ảnh';">
+                            <img src="https://placehold.co/600x750/FCE7F3/DB2777?text=Team+Building" alt="Ảnh hoạt động team building" class="insta-post-image" onerror="this.src='https://placehold.co/600x750/E2E8F0/2D3748?text=Ảnh+Lỗi';">
                             <section class="insta-post-actions">
                                 <button class="like-btn"><i class="far fa-heart"></i></button>
                                 <button class="comment-btn"><i class="far fa-comment"></i></button>
@@ -851,13 +939,13 @@
                             </section>
                             <section class="insta-post-add-comment"><input type="text" placeholder="Thêm bình luận..."><button>Đăng</button></section>
                         </article>
-                         <article class="insta-post-card">
+                           <article class="insta-post-card">
                             <header class="insta-post-header">
-                                <img src="https://placehold.co/40x40/DDD6FE/5B21B6?text=Minh" alt="Minh Avatar" class="avatar" onerror="this.src='https://placehold.co/40x40/E2E8F0/2D3748?text=Lỗi';">
+                                <img src="https://placehold.co/40x40/DDD6FE/5B21B6?text=Minh" alt="Minh Avatar" class="avatar" onerror="this.src='https://placehold.co/40x40/E2E8F0/2D3748?text=Ảnh+Lỗi';">
                                 <div><a href="#" class="username">minh.anh_finance</a><div class="location">Thư viện HUB</div></div>
                                 <button class="options-btn"><i class="fas fa-ellipsis-h"></i></button>
                             </header>
-                            <img src="https://placehold.co/600x600/EDE9FE/7C3AED?text=Học+Bài+Deadline" alt="Ảnh học bài trên thư viện" class="insta-post-image" onerror="this.src='https://placehold.co/600x600/E2E8F0/2D3748?text=Lỗi+Ảnh';">
+                            <img src="https://placehold.co/600x600/EDE9FE/7C3AED?text=Học+Bài+Deadline" alt="Ảnh học bài trên thư viện" class="insta-post-image" onerror="this.src='https://placehold.co/600x600/E2E8F0/2D3748?text=Ảnh+Lỗi';">
                             <section class="insta-post-actions">
                                 <button class="like-btn"><i class="far fa-heart"></i></button>
                                 <button class="comment-btn"><i class="far fa-comment"></i></button>
@@ -872,11 +960,70 @@
                             </section>
                              <section class="insta-post-add-comment"><input type="text" placeholder="Thêm bình luận..."><button>Đăng</button></section>
                         </article>
+
+                        <!-- New Social Posts -->
+                        <article class="insta-post-card">
+                            <header class="insta-post-header">
+                                <img src="https://placehold.co/40x40/D1FAE5/065F46?text=Huy" alt="Huy Avatar" class="avatar" onerror="this.src='https://placehold.co/40x40/E2E8F0/2D3748?text=Ảnh+Lỗi';">
+                                <div><a href="#" class="username">huy.cntt_k26</a><div class="location">Phòng máy tính HUB</div></div>
+                                <button class="options-btn"><i class="fas fa-ellipsis-h"></i></button>
+                            </header>
+                            <img src="https://placehold.co/600x600/D1FAE5/065F46?text=Code+Chay+Deadline" alt="Ảnh code chạy deadline" class="insta-post-image" onerror="this.src='https://placehold.co/600x600/E2E8F0/2D3748?text=Ảnh+Lỗi';">
+                            <section class="insta-post-actions">
+                                <button class="like-btn"><i class="far fa-heart"></i></button>
+                                <button class="comment-btn"><i class="far fa-comment"></i></button>
+                                <button class="share-btn"><i class="far fa-paper-plane"></i></button>
+                                <button class="save-btn"><i class="far fa-bookmark"></i></button>
+                            </section>
+                            <section class="insta-post-likes"><span class="like-count">205</span> lượt thích</section>
+                            <section class="insta-post-caption"><a href="#" class="username">huy.cntt_k26</a><span>Đêm nay lại thức trắng với code rồi. Ai còn thức không? 💻 #DeveloperLife #HUBIT</span></section>
+                            <a href="#" class="insta-post-comments-link comment-btn">Xem tất cả 25 bình luận</a>
+                            <section class="insta-post-comments-section">
+                                <p class="text-xs text-gray-500 p-2">Khu vực bình luận sẽ hiện ở đây...</p>
+                            </section>
+                            <section class="insta-post-add-comment"><input type="text" placeholder="Thêm bình luận..."><button>Đăng</button></section>
+                        </article>
+
+                        <article class="insta-post-card">
+                            <header class="insta-post-header">
+                                <img src="https://placehold.co/40x40/E0E7FF/4F46E5?text=Mai" alt="Mai Avatar" class="avatar" onerror="this.src='https://placehold.co/40x40/E2E8F0/2D3748?text=Ảnh+Lỗi';">
+                                <div><a href="#" class="username">mai.ktqt_hub</a><div class="location">HUB Campus</div></div>
+                                <button class="options-btn"><i class="fas fa-ellipsis-h"></i></button>
+                            </header>
+                            <img src="https://placehold.co/600x600/E0E7FF/4F46E5?text=Sân+Trường" alt="Ảnh sân trường HUB" class="insta-post-image" onerror="this.src='https://placehold.co/600x600/E2E8F0/2D3748?text=Ảnh+Lỗi';">
+                            <section class="insta-post-actions">
+                                <button class="like-btn"><i class="far fa-heart"></i></button>
+                                <button class="comment-btn"><i class="far fa-comment"></i></button>
+                                <button class="share-btn"><i class="far fa-paper-plane"></i></button>
+                                <button class="save-btn"><i class="far fa-bookmark"></i></button>
+                            </section>
+                            <section class="insta-post-likes"><span class="like-count">310</span> lượt thích</section>
+                            <section class="insta-post-caption"><a href="#" class="username">mai.ktqt_hub</a><span>Buổi chiều yên bình ở sân trường. Yêu HUB! 💙 #HUBUniversity #StudentLife</span></section>
+                            <a href="#" class="insta-post-comments-link comment-btn">Xem tất cả 40 bình luận</a>
+                            <section class="insta-post-comments-section">
+                                <p class="text-xs text-gray-500 p-2">Khu vực bình luận sẽ hiện ở đây...</p>
+                            </section>
+                            <section class="insta-post-add-comment"><input type="text" placeholder="Thêm bình luận..."><button>Đăng</button></section>
+                        </article>
+
                     </div>
                     <aside class="md:col-span-4 space-y-6">
-                        <div class="bg-white p-5 rounded-lg shadow border border-gray-200 insta-sidebar-profile"><div class="flex items-center mb-4"><img src="https://placehold.co/56x56/FFE4E6/DC2626?text=Me" alt="Your Avatar" class="avatar rounded-full mr-4" onerror="this.src='https://placehold.co/56x56/E2E8F0/2D3748?text=Lỗi';"><div><p class="font-semibold text-base text-gray-800">[Tên Của Bạn]</p><p class="text-sm text-gray-500">@usernamecuaban</p></div></div><div class="flex justify-around text-center text-sm text-gray-600 mb-4"><div><span class="font-bold block text-gray-800 text-base">150</span><span class="text-xs">bài viết</span></div><div><span class="font-bold block text-gray-800 text-base">500</span><span class="text-xs">bạn bè</span></div><div><span class="font-bold block text-gray-800 text-base">230</span><span class="text-xs">theo dõi</span></div></div><button class="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300 text-sm">Xem trang cá nhân</button></div>
-                        <div class="bg-white p-5 rounded-lg shadow border border-gray-200"><div class="flex justify-between items-center mb-3"><h4 class="text-sm font-semibold text-gray-500">Gợi ý cho bạn</h4><a href="#" class="text-xs font-semibold text-gray-800">Xem tất cả</a></div><div class="space-y-3"><div class="flex items-center justify-between"><div class="flex items-center"><img src="https://placehold.co/32x32/CCFBF1/14B8A6?text=Nam" alt="Nam Avatar" class="w-8 h-8 rounded-full mr-3" onerror="this.src='https://placehold.co/32x32/E2E8F0/2D3748?text=Lỗi';"><div><p class="font-semibold text-gray-800 text-sm">quoc.nam_hub</p><p class="text-xs text-gray-400">Gợi ý cho bạn</p></div></div><button class="text-xs text-blue-500 font-semibold">Theo dõi</button></div><div class="flex items-center justify-between"><div class="flex items-center"><img src="https://placehold.co/32x32/E0F2FE/38BDF8?text=Vy" alt="Vy Avatar" class="w-8 h-8 rounded-full mr-3" onerror="this.src='https://placehold.co/32x32/E2E8F0/2D3748?text=Lỗi';"><div><p class="font-semibold text-gray-800 text-sm">khanhvy.k25</p><p class="text-xs text-gray-400">Gợi ý cho bạn</p></div></div><button class="text-xs text-blue-500 font-semibold">Theo dõi</button></div></div></div>
-                         <p class="text-xs text-gray-400 text-center mt-4">&copy; <span id="socialCurrentYear">2025</span> HUBVERSE INSTA-LIKE</p>
+                        <div class="bg-white p-5 rounded-lg shadow border border-gray-200 insta-sidebar-profile"><div class="flex items-center mb-4"><img src="https://placehold.co/56x56/FFE4E6/DC2626?text=Me" alt="Your Avatar" class="avatar rounded-full mr-4" onerror="this.src='https://placehold.co/56x56/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div><p class="font-semibold text-base text-gray-800">[Tên Của Bạn]</p><p class="text-sm text-gray-500">@usernamecuaban</p></div></div><div class="flex justify-around text-center text-sm text-gray-600 mb-4"><div><span class="font-bold block text-gray-800 text-base">150</span><span class="text-xs">bài viết</span></div><div><span class="font-bold block text-gray-800 text-base">500</span><span class="text-xs">bạn bè</span></div><div><span class="font-bold block text-gray-800 text-base">230</span><span class="text-xs">theo dõi</span></div></div><button class="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300 text-sm">Xem trang cá nhân</button></div>
+                        <div class="bg-white p-5 rounded-lg shadow border border-gray-200">
+                            <div class="flex justify-between items-center mb-3">
+                                <h4 class="text-sm font-semibold text-gray-500">Gợi ý cho bạn</h4>
+                                <a href="#" class="text-xs font-semibold text-gray-800">Xem tất cả</a>
+                            </div>
+                            <div class="space-y-3" id="suggested-friends-list">
+                                <!-- Existing Suggested Friends -->
+                                <div class="flex items-center justify-between"><div class="flex items-center"><img src="https://placehold.co/32x32/CCFBF1/14B8A6?text=Nam" alt="Nam Avatar" class="w-8 h-8 rounded-full mr-3" onerror="this.src='https://placehold.co/32x32/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div><p class="font-semibold text-gray-800 text-sm">quoc.nam_hub</p><p class="text-xs text-gray-400">Gợi ý cho bạn</p></div></div><button class="text-xs text-blue-500 font-semibold">Theo dõi</button></div>
+                                <div class="flex items-center justify-between"><div class="flex items-center"><img src="https://placehold.co/32x32/E0F2FE/38BDF8?text=Vy" alt="Vy Avatar" class="w-8 h-8 rounded-full mr-3" onerror="this.src='https://placehold.co/32x32/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div><p class="font-semibold text-gray-800 text-sm">khanhvy.k25</p><p class="text-xs text-gray-400">Gợi ý cho bạn</p></div></div><button class="text-xs text-blue-500 font-semibold">Theo dõi</button></div>
+                                <!-- New Suggested Friends -->
+                                <div class="flex items-center justify-between"><div class="flex items-center"><img src="https://placehold.co/32x32/FFD1DC/FF69B4?text=An" alt="An Avatar" class="w-8 h-8 rounded-full mr-3" onerror="this.src='https://placehold.co/32x32/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div><p class="font-semibold text-gray-800 text-sm">an.cntt_hub</p><p class="text-xs text-gray-400">Gợi ý cho bạn</p></div></div><button class="text-xs text-blue-500 font-semibold">Theo dõi</button></div>
+                                <div class="flex items-center justify-between"><div class="flex items-center"><img src="https://placehold.co/32x32/D4EDDA/28A745?text=Binh" alt="Binh Avatar" class="w-8 h-8 rounded-full mr-3" onerror="this.src='https://placehold.co/32x32/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div><p class="font-semibold text-gray-800 text-sm">binh.finance</p><p class="text-xs text-gray-400">Gợi ý cho bạn</p></div></div><button class="text-xs text-blue-500 font-semibold">Theo dõi</button></div>
+                            </div>
+                        </div>
+                           <p class="text-xs text-gray-400 text-center mt-4">&copy; <span id="socialCurrentYear">2025</span> HUBVERSE INSTA-LIKE</p>
                     </aside>
                 </div>
             </div>
@@ -935,12 +1082,12 @@
                     <label for="register-password" class="form-label">Mật khẩu</label>
                     <input type="password" id="register-password" class="form-input" placeholder="Tạo mật khẩu" required>
                 </div>
-                 <div>
+                   <div>
                     <label for="register-confirm-password" class="form-label">Xác nhận mật khẩu</label>
                     <input type="password" id="register-confirm-password" class="form-input" placeholder="Nhập lại mật khẩu" required>
                 </div>
                 <button type="submit" class="form-button mt-4">Đăng Ký</button>
-                 <p class="text-xs text-center mt-4 text-gray-500">Đã có tài khoản? <a href="#" id="show-login-from-register" class="text-orange-500 hover:underline">Đăng nhập</a></p>
+                   <p class="text-xs text-center mt-4 text-gray-500">Đã có tài khoản? <a href="#" id="show-login-from-register" class="text-orange-500 hover:underline">Đăng nhập</a></p>
             </form>
         </div>
     </div>
@@ -949,9 +1096,12 @@
         <div class="modal-content">
             <button id="close-share-modal" class="modal-close-btn">&times;</button>
             <h3 class="text-xl font-semibold mb-4 text-center">Chia sẻ bài viết</h3>
-            <p class="text-center text-gray-600 mb-4">Tính năng chia sẻ cho bạn bè sẽ sớm được cập nhật!</p>
+            <p class="text-center text-gray-600 mb-4">Chọn bạn bè để chia sẻ bài viết này:</p>
+            <div id="share-friend-list" class="share-friend-list">
+                <!-- Friends will be dynamically loaded here -->
+            </div>
             <div class="text-center">
-                <button id="confirm-share-btn" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-6 rounded-lg">OK</button>
+                <button id="confirm-share-btn" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-6 rounded-lg">Chia sẻ</button>
             </div>
         </div>
     </div>
@@ -970,67 +1120,58 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Three.js Hero Animation
+            // Three.js Hero Animation - Starfield
             const heroSection = document.querySelector('.hero-section');
             const canvas = document.getElementById('hero-3d-canvas');
             if (heroSection && canvas && typeof THREE !== 'undefined') {
                 const scene = new THREE.Scene();
                 const camera = new THREE.PerspectiveCamera(75, heroSection.offsetWidth / heroSection.offsetHeight, 0.1, 1000);
-                const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true }); 
+                const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
                 renderer.setSize(heroSection.offsetWidth, heroSection.offsetHeight);
-                renderer.setClearColor(0x000000, 0); 
+                renderer.setClearColor(0x000000, 0); // Transparent background for canvas to show CSS background
 
-                const shapes = [];
-                const shapeTypes = ['cube', 'sphere', 'cone', 'torus', 'dodecahedron'];
-                const shapeColors = [0x6dd5ed, 0x2193b0, 0x0077b6, 0x00b4d8, 0xade8f4, 0xcaf0f8, 0xffffff];
+                const starCount = 5000; // Number of stars
+                const starGeometry = new THREE.BufferGeometry();
+                const starVertices = [];
 
-                for (let i = 0; i < 25; i++) { 
-                    let geometry;
-                    const type = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
-                    const size = Math.random() * 0.25 + 0.15; 
-
-                    switch(type) {
-                        case 'sphere': geometry = new THREE.SphereGeometry(size, 16, 16); break;
-                        case 'cone': geometry = new THREE.ConeGeometry(size, size * 1.5, 16); break;
-                        case 'torus': geometry = new THREE.TorusGeometry(size * 0.8, size * 0.3, 16, 100); break;
-                        case 'dodecahedron': geometry = new THREE.DodecahedronGeometry(size); break;
-                        default: geometry = new THREE.BoxGeometry(size, size, size); 
-                    }
-                    
-                    const material = new THREE.MeshPhongMaterial({ 
-                        color: shapeColors[Math.floor(Math.random() * shapeColors.length)],
-                        shininess: 60 + Math.random() * 40, 
-                        specular: 0x333333,
-                        opacity: 0.5 + Math.random() * 0.4, 
-                        transparent: true
-                    });
-                    const shape = new THREE.Mesh(geometry, material);
-
-                    shape.position.x = (Math.random() - 0.5) * 12; 
-                    shape.position.y = (Math.random() - 0.5) * 8;  
-                    shape.position.z = (Math.random() - 0.5) * 8 - 3; 
-
-                    shape.rotation.x = Math.random() * 2 * Math.PI;
-                    shape.rotation.y = Math.random() * 2 * Math.PI;
-                    
-                    shape.userData.rotationSpeedX = (Math.random() - 0.5) * 0.008;
-                    shape.userData.rotationSpeedY = (Math.random() - 0.5) * 0.008;
-                    shape.userData.floatSpeed = (Math.random() - 0.5) * 0.006;
-                    shape.userData.initialY = shape.position.y;
-
-
-                    shapes.push(shape);
-                    scene.add(shape);
+                // Generate random positions for stars
+                for (let i = 0; i < starCount; i++) {
+                    const x = (Math.random() * 2 - 1) * 100; // Spread stars across a wide area
+                    const y = (Math.random() * 2 - 1) * 100;
+                    const z = (Math.random() * 2 - 1) * 100;
+                    starVertices.push(x, y, z);
                 }
+                starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
 
-                const ambientLight = new THREE.AmbientLight(0xffffff, 0.6); 
-                scene.add(ambientLight);
-                const directionalLight = new THREE.DirectionalLight(0xffffff, 0.7); 
-                directionalLight.position.set(3, 7, 5);
-                scene.add(directionalLight);
+                // Create a simple white dot texture for stars
+                const starTexture = new THREE.CanvasTexture(
+                    (() => {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = 16;
+                        canvas.height = 16;
+                        const context = canvas.getContext('2d');
+                        context.fillStyle = 'white';
+                        context.beginPath();
+                        context.arc(8, 8, 8, 0, Math.PI * 2);
+                        context.fill();
+                        return canvas;
+                    })()
+                );
 
+                const starMaterial = new THREE.PointsMaterial({
+                    color: 0xffffff,
+                    size: 0.2, // Size of each star
+                    map: starTexture,
+                    transparent: true,
+                    blending: THREE.AdditiveBlending, // For a glowing effect
+                    sizeAttenuation: true // Stars appear smaller further away
+                });
 
-                camera.position.z = 5;
+                const stars = new THREE.Points(starGeometry, starMaterial);
+                scene.add(stars);
+
+                camera.position.z = 50; // Adjust camera to see the starfield
+
                 let mouseX = 0, mouseY = 0;
                 if(heroSection.offsetWidth > 768) { // Only enable mouse move on larger screens
                     document.addEventListener('mousemove', (event) => {
@@ -1039,18 +1180,31 @@
                     });
                 }
 
-
                 function animate() {
                     requestAnimationFrame(animate);
-                    shapes.forEach(shape => {
-                        shape.rotation.x += shape.userData.rotationSpeedX;
-                        shape.rotation.y += shape.userData.rotationSpeedY;
-                        
-                        shape.position.y = shape.userData.initialY + Math.sin(Date.now() * 0.001 + shape.position.x) * shape.userData.floatSpeed * 100 ; 
-                    });
+
+                    // Slowly rotate the entire starfield
+                    stars.rotation.x += 0.0001;
+                    stars.rotation.y += 0.0002;
+
+                    // Simulate movement of stars (e.g., drifting towards the camera)
+                    const positions = starGeometry.attributes.position.array;
+                    for (let i = 2; i < positions.length; i += 3) {
+                        positions[i] -= 0.1; // Move stars along Z-axis
+
+                        // If a star moves too close, reset its position to the far end
+                        if (positions[i] < -100) {
+                            positions[i] = 100;
+                            positions[i-1] = (Math.random() * 2 - 1) * 100; // Reset Y
+                            positions[i-2] = (Math.random() * 2 - 1) * 100; // Reset X
+                        }
+                    }
+                    starGeometry.attributes.position.needsUpdate = true; // Tell Three.js to update buffer
+
                     if(heroSection.offsetWidth > 768) {
-                        camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.02;
-                        camera.position.y += (mouseY * 0.5 - camera.position.y) * 0.02;
+                        // Apply subtle camera parallax based on mouse position
+                        camera.position.x += (mouseX * 5 - camera.position.x) * 0.01;
+                        camera.position.y += (mouseY * 5 - camera.position.y) * 0.01;
                     }
                     camera.lookAt(scene.position);
 
@@ -1069,14 +1223,16 @@
             const images = document.querySelectorAll('img');
             images.forEach(img => {
                 img.onerror = function() {
-                    let width = img.getAttribute('width') || img.style.width || '200';
-                    let height = img.getAttribute('height') || img.style.height || '200';
-                    width = String(width).replace('px', '');
-                    height = String(height).replace('px', '');
-                    if (isNaN(parseInt(width))) width = '200';
-                    if (isNaN(parseInt(height))) height = '200';
+                    let width = parseInt(img.getAttribute('width')) || parseInt(img.style.width) || 200;
+                    let height = parseInt(img.getAttribute('height')) || parseInt(img.style.height) || 200;
+
+                    // Ensure width and height are numbers, default to 200 if not
+                    if (isNaN(width) || width <= 0) width = 200;
+                    if (isNaN(height) || height <= 0) height = 200;
+
                     this.src = `https://placehold.co/${width}x${height}/E9ECEF/6C757D?text=Ảnh+Lỗi`;
-                    this.alt = 'Lỗi tải ảnh';
+                    this.alt = 'Ảnh lỗi';
+                    console.warn(`Failed to load image: ${this.src}. Displaying placeholder for ${width}x${height}.`);
                 };
             });
             const currentYearSpan = document.getElementById('currentYear');
@@ -1089,16 +1245,25 @@
             const geminiChatInput = document.getElementById('gemini-chat-input');
             const geminiSendButton = document.getElementById('gemini-send-button');
 
-            function addGeminiMessage(message, sender) {
+            // Chat history for Gemini API
+            let chatHistory = [
+                { role: "user", parts: [{ text: "Xin chào! Mình là HUB AI, người bạn đồng hành học tập của bạn. Bạn cần hỗ trợ gì hôm nay?" }] },
+                { role: "model", parts: [{ text: "Chào bạn! Thông tin về đăng ký học phần hè thường được cập nhật trên cổng thông tin sinh viên của trường. Bạn có thể tìm thấy hướng dẫn chi tiết và lịch đăng ký tại đó. Ngoài ra, mình có thể giúp bạn giải đáp các câu hỏi về các môn học, thủ tục hành chính, hoặc gợi ý tài liệu học tập. Bạn muốn hỏi gì thêm không?" }] }
+            ];
+
+            function addGeminiMessage(message, sender, messageId = null) {
                 if (!geminiChatMessages) return;
                 const bubbleDiv = document.createElement('div');
                 bubbleDiv.classList.add('gemini-chat-bubble', sender);
+                if (messageId) {
+                    bubbleDiv.id = messageId;
+                }
 
                 const avatarDiv = document.createElement('div');
                 avatarDiv.classList.add('avatar');
                 if (sender === 'user') {
                     avatarDiv.classList.add('avatar-user');
-                    avatarDiv.textContent = 'SV'; 
+                    avatarDiv.textContent = 'SV';
                 } else {
                     avatarDiv.classList.add('avatar-ai');
                     const icon = document.createElement('i');
@@ -1108,41 +1273,86 @@
 
                 const messageContentDiv = document.createElement('div');
                 messageContentDiv.classList.add('message-content');
-                messageContentDiv.innerHTML = `<p>${message.replace(/\n/g, '<br>')}</p>`; 
+                messageContentDiv.innerHTML = `<p>${message.replace(/\n/g, '<br>')}</p>`;
 
                 bubbleDiv.appendChild(avatarDiv);
                 bubbleDiv.appendChild(messageContentDiv);
-                if (sender === 'user') { 
-                    bubbleDiv.innerHTML = ''; 
+                if (sender === 'user') {
+                    bubbleDiv.innerHTML = '';
                     bubbleDiv.appendChild(messageContentDiv);
                     bubbleDiv.appendChild(avatarDiv);
                 }
-                
+
                 geminiChatMessages.appendChild(bubbleDiv);
                 geminiChatMessages.scrollTop = geminiChatMessages.scrollHeight;
             }
 
+            async function getGeminiResponse(prompt) {
+                // Add user message to chat history
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // Canvas will automatically provide the API key
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        // Add AI response to chat history
+                        chatHistory.push({ role: "model", parts: [{ text: text }] });
+                        return text;
+                    } else {
+                        console.error("Unexpected API response structure:", result);
+                        return "Xin lỗi, tôi không thể tạo phản hồi lúc này. Vui lòng thử lại sau.";
+                    }
+                } catch (error) {
+                    console.error("Error calling Gemini API:", error);
+                    return "Đã xảy ra lỗi khi kết nối với AI. Vui lòng kiểm tra kết nối mạng của bạn.";
+                }
+            }
+
+
             if (geminiSendButton) {
-                geminiSendButton.addEventListener('click', () => {
+                geminiSendButton.addEventListener('click', async () => {
                     const userMessage = geminiChatInput.value.trim();
                     if (userMessage) {
                         addGeminiMessage(userMessage, 'user');
                         geminiChatInput.value = '';
-                        setTimeout(() => {
-                            addGeminiMessage('Cảm ơn câu hỏi của bạn! HUB AI đang xử lý và sẽ phản hồi trong giây lát...', 'ai');
-                        }, 1200);
+                        
+                        // Show a typing indicator or a "processing" message
+                        const processingMessageId = 'processing-msg-' + Date.now();
+                        addGeminiMessage('HUB AI đang suy nghĩ...', 'ai', processingMessageId);
+
+                        const aiResponse = await getGeminiResponse(userMessage);
+                        
+                        // Remove the processing message (if still there)
+                        const existingProcessingMessage = document.getElementById(processingMessageId);
+                        if (existingProcessingMessage) {
+                            existingProcessingMessage.remove();
+                        }
+
+                        addGeminiMessage(aiResponse, 'ai');
                     }
                 });
             }
             if (geminiChatInput) {
                 geminiChatInput.addEventListener('keypress', (event) => {
-                    if (event.key === 'Enter' && !event.shiftKey) { 
+                    if (event.key === 'Enter' && !event.shiftKey) {
                         event.preventDefault();
                         if (geminiSendButton) geminiSendButton.click();
                     }
                 });
             }
-            
+
             // --- Page Router Logic ---
             const pageRouterLinks = document.querySelectorAll('.page-router-link');
             const pageContentSections = document.querySelectorAll('.page-content-section');
@@ -1201,12 +1411,12 @@
                 const mainCategorySelect = document.getElementById(`filter-main-category-${type}`);
                 const mainSpecTabsContainer = document.getElementById(`${prefix}main-specialization-tabs-container`);
                 const mainSpecTabs = mainSpecTabsContainer ? mainSpecTabsContainer.querySelectorAll(`.${prefix}category-tab-item`) : [];
-                
+
                 const subSpecTabsOuterContainer = document.getElementById(`${prefix}sub-specialization-tabs-container`);
                 const allSubSpecContainers = subSpecTabsOuterContainer ? subSpecTabsOuterContainer.querySelectorAll(`.${prefix}sub-specialization-tabs`) : [];
-                
+
                 const itemGrid = document.getElementById(type === 'library' ? 'document-grid' : 'product-grid');
-                const allItems = itemGrid ? Array.from(itemGrid.children) : []; 
+                const allItems = itemGrid ? Array.from(itemGrid.children) : [];
                 const filterButton = document.getElementById(`filter-results-button-${type}`);
 
                 function hideAllSubSpecContainers() {
@@ -1215,7 +1425,7 @@
                         subSpecTabsOuterContainer.classList.remove('active');
                     }
                 }
-                
+
                 function activateTab(tabs, clickedTab) {
                     if (!tabs) return;
                     tabs.forEach(t => t.classList.remove('active-tab'));
@@ -1228,7 +1438,7 @@
                             mainSpecTabsContainer.classList.add('active');
                             const allMainSpecsTab = mainSpecTabsContainer.querySelector(`.${prefix}category-tab-item[data-main-spec="all-main-specs"]`);
                             activateTab(mainSpecTabs, allMainSpecsTab);
-                            hideAllSubSpecContainers(); 
+                            hideAllSubSpecContainers();
                         } else {
                             mainSpecTabsContainer.classList.remove('active');
                             hideAllSubSpecContainers();
@@ -1241,11 +1451,11 @@
                         tab.addEventListener('click', function() {
                             activateTab(mainSpecTabs, this);
                             const mainSpecValue = this.dataset.mainSpec;
-                            const hasSubs = this.dataset.hasSubs === 'true'; 
+                            const hasSubs = this.dataset.hasSubs === 'true';
 
-                            hideAllSubSpecContainers(); 
+                            hideAllSubSpecContainers();
 
-                            if (mainSpecValue !== 'all-main-specs' && hasSubs) { 
+                            if (mainSpecValue !== 'all-main-specs' && hasSubs) {
                                 const subContainerToShow = document.getElementById(`${prefix}subs-${mainSpecValue}`);
                                 if (subContainerToShow) {
                                     subContainerToShow.classList.add('active');
@@ -1257,8 +1467,8 @@
                         });
                     });
                 }
-                
-                if (allSubSpecContainers) { 
+
+                if (allSubSpecContainers) {
                     allSubSpecContainers.forEach(container => {
                         const subTabs = container.querySelectorAll(`.${prefix}sub-category-tab-item`);
                         subTabs.forEach(subTab => {
@@ -1268,13 +1478,13 @@
                         });
                     });
                 }
-                
+
                 if (mainCategorySelect && mainSpecTabsContainer) {
                     if (mainCategorySelect.value === 'chuyen-nganh') {
                         mainSpecTabsContainer.classList.add('active');
                         const allMainSpecsTab = mainSpecTabsContainer.querySelector(`.${prefix}category-tab-item[data-main-spec="all-main-specs"]`);
                         activateTab(mainSpecTabs, allMainSpecsTab);
-                        hideAllSubSpecContainers(); 
+                        hideAllSubSpecContainers();
                     } else {
                         mainSpecTabsContainer.classList.remove('active');
                         hideAllSubSpecContainers();
@@ -1286,13 +1496,13 @@
                     filterButton.addEventListener('click', function() {
                         const selectedMainCategory = mainCategorySelect.value;
                         let selectedMainSpec = '';
-                        let selectedSubSpec = ''; 
+                        let selectedSubSpec = '';
 
                         if (selectedMainCategory === 'chuyen-nganh' && mainSpecTabsContainer && mainSpecTabsContainer.classList.contains('active')) {
                             const activeMainSpecTab = mainSpecTabsContainer.querySelector(`.${prefix}category-tab-item.active-tab`);
                             if (activeMainSpecTab) {
                                 selectedMainSpec = activeMainSpecTab.dataset.mainSpec;
-                                if (activeMainSpecTab.dataset.hasSubs === 'true' && selectedMainSpec !== 'all-main-specs') { 
+                                if (activeMainSpecTab.dataset.hasSubs === 'true' && selectedMainSpec !== 'all-main-specs') {
                                     const activeSubSpecContainer = document.getElementById(`${prefix}subs-${selectedMainSpec}`);
                                     if (activeSubSpecContainer && activeSubSpecContainer.classList.contains('active')) {
                                         const activeSubSpecTab = activeSubSpecContainer.querySelector(`.${prefix}sub-category-tab-item.active-tab`);
@@ -1301,7 +1511,7 @@
                                 }
                             }
                         }
-                        
+
                         console.log(`Filtering ${type} for: Main Cat: ${selectedMainCategory}, Main Spec: ${selectedMainSpec}, Sub Spec: ${selectedSubSpec}`);
 
                         allItems.forEach(item => {
@@ -1315,27 +1525,27 @@
                             } else if (itemCategory === selectedMainCategory) {
                                 if (selectedMainCategory === 'chuyen-nganh') {
                                     if (selectedMainSpec === 'all-main-specs' || !selectedMainSpec) {
-                                        showItem = true; 
+                                        showItem = true;
                                     } else if (itemMainSpecTag === selectedMainSpec) {
                                         const mainSpecTabEl = mainSpecTabsContainer.querySelector(`.${prefix}category-tab-item[data-main-spec="${selectedMainSpec}"]`);
-                                        if (mainSpecTabEl && mainSpecTabEl.dataset.hasSubs === 'true') { 
+                                        if (mainSpecTabEl && mainSpecTabEl.dataset.hasSubs === 'true') {
                                             if (selectedSubSpec === `all-${selectedMainSpec}-subs` || !selectedSubSpec || itemSubSpecTag === selectedSubSpec) {
                                                 showItem = true;
                                             } else { showItem = false; }
-                                        } else { showItem = true; } 
+                                        } else { showItem = true; }
                                     } else { showItem = false; }
-                                } else { 
+                                } else {
                                     showItem = true;
                                 }
                             } else { showItem = false; }
-                            item.style.display = showItem ? (type === 'library' ? 'block' : 'flex') : 'none'; 
+                            item.style.display = showItem ? (type === 'library' ? 'block' : 'flex') : 'none';
                         });
                     });
                 }
             }
 
             setupFilterLogic('marketplace');
-            setupFilterLogic('library'); 
+            setupFilterLogic('library');
 
             // News & Events Tab Logic
             const newsTabsMenu = document.getElementById('news-events-tabs-menu');
@@ -1364,10 +1574,11 @@
             const loginModal = document.getElementById('login-modal');
             const registerModal = document.getElementById('register-modal');
             const shareModal = document.getElementById('share-modal');
+            const shareFriendList = document.getElementById('share-friend-list');
 
             const openLoginBtn = document.getElementById('open-login-modal');
             const closeLoginBtn = document.getElementById('close-login-modal');
-            
+
             const openRegisterBtn = document.getElementById('open-register-modal'); // Updated to get the correct button
             const closeRegisterBtn = document.getElementById('close-register-modal');
 
@@ -1383,7 +1594,7 @@
 
             if (openLoginBtn) openLoginBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(loginModal); });
             if (closeLoginBtn) closeLoginBtn.addEventListener('click', () => closeModal(loginModal));
-            
+
             if (openRegisterBtn) openRegisterBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(registerModal); });
             if (closeRegisterBtn) closeRegisterBtn.addEventListener('click', () => closeModal(registerModal));
 
@@ -1401,7 +1612,7 @@
                     openModal(loginModal);
                 });
             }
-            
+
             [loginModal, registerModal, shareModal].forEach(modal => {
                 if (modal) {
                     modal.addEventListener('click', (event) => {
@@ -1411,6 +1622,15 @@
                     });
                 }
             });
+
+            // Dummy friend data for sharing
+            const friends = [
+                { id: 'friend1', name: 'Nguyễn Văn A', avatar: 'https://placehold.co/32x32/FFD1DC/FF69B4?text=A' },
+                { id: 'friend2', name: 'Trần Thị B', avatar: 'https://placehold.co/32x32/D4EDDA/28A745?text=B' },
+                { id: 'friend3', name: 'Lê Văn C', avatar: 'https://placehold.co/32x32/ADD8E6/000080?text=C' },
+                { id: 'friend4', name: 'Phạm Thị D', avatar: 'https://placehold.co/32x32/FFFACD/DAA520?text=D' },
+                { id: 'friend5', name: 'Hoàng Văn E', avatar: 'https://placehold.co/32x32/E6E6FA/800080?text=E' },
+            ];
 
             // Social Post Interactions
             const instaPosts = document.querySelectorAll('.insta-post-card');
@@ -1429,11 +1649,11 @@
                         liked = !liked;
                         if (liked) {
                             likeBtn.classList.add('liked');
-                            likeBtn.innerHTML = '<i class="fas fa-heart"></i>'; 
+                            likeBtn.innerHTML = '<i class="fas fa-heart"></i>';
                             currentLikes++;
                         } else {
                             likeBtn.classList.remove('liked');
-                            likeBtn.innerHTML = '<i class="far fa-heart"></i>'; 
+                            likeBtn.innerHTML = '<i class="far fa-heart"></i>';
                             currentLikes--;
                         }
                         likeCountSpan.textContent = currentLikes;
@@ -1443,7 +1663,7 @@
                 if (commentTriggers.length > 0 && commentsSection) {
                     commentTriggers.forEach(trigger => {
                         trigger.addEventListener('click', (e) => {
-                            e.preventDefault(); 
+                            e.preventDefault();
                             commentsSection.classList.toggle('active');
                             if (commentsSection.classList.contains('active')) {
                                 const commentInput = post.querySelector('.insta-post-add-comment input');
@@ -1454,11 +1674,34 @@
                 }
 
 
-                if (shareBtn && shareModal && closeShareBtn && confirmShareBtn) {
-                    shareBtn.addEventListener('click', () => openModal(shareModal));
+                if (shareBtn && shareModal && closeShareBtn && confirmShareBtn && shareFriendList) {
+                    shareBtn.addEventListener('click', () => {
+                        // Clear previous friend list
+                        shareFriendList.innerHTML = '';
+                        // Populate friend list
+                        friends.forEach(friend => {
+                            const friendItem = document.createElement('label');
+                            friendItem.classList.add('share-friend-item');
+                            friendItem.innerHTML = `
+                                <input type="checkbox" name="share-friend" value="${friend.id}">
+                                <img src="${friend.avatar}" alt="${friend.name} Avatar" class="avatar">
+                                <span class="username">${friend.name}</span>
+                            `;
+                            shareFriendList.appendChild(friendItem);
+                        });
+                        openModal(shareModal);
+                    });
                     if(closeShareBtn) closeShareBtn.addEventListener('click', () => closeModal(shareModal));
                     if(confirmShareBtn) confirmShareBtn.addEventListener('click', () => {
-                        console.log("Shared (mock)!");
+                        const selectedFriends = Array.from(shareFriendList.querySelectorAll('input[type="checkbox"]:checked'))
+                                                        .map(checkbox => friends.find(f => f.id === checkbox.value).name);
+                        if (selectedFriends.length > 0) {
+                            console.log("Shared to:", selectedFriends.join(', '));
+                            // In a real application, you'd send this data to a backend
+                            alert(`Đã chia sẻ bài viết cho: ${selectedFriends.join(', ')}`); // Using alert for simplicity, would use custom modal in production
+                        } else {
+                            alert("Vui lòng chọn ít nhất một người bạn để chia sẻ.");
+                        }
                         closeModal(shareModal);
                     });
                 }
@@ -1469,16 +1712,42 @@
                         const icon = saveBtn.querySelector('i');
                         if (saveBtn.classList.contains('saved')) {
                             icon.classList.remove('far');
-                            icon.classList.add('fas'); 
+                            icon.classList.add('fas');
                         } else {
                             icon.classList.remove('fas');
-                            icon.classList.add('far'); 
+                            icon.classList.add('far');
                         }
                     });
                 }
             });
 
+            // --- New: Magic Effect and Smooth Scroll for "Khám Phá Ngay" button ---
+            const exploreNowBtn = document.getElementById('explore-now-btn');
 
+            if (exploreNowBtn) {
+                exploreNowBtn.addEventListener('click', function(event) {
+                    event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
+
+                    // Thêm class để kích hoạt hiệu ứng ánh sáng
+                    this.classList.add('magic-effect');
+
+                    // Lấy ID của phần tử cần cuộn tới từ thuộc tính href
+                    const targetId = this.getAttribute('href').substring(1); // Lấy "features-overview"
+                    const targetSection = document.getElementById(targetId);
+
+                    // Sau khi hiệu ứng ánh sáng kết thúc (0.8 giây), thực hiện cuộn mượt mà
+                    setTimeout(() => {
+                        // Xóa class hiệu ứng sau khi animation hoàn tất
+                        this.classList.remove('magic-effect');
+
+                        if (targetSection) {
+                            targetSection.scrollIntoView({
+                                behavior: 'smooth' // Cuộn mượt mà
+                            });
+                        }
+                    }, 800); // Thời gian này phải khớp với thời gian animation CSS (0.8s)
+                });
+            }
         });
     </script>
 
