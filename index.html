@@ -199,7 +199,7 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
-         /* Role-specific colors */
+        /* Role-specific colors */
         #team-hoai .team-role { color: #fb7185; } /* Rose */
         #team-duyen .team-role { color: #60a5fa; } /* Blue */
         #team-tran .team-role { color: #4ade80; } /* Green */
@@ -232,50 +232,21 @@
         }
 
         /* Marketplace & Library Filtering Tabs */
-        .library-main-specialization-tabs, .library-sub-specialization-tabs-container,
-        .main-specialization-tabs, .sub-specialization-tabs-container {
-            display: none; padding-top: 0.75rem; margin-top: 0.75rem;
-        }
-        .library-main-specialization-tabs.active, .library-sub-specialization-tabs-container.active,
-        .main-specialization-tabs.active, .sub-specialization-tabs-container.active {
+        .filter-tab-container {
             display: flex; flex-wrap: wrap; gap: 0.5rem;
         }
-        .library-main-specialization-tabs, .main-specialization-tabs { border-top: 1px solid #e5e7eb; }
-        .library-sub-specialization-tabs-container { margin-left: 1rem; padding-left: 1rem; border-left: 2px solid #22d3ee; }
-        .sub-specialization-tabs-container { margin-left: 1rem; padding-left: 1rem; border-left: 2px solid #fbbf24; }
-        .library-sub-specialization-tabs, .sub-specialization-tabs { display: none; flex-wrap: wrap; gap: 0.5rem; }
-        .library-sub-specialization-tabs.active, .sub-specialization-tabs.active { display: flex; }
-
-        .library-category-tab-item, .library-sub-category-tab-item,
-        .category-tab-item, .sub-category-tab-item {
+        .filter-tab-item {
             padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; cursor: pointer;
             transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
         }
-        .library-category-tab-item, .library-sub-category-tab-item {
-            border: 1px solid #22d3ee; color: #0891b2; background-color: #cffafe;
-        }
-        .library-category-tab-item:hover, .library-category-tab-item.active-tab,
-        .library-sub-category-tab-item:hover, .library-sub-category-tab-item.active-tab {
-            background-color: #22d3ee; color: #0e7490; border-color: #06b6d4;
-        }
-        .library-sub-category-tab-item { border-color: #67e8f9; background-color: #ecfeff; }
-        .library-sub-category-tab-item:hover, .library-sub-category-tab-item.active-tab {
-            background-color: #67e8f9; color: #0e7490;
-        }
-        .category-tab-item, .sub-category-tab-item { /* For Marketplace */
-            border: 1px solid #fbbf24; color: #b45309; background-color: #fef3c7;
-        }
-        .category-tab-item:hover, .category-tab-item.active-tab,
-        .sub-category-tab-item:hover, .sub-category-tab-item.active-tab {
-            background-color: #fbbf24; color: #78350f; border-color: #f59e0b;
-        }
-        .sub-category-tab-item {
-            border-color: #fcd34d; background-color: #fffbeb;
-        }
-        .sub-category-tab-item:hover, .sub-category-tab-item.active-tab {
-            background-color: #fcd34d; color: #92400e;
-        }
-
+        /* Library Tabs */
+        .library-tab { border: 1px solid #22d3ee; color: #0891b2; background-color: #cffafe; }
+        .library-tab:hover, .library-tab.active-tab { background-color: #22d3ee; color: #0e7490; border-color: #06b6d4; }
+        
+        /* Marketplace Tabs */
+        .marketplace-tab { border: 1px solid #fbbf24; color: #b45309; background-color: #fef3c7; }
+        .marketplace-tab:hover, .marketplace-tab.active-tab { background-color: #fbbf24; color: #78350f; border-color: #f59e0b; }
+        
         /* News & Events Tabs */
         .news-events-tabs-menu {
             display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem;
@@ -349,9 +320,9 @@
         .insta-post-actions { display: flex; align-items: center; padding: 0.5rem 1rem; }
         .insta-post-actions button {
             background: none; border: none; cursor: pointer; font-size: 1.5rem;
-            color: #262626; margin-right: 1rem; transition: color 0.2s;
+            color: #262626; margin-right: 1rem; transition: color 0.2s, transform 0.2s;
         }
-        .insta-post-actions button:hover { color: #8e8e8e; }
+        .insta-post-actions button:hover { color: #8e8e8e; transform: scale(1.1); }
         .insta-post-actions button.liked .fa-heart { color: #ed4956; font-weight: 900; }
         .insta-post-actions .save-btn { margin-left: auto; margin-right: 0; }
         .insta-post-actions .save-btn.saved .fa-bookmark { color: #262626; font-weight: 900; }
@@ -450,10 +421,12 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             z-index: 2000;
             opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
+            visibility: hidden;
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
         }
         .notification-toast.show {
             opacity: 1;
+            visibility: visible;
             transform: translate(-50%, -10px);
         }
 
@@ -516,7 +489,7 @@
                     <!-- Team Member 1: Lê Hồng Hoài (COO) -->
                     <div id="team-hoai" class="team-card">
                         <div class="team-avatar-container">
-                             <img src="COO.PNG" alt="Lê Hồng Hoài - COO" class="team-avatar">
+                             <img src="https://placehold.co/150x150/fecaca/991b1b?text=COO" alt="Lê Hồng Hoài - COO" class="team-avatar">
                         </div>
                         <h3 class="team-name">Lê Hồng Hoài</h3>
                         <p class="team-role">COO</p>
@@ -524,7 +497,7 @@
                     <!-- Team Member 2: Đỗ Trần Mỹ Duyên (Head of Marketing) -->
                     <div id="team-duyen" class="team-card">
                         <div class="team-avatar-container">
-                             <img src="Head of marketing.jpeg" alt="Đỗ Trần Mỹ Duyên - Head of Marketing" class="team-avatar">
+                             <img src="https://placehold.co/150x150/bae6fd/0c4a6e?text=MKT" alt="Đỗ Trần Mỹ Duyên - Head of Marketing" class="team-avatar">
                         </div>
                         <h3 class="team-name">Đỗ Trần Mỹ Duyên</h3>
                         <p class="team-role">Head of Marketing</p>
@@ -532,7 +505,7 @@
                     <!-- Team Member 3: Nguyễn Thị Bảo Trân (Web Operations Manager) -->
                     <div id="team-tran" class="team-card">
                         <div class="team-avatar-container">
-                             <img src="Web operation manager.jpg" alt="Nguyễn Thị Bảo Trân - Web Operations Manager" class="team-avatar">
+                             <img src="https://placehold.co/150x150/bbf7d0/14532d?text=WEB" alt="Nguyễn Thị Bảo Trân - Web Operations Manager" class="team-avatar">
                         </div>
                         <h3 class="team-name">Nguyễn Thị Bảo Trân</h3>
                         <p class="team-role">Web Operations Manager</p>
@@ -540,7 +513,7 @@
                     <!-- Team Member 4: Trần Thiên Ngân (Creative Design Director) -->
                     <div id="team-ngan" class="team-card">
                         <div class="team-avatar-container">
-                             <img src="Creative Design Director.PNG" alt="Trần Thiên Ngân - Creative Design Director" class="team-avatar">
+                             <img src="https://placehold.co/150x150/fef08a/854d0e?text=ART" alt="Trần Thiên Ngân - Creative Design Director" class="team-avatar">
                         </div>
                         <h3 class="team-name">Trần Thiên Ngân</h3>
                         <p class="team-role">Creative Design Director</p>
@@ -548,7 +521,7 @@
                     <!-- Team Member 5: Nguyễn Thị Kim Hường (Content Strategist) -->
                     <div id="team-huong" class="team-card">
                         <div class="team-avatar-container">
-                             <img src="Content strategist.JPG" alt="Nguyễn Thị Kim Hường - Content Strategist" class="team-avatar">
+                             <img src="https://placehold.co/150x150/ddd6fe/5b21b6?text=TXT" alt="Nguyễn Thị Kim Hường - Content Strategist" class="team-avatar">
                         </div>
                         <h3 class="team-name">Nguyễn Thị Kim Hường</h3>
                         <p class="team-role">Content Strategist</p>
@@ -563,9 +536,18 @@
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 section-title" style="border-color: #f97316;">Chợ Sinh Viên HUBverse</h2>
                 <p class="text-center text-gray-600 mb-12 md:mb-16 max-w-xl mx-auto text-lg">Nơi "pass" đồ cũ, tìm "deal" hời cho mọi nhu cầu học tập và đời sống sinh viên.</p>
-                <!-- Filter UI will be here -->
+                <!-- Filter UI -->
+                 <div class="mb-8">
+                    <div id="marketplace-filter-tabs" class="filter-tab-container justify-center">
+                        <button class="filter-tab-item marketplace-tab active-tab" data-filter="all">Tất Cả</button>
+                        <button class="filter-tab-item marketplace-tab" data-filter="sach">Sách & Giáo Trình</button>
+                        <button class="filter-tab-item marketplace-tab" data-filter="dungcu">Dụng Cụ Học Tập</button>
+                        <button class="filter-tab-item marketplace-tab" data-filter="khac">Khác</button>
+                    </div>
+                </div>
                 <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                    <!-- Products will be dynamically loaded here by JavaScript -->
+                    <!-- Products will be dynamically loaded here -->
+                    <p class="text-center col-span-full">Đang tải sản phẩm...</p>
                 </div>
             </div>
         </section>
@@ -575,30 +557,65 @@
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 section-title" style="border-color: #0ea5e9;">Thư Viện Tri Thức HUB</h2>
                 <p class="text-center text-gray-600 mb-12 md:mb-16 max-w-xl mx-auto text-lg">Nguồn tài liệu học thuật vô tận, từ bài giảng, sách chuyên khảo đến nghiên cứu khoa học mới nhất.</p>
-                <!-- Filter UI will be here -->
+                <!-- Filter UI -->
+                <div class="mb-8">
+                    <div id="library-filter-tabs" class="filter-tab-container justify-center">
+                         <button class="filter-tab-item library-tab active-tab" data-filter="all">Tất Cả</button>
+                         <button class="filter-tab-item library-tab" data-filter="tcnh">Tài chính - Ngân hàng</button>
+                         <button class="filter-tab-item library-tab" data-filter="ktkt">Kế toán - Kiểm toán</button>
+                         <button class="filter-tab-item library-tab" data-filter="qtkd">Quản trị Kinh doanh</button>
+                         <button class="filter-tab-item library-tab" data-filter="ktqt">Kinh tế Quốc tế</button>
+                         <button class="filter-tab-item library-tab" data-filter="nnanh">Ngôn ngữ Anh</button>
+                         <button class="filter-tab-item library-tab" data-filter="htttql">HTTT Quản lí</button>
+                         <button class="filter-tab-item library-tab" data-filter="luatkt">Luật Kinh tế</button>
+                    </div>
+                </div>
                 <div id="document-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                     <!-- Documents will be dynamically loaded here by JavaScript -->
+                     <!-- Documents will be dynamically loaded here -->
+                     <p class="text-center col-span-full">Đang tải tài liệu...</p>
                 </div>
             </div>
         </section>
 
         <!-- NEWS & EVENTS PAGE -->
         <section id="news-events" class="py-16 md:py-24 bg-yellow-50 page-content-section">
-            <!-- Content remains static for now, can be dynamic in future -->
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 section-title" style="border-color: #f59e0b;">HUB News & Events Feed</h2>
-                <div id="news-events-tabs-menu" class="news-events-tabs-menu">
-                    <button class="news-event-tab-button active-news-tab" data-target="available-activities-content"><i class="fas fa-calendar-check mr-2"></i>Hoạt Động Đang Diễn Ra</button>
-                    <button class="news-event-tab-button" data-target="volunteer-activities-content"><i class="fas fa-hands-helping mr-2"></i>Hoạt Động Tình Nguyện</button>
-                    <button class="news-event-tab-button" data-target="academic-competitions-content"><i class="fas fa-trophy mr-2"></i>Cuộc Thi Học Thuật</button>
+                <div class="news-events-tabs-menu">
+                    <button class="news-event-tab-button active-news-tab" data-target="su-kien"><i class="fas fa-calendar-check mr-2"></i>Sự Kiện</button>
+                    <button class="news-event-tab-button" data-target="minigames"><i class="fas fa-gamepad mr-2"></i>Minigames</button>
+                    <button class="news-event-tab-button" data-target="tinh-nguyen"><i class="fas fa-hands-helping mr-2"></i>Tình Nguyện</button>
+                    <button class="news-event-tab-button" data-target="hoc-thuat"><i class="fas fa-trophy mr-2"></i>Học Thuật</button>
                 </div>
-                <div id="available-activities-content" class="news-event-content-pane active">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                         <div class="event-card hover:shadow-amber-200/50"><img src="https://placehold.co/400x220/FEF3C7/D97706?text=Workshop" alt="Workshop Kỹ năng" class="w-full h-48 object-cover rounded-t-xl" onerror="this.src='https://placehold.co/400x220/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div class="p-6"><span class="event-tag tag-workshop mb-2 inline-block">Workshop</span><h4 class="text-xl font-semibold mb-2 text-gray-800">Kỹ Năng Phỏng Vấn Chinh Phục Nhà Tuyển Dụng</h4><p class="text-gray-600 text-sm mb-3"><i class="fas fa-clock mr-1"></i> 09:00, 15/07 - Hội trường A1</p><p class="text-gray-700 text-sm mb-4 line-clamp-3">Rèn luyện kỹ năng phỏng vấn với chuyên gia nhân sự, tự tin ứng tuyển mọi vị trí.</p><a href="#" class="font-semibold text-amber-600 hover:text-amber-700">Đăng ký <i class="fas fa-arrow-right ml-1"></i></a></div></div>
-                         <div class="event-card hover:shadow-amber-200/50"><img src="https://placehold.co/400x220/FEF3C7/D97706?text=Job+Fair" alt="Ngày hội việc làm" class="w-full h-48 object-cover rounded-t-xl" onerror="this.src='https://placehold.co/400x220/E2E8F0/2D3748?text=Ảnh+Lỗi';"><div class="p-6"><span class="event-tag tag-event mb-2 inline-block">Sự kiện lớn</span><h4 class="text-xl font-semibold mb-2 text-gray-800">Ngày Hội Việc Làm HUB Connect 2025</h4><p class="text-gray-600 text-sm mb-3"><i class="fas fa-calendar-day mr-1"></i> Cả ngày, 20/07 - Sân vận động trường</p><p class="text-gray-700 text-sm mb-4 line-clamp-3">Hàng ngàn cơ hội việc làm từ các doanh nghiệp hàng đầu. Đừng bỏ lỡ!</p><a href="#" class="font-semibold text-amber-600 hover:text-amber-700">Xem chi tiết <i class="fas fa-arrow-right ml-1"></i></a></div></div>
-                    </div>
+                <!-- Event Content -->
+                <div id="su-kien" class="news-event-content-pane active">
+                     <h3 class="text-2xl font-bold mb-6 text-center text-yellow-800">Hoạt Động & Sự Kiện Nổi Bật</h3>
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="event-card hover:shadow-amber-200/50"><img src="https://placehold.co/400x220/FEF3C7/D97706?text=Gala" alt="Gala Chào Tân Sinh Viên" class="w-full h-48 object-cover rounded-t-xl"><div class="p-6"> <h4 class="text-xl font-semibold mb-2 text-gray-800">Gala Chào Tân Sinh Viên "HUB On Fire"</h4> <p class="text-gray-600 text-sm mb-3"><i class="fas fa-clock mr-1"></i> 18:00, 28/08 - Sân khấu ngoài trời</p> <p class="text-gray-700 text-sm mb-4 line-clamp-3">Quẩy tung nóc với dàn line-up "cây nhà lá vườn" nhưng chất lượng quốc tế. Vé vào cổng miễn phí nhưng vé gửi xe thì không!</p> <a href="#" class="font-semibold text-amber-600 hover:text-amber-700">Xem chi tiết <i class="fas fa-arrow-right ml-1"></i></a></div></div>
+                        <div class="event-card hover:shadow-amber-200/50"><img src="https://placehold.co/400x220/FEF3C7/D97706?text=Job+Fair" alt="Ngày hội việc làm" class="w-full h-48 object-cover rounded-t-xl"><div class="p-6"> <h4 class="text-xl font-semibold mb-2 text-gray-800">Ngày Hội Việc Làm HUB Connect 2025</h4> <p class="text-gray-600 text-sm mb-3"><i class="fas fa-calendar-day mr-1"></i> Cả ngày, 20/07 - Sân vận động trường</p> <p class="text-gray-700 text-sm mb-4 line-clamp-3">Cơ hội "bán thân" cho các tư bản lớn. Nhớ mang theo nhiều CV và một nụ cười thật tươi dù trong lòng đang deadline dí.</p> <a href="#" class="font-semibold text-amber-600 hover:text-amber-700">Xem gian hàng <i class="fas fa-arrow-right ml-1"></i></a></div></div>
+                     </div>
                 </div>
-                <!-- Other panes... -->
+                <!-- Minigames Content -->
+                <div id="minigames" class="news-event-content-pane">
+                     <h3 class="text-2xl font-bold mb-6 text-center text-yellow-800">Minigames Giải Trí</h3>
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="event-card hover:shadow-amber-200/50"><img src="https://placehold.co/400x220/FEF3C7/D97706?text=Game" alt="Truy tìm Admin" class="w-full h-48 object-cover rounded-t-xl"><div class="p-6"> <h4 class="text-xl font-semibold mb-2 text-gray-800">Truy Tìm Admin Ẩn Danh</h4> <p class="text-gray-600 text-sm mb-3"><i class="fas fa-clock mr-1"></i> Bất cứ khi nào bạn online</p> <p class="text-gray-700 text-sm mb-4 line-clamp-3">Admin đang ẩn mình trong các bài post. Giải được mật mã, tìm ra admin, nhận ngay ly trà sữa full topping và sự ngưỡng mộ từ bạn bè.</p> <a href="#" class="font-semibold text-amber-600 hover:text-amber-700">Tham gia ngay <i class="fas fa-arrow-right ml-1"></i></a></div></div>
+                     </div>
+                </div>
+                <!-- Volunteer Content -->
+                <div id="tinh-nguyen" class="news-event-content-pane">
+                     <h3 class="text-2xl font-bold mb-6 text-center text-yellow-800">Hoạt Động Tình Nguyện Ý Nghĩa</h3>
+                      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="event-card hover:shadow-amber-200/50"><img src="https://placehold.co/400x220/FEF3C7/D97706?text=Volunteer" alt="Mùa hè xanh" class="w-full h-48 object-cover rounded-t-xl"><div class="p-6"> <h4 class="text-xl font-semibold mb-2 text-gray-800">Chủ Nhật Xanh - Dọn Rác Bờ Kênh</h4> <p class="text-gray-600 text-sm mb-3"><i class="fas fa-calendar-alt mr-1"></i> 07:00, Chủ nhật tuần này</p> <p class="text-gray-700 text-sm mb-4 line-clamp-3">Dọn sạch con kênh gần trường, nhận điểm rèn luyện và một trái tim trong sạch. Bonus: có thể bạn sẽ tìm thấy "crush" ở đây.</p> <a href="#" class="font-semibold text-amber-600 hover:text-amber-700">Đăng ký CTV <i class="fas fa-arrow-right ml-1"></i></a></div></div>
+                     </div>
+                </div>
+                <!-- Academic Content -->
+                <div id="hoc-thuat" class="news-event-content-pane">
+                     <h3 class="text-2xl font-bold mb-6 text-center text-yellow-800">Cuộc Thi Học Thuật Đỉnh Cao</h3>
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="event-card hover:shadow-amber-200/50"><img src="https://placehold.co/400x220/FEF3C7/D97706?text=Shark+Tank" alt="Shark Tank HUB" class="w-full h-48 object-cover rounded-t-xl"><div class="p-6"> <h4 class="text-xl font-semibold mb-2 text-gray-800">"Shark Tank" Phiên Bản HUB</h4> <p class="text-gray-600 text-sm mb-3"><i class="fas fa-gavel mr-1"></i> Vòng sơ loại: 15/09</p> <p class="text-gray-700 text-sm mb-4 line-clamp-3">Ý tưởng của bạn có thể nhận được "deal" từ... quỹ khuyến học của khoa. Giải thưởng cao nhất: một chuyến đi thực tế tại Doanh nghiệp X.</p> <a href="#" class="font-semibold text-amber-600 hover:text-amber-700">Nộp đề án <i class="fas fa-arrow-right ml-1"></i></a></div></div>
+                     </div>
+                </div>
             </div>
         </section>
 
@@ -624,15 +641,19 @@
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 section-title" style="border-color: #ec4899;">HUB Connection - Khoảnh Khắc HUBers</h2>
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-                    <div id="social-feed-container" class="md:col-span-8 space-y-6">
-                        <!-- New Post Box -->
-                         <div id="new-post-box" class="bg-white p-4 rounded-lg shadow border border-gray-200" style="display: none;">
+                    <div class="md:col-span-8">
+                         <!-- New Post Box -->
+                         <div id="new-post-box" class="bg-white p-4 rounded-lg shadow border border-gray-200 mb-6" style="display: none;">
                              <!-- Content populated by JS when user is logged in -->
                          </div>
-                        <!-- Posts will be dynamically loaded here -->
+                         <div id="social-feed-container" class="space-y-6">
+                            <!-- Posts will be dynamically loaded here -->
+                             <p class="text-center col-span-full">Đang tải bài viết...</p>
+                         </div>
                     </div>
                     <aside id="social-sidebar-container" class="md:col-span-4 space-y-6">
                         <!-- Sidebar profile and suggestions loaded by JS -->
+                         <p class="text-center">Đăng nhập để xem gợi ý.</p>
                     </aside>
                 </div>
             </div>
@@ -650,7 +671,6 @@
     </section>
 
     <footer id="contact" class="footer py-16">
-        <!-- Footer content remains the same -->
         <div class="container mx-auto px-6">
              <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-8">
                  <div><h3 class="text-3xl font-bold mb-4 hubverse-title" style="color: #ffffff;">HUBverse</h3><p class="text-gray-300 leading-relaxed">Nền tảng sinh viên vì sinh viên, bởi sinh viên HUB.</p><p class="text-gray-400 mt-2 text-sm">Trường Đại học Ngân hàng TP.HCM (HUB)</p></div>
@@ -658,7 +678,7 @@
                  <div><h4 class="text-xl font-semibold mb-4 text-cyan-300">Kết Nối Với HUBverse</h4><div class="flex space-x-5 mb-4"><a href="#" class="text-2xl social-icon"><i class="fab fa-facebook-square"></i></a><a href="#" class="text-2xl social-icon"><i class="fab fa-instagram-square"></i></a></div><p class="text-gray-300 text-sm">Email: support@hubverse.edu.vn</p></div>
              </div>
              <div class="mt-10 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm"><p>&copy; <span id="currentYear"></span> HUBverse Team. All rights reserved.</p></div>
-         </div>
+        </div>
     </footer>
 
     <!-- MODALS -->
@@ -668,7 +688,7 @@
             <h3 class="text-2xl font-semibold mb-6 text-center hubverse-title">Đăng Nhập HUBverse</h3>
             <form id="login-form">
                 <div>
-                    <label for="login-email" class="form-label">Email</label>
+                    <label for="login-email" class="form-label">Email hoặc Số Điện Thoại</label>
                     <input type="email" id="login-email" class="form-input" placeholder="nhapemail@hub.edu.vn" required>
                 </div>
                 <div>
@@ -718,24 +738,53 @@
         // Firebase Imports
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, signInWithCustomToken, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, setDoc, doc, getDoc, collection, onSnapshot, updateDoc, arrayUnion, arrayRemove, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, setDoc, doc, getDoc, collection, onSnapshot, updateDoc, arrayUnion, arrayRemove, serverTimestamp, addDoc, query, where, getDocs, orderBy } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
         import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
 
         document.addEventListener('DOMContentLoaded', async function() {
-            // --- FIREBASE SETUP ---
-            const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : { apiKey: "AIza...", authDomain: "...", projectId: "..." }; // Fallback for local dev
+            // --- GLOBAL VARIABLES & CONFIG ---
+            const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : { apiKey: "YOUR_API_KEY", authDomain: "YOUR_AUTH_DOMAIN", projectId: "YOUR_PROJECT_ID" }; // Fallback for local dev
             const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-hubverse';
-
-            setLogLevel('debug'); // For detailed console logs
+            
+            // Set to 'debug' for detailed logs, or 'silent' for production
+            setLogLevel('debug');
 
             const app = initializeApp(firebaseConfig);
             const auth = getAuth(app);
             const db = getFirestore(app);
 
             let currentUser = null;
-            let currentUserData = null;
+            let currentUserData = null; // To hold Firestore user data
 
-            // Function to show a toast notification
+            // --- MOCK DATA FOR DEMO ---
+            const mockProducts = [
+                { id: 'prod1', name: 'Giáo trình Kinh tế học quốc tế (bản mới)', price: 45000, seller: 'minh.an_k19', category: 'sach', tags: ['kinh tế quốc tế', 'giáo trình'], description: 'Sách còn mới 99%, mình học xong pass lại giá rẻ cho các em.', imageUrl: 'https://placehold.co/400x300/FFEBD9/9A3412?text=KTQT' },
+                { id: 'prod2', name: 'Máy tính Casio FX-580VNX', price: 500000, seller: 'bao.tran_k20', category: 'dungcu', tags: ['máy tính', 'casio'], description: 'Dùng được 1 học kỳ, còn full box, full chức năng, anti-fake. Thi xong không dùng nữa.', imageUrl: 'https://placehold.co/400x300/DDECFE/1E40AF?text=Casio' },
+                { id: 'prod3', name: 'Giáo trình Triết học Mác-Lênin (bản cũ)', price: 25000, seller: 'sv.namcuoi', category: 'sach', tags: ['triết học', 'đại cương'], description: 'Pass gấp lấy tiền uống trà đá. Sách có highlight vài chỗ quan trọng, mua về khỏi highlight lại.', imageUrl: 'https://placehold.co/400x300/FEF9C3/854D0E?text=Triết' },
+                { id: 'prod4', name: 'Apple Watch SE 40mm', price: 2500000, seller: 'rich.kid_hub', category: 'dungcu', tags: ['đồng hồ', 'apple watch'], description: 'Lên đời Ultra nên pass lại. Còn bảo hành, pin 95%, tặng kèm 3 dây đeo.', imageUrl: 'https://placehold.co/400x300/F3E8FF/5B21B6?text=Watch' },
+                { id: 'prod5', name: 'Balo laptop chống nước', price: 150000, seller: 'thien.ngan_art', category: 'khac', tags: ['balo', 'laptop'], description: 'Balo nhiều ngăn, đựng vừa laptop 15.6 inch. Mua về nhưng ít dùng.', imageUrl: 'https://placehold.co/400x300/E0E7FF/312E81?text=Balo' },
+                { id: 'prod6', name: '[Pass vé] Concert BlackPink', price: 1200000, seller: 'blink.hub', category: 'khac', tags: ['vé', 'concert'], description: 'Bận ôn thi cuối kỳ nên đành pass lại vé. Vị trí đẹp, giá gốc không phụ thu.', imageUrl: 'https://placehold.co/400x300/FCE7F3/831843?text=Vé' },
+            ];
+
+            const mockDocuments = [
+                { id: 'doc1', title: 'Slide Phân tích Báo cáo Tài chính', author: 'TS. Đoàn Anh Tuấn', category: 'tcnh', type: 'Bài giảng', url: '#' },
+                { id: 'doc2', title: 'Tổng hợp 50 câu hỏi phỏng vấn Big4', author: 'Sưu tầm', category: 'ktkt', type: 'Tài liệu', url: '#' },
+                { id: 'doc3', title: 'Case Study Marketing cho Biti\'s Hunter', author: 'Nhóm 5 - Lớp QT Mar', category: 'qtkd', type: 'Bài tập nhóm', url: '#' },
+                { id: 'doc4', title: 'Đề cương ôn tập Kinh tế Lượng', author: 'Khoa KTQT', category: 'ktqt', type: 'Đề cương', url: '#' },
+                { id: 'doc5', title: '1200 Từ vựng IELTS band 8.0', author: 'IELTS Official', category: 'nnanh', type: 'Từ vựng', url: '#' },
+                { id: 'doc6', title: 'Giáo trình SQL cho người mới bắt đầu', author: 'Khoa HTTTQL', category: 'htttql', type: 'Giáo trình', url: '#' },
+                { id: 'doc7', title: 'Luật Doanh nghiệp 2020 (tóm tắt)', author: 'Sưu tầm', category: 'luatkt', type: 'Luật', url: '#' },
+                { id: 'doc8', title: 'Bài giảng Thị trường Chứng khoán', author: 'PGS. TS. Trần Thị Kim', category: 'tcnh', type: 'Bài giảng', url: '#' },
+            ];
+            
+            const mockPosts = [
+                { id: 'post1', authorName: 'Phước Nguyễn', authorUsername: 'phuoc.nguyen', authorAvatar: 'https://placehold.co/40x40/dbeafe/1e40af?text=P', caption: 'Trà đá cổng sau cơ sở Hoàng Diệu 2 vẫn là chân ái mọi người ạ. 3k một ly, chỗ ngồi "view" triệu đô nhìn dòng người hối hả.', location: 'Thủ Đức, TP.HCM', likes: 102 },
+                { id: 'post2', authorName: 'Minh Anh', authorUsername: 'minhanh.hub', authorAvatar: 'https://placehold.co/40x40/fce7f3/9d174d?text=M', caption: 'Điểm danh team K20 chuẩn bị chạy deadline ngập mặt nào :)) Ai có bí kíp qua môn Tư tưởng không chia sẻ với...', imageUrl: 'https://placehold.co/600x400/FFF7ED/C2410C?text=Deadline', location: 'Thư viện HUB', likes: 256 },
+                { id: 'post3', authorName: 'Bảo Trân Foodie', authorUsername: 'baotran.foodie', authorAvatar: 'https://placehold.co/40x40/ecfdf5/047857?text=B', caption: 'Mới phát hiện quán bún đậu mắm tôm gần cơ sở Hàm Nghi siêu đỉnh, đầy đặn mà có 45 cành. Ai cần review chi tiết không?', location: 'Quận 1, TP.HCM', likes: 312 },
+                { id: 'post4', authorName: 'Sinh Viên Năm Cuối', authorUsername: 'sv.namcuoi', authorAvatar: 'https://placehold.co/40x40/f3f4f6/4b5563?text=S', caption: 'Có ai pass lại môn Xác suất thống kê không ạ, em cảm ơn và hậu tạ bằng 1 ly trà sữa full topping ạ :((', location: 'Tìm đồng đội', likes: 55 },
+            ];
+
+            // --- NOTIFICATION FUNCTION ---
             function showToast(message) {
                 const toast = document.getElementById('notification-toast');
                 if (!toast) return;
@@ -746,7 +795,7 @@
                 }, 3000);
             }
 
-            // --- AUTHENTICATION ---
+            // --- AUTHENTICATION & USER MANAGEMENT ---
             try {
                 if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
                     await signInWithCustomToken(auth, __initial_auth_token);
@@ -761,75 +810,94 @@
             onAuthStateChanged(auth, async (user) => {
                 if (user && !user.isAnonymous) {
                     currentUser = user;
-                    // Fetch user data from Firestore
                     const userDocRef = doc(db, `/artifacts/${appId}/users`, user.uid);
                     const userDocSnap = await getDoc(userDocRef);
                     if (userDocSnap.exists()) {
                         currentUserData = { id: user.uid, ...userDocSnap.data() };
+                        updateUIAfterLogin();
+                        loadChatHistory();
+                        renderSocialFeed(mockPosts); // Reload feed to show personalized data (likes/saves)
                     } else {
-                        // This case might happen if user doc creation failed after registration
-                        currentUserData = { id: user.uid, name: user.email.split('@')[0], email: user.email, friends: [], savedPosts: [] };
+                        console.error("Firestore user document not found for logged-in user.");
+                        handleLogout();
                     }
-                    updateUIAfterLogin();
-                    loadSocialFeed();
-                    loadChatHistory();
                 } else {
                     currentUser = null;
                     currentUserData = null;
                     updateUIAfterLogout();
-                    loadSocialFeed(); // Load public feed
+                    renderSocialFeed(mockPosts); // Load public feed
+                    loadChatHistory(); // Show login prompt in chat
                 }
             });
 
-            const loginForm = document.getElementById('login-form');
-            const registerForm = document.getElementById('register-form');
-            const loginError = document.getElementById('login-error');
-            const registerError = document.getElementById('register-error');
-
-            loginForm.addEventListener('submit', async (e) => {
+            // LOGIN FORM
+            document.getElementById('login-form').addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const email = loginForm['login-email'].value;
-                const password = loginForm['login-password'].value;
+                const email = document.getElementById('login-email').value;
+                const password = document.getElementById('login-password').value;
+                const errorEl = document.getElementById('login-error');
                 try {
-                    loginError.style.display = 'none';
+                    errorEl.style.display = 'none';
                     await signInWithEmailAndPassword(auth, email, password);
-                    closeModal(loginModal);
+                    closeModal(document.getElementById('login-modal'));
                     showToast("Đăng nhập thành công!");
                 } catch (error) {
-                    console.error("Login Error:", error);
-                    loginError.textContent = "Email hoặc mật khẩu không đúng.";
-                    loginError.style.display = 'block';
+                    console.error("Login Error:", error.code);
+                    errorEl.textContent = "Email hoặc mật khẩu không đúng.";
+                    errorEl.style.display = 'block';
                 }
             });
 
-            registerForm.addEventListener('submit', async (e) => {
+            // REGISTER FORM
+            document.getElementById('register-form').addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const name = registerForm['register-name'].value;
-                const email = registerForm['register-email'].value;
-                const password = registerForm['register-password'].value;
+                const name = document.getElementById('register-name').value;
+                const email = document.getElementById('register-email').value;
+                const password = document.getElementById('register-password').value;
+                const errorEl = document.getElementById('register-error');
+                if (password.length < 6) {
+                    errorEl.textContent = "Mật khẩu phải có ít nhất 6 ký tự.";
+                    errorEl.style.display = 'block';
+                    return;
+                }
+
                 try {
-                    registerError.style.display = 'none';
+                    errorEl.style.display = 'none';
                     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-                    // Create a user document in Firestore
-                    const userDocRef = doc(db, `/artifacts/${appId}/users`, userCredential.user.uid);
+                    const user = userCredential.user;
+
+                    const userDocRef = doc(db, `/artifacts/${appId}/users`, user.uid);
                     await setDoc(userDocRef, {
                         name: name,
-                        username: email.split('@')[0],
+                        username: email.split('@')[0].replace(/[^a-zA-Z0-9]/g, ''),
                         email: email,
-                        avatar: `https://placehold.co/56x56/FFE4E6/DC2626?text=${name.charAt(0)}`,
+                        avatar: `https://placehold.co/56x56/FFE4E6/DC2626?text=${name.charAt(0).toUpperCase()}`,
                         friends: [],
                         savedPosts: [],
+                        likedPosts: [],
                         createdAt: serverTimestamp()
                     });
-                    closeModal(registerModal);
+                    
+                    closeModal(document.getElementById('register-modal'));
                     showToast("Đăng ký thành công! Đang đăng nhập...");
                 } catch (error) {
-                    console.error("Register Error:", error);
-                    registerError.textContent = "Đăng ký không thành công. Email có thể đã tồn tại.";
-                    registerError.style.display = 'block';
+                    console.error("Register Error:", error.code);
+                    if (error.code === 'auth/email-already-in-use') {
+                        errorEl.textContent = "Email này đã được sử dụng.";
+                    } else {
+                        errorEl.textContent = "Đã xảy ra lỗi. Vui lòng thử lại.";
+                    }
+                    errorEl.style.display = 'block';
                 }
             });
 
+            // LOGOUT
+            async function handleLogout() {
+                await signOut(auth);
+                showToast("Đã đăng xuất.");
+            }
+
+            // --- UI UPDATES (LOGIN/LOGOUT) ---
             function updateUIAfterLogin() {
                 const authContainer = document.getElementById('auth-container');
                 const newPostBox = document.getElementById('new-post-box');
@@ -839,100 +907,98 @@
                 authContainer.innerHTML = `
                     <div class="flex items-center gap-4">
                         <span class="font-semibold text-gray-700 hidden sm:block">${currentUserData.name}</span>
-                        <img src="${currentUserData.avatar}" alt="avatar" class="w-10 h-10 rounded-full cursor-pointer">
-                        <button id="logout-btn" class="text-sm text-gray-500 hover:text-red-500"><i class="fas fa-sign-out-alt"></i></button>
+                        <img src="${currentUserData.avatar}" alt="avatar" class="w-10 h-10 rounded-full cursor-pointer object-cover">
+                        <button id="logout-btn" title="Đăng xuất" class="text-gray-500 hover:text-red-500 transition-colors"><i class="fas fa-sign-out-alt text-lg"></i></button>
                     </div>
                 `;
-                document.getElementById('logout-btn').addEventListener('click', async () => {
-                    await signOut(auth);
-                    showToast("Đã đăng xuất.");
-                });
+                document.getElementById('logout-btn').addEventListener('click', handleLogout);
                 
                 newPostBox.style.display = 'block';
                 newPostBox.innerHTML = `
-                    <div class="flex items-center">
-                        <img src="${currentUserData.avatar}" alt="User Avatar" class="w-10 h-10 rounded-full mr-3">
-                        <input type="text" placeholder="Bạn đang nghĩ gì, ${currentUserData.name}?" class="w-full p-2 border border-gray-300 rounded-full focus:ring-pink-500 focus:border-pink-500 text-sm bg-gray-50">
+                    <div class="flex items-start">
+                        <img src="${currentUserData.avatar}" alt="User Avatar" class="w-10 h-10 rounded-full mr-3 object-cover">
+                        <textarea id="new-post-content" placeholder="Bạn đang nghĩ gì, ${currentUserData.name}?" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-pink-500 focus:border-pink-500 text-sm bg-gray-50" rows="3"></textarea>
                     </div>
-                    <div class="flex justify-end mt-3 pt-3 border-t border-gray-200">
-                        <button class="text-pink-600 hover:bg-pink-100 py-2 px-3 rounded-md text-sm mr-2"><i class="fas fa-image mr-1"></i> Ảnh/Video</button>
-                        <button class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-md text-sm">Đăng</button>
+                    <div class="flex justify-between items-center mt-3 pt-3 border-t border-gray-200">
+                        <div>
+                             <button class="text-gray-500 hover:text-pink-600 py-2 px-3 rounded-md text-sm"><i class="fas fa-image mr-1"></i> Ảnh/Video</button>
+                        </div>
+                        <button id="submit-post-btn" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-5 rounded-md text-sm">Đăng</button>
                     </div>
                 `;
+                document.getElementById('submit-post-btn').addEventListener('click', handleCreatePost);
             }
 
             function updateUIAfterLogout() {
-                document.getElementById('auth-container').innerHTML = `<button id="open-login-modal" class="btn-login">Đăng Nhập</button>`;
-                document.getElementById('open-login-modal').addEventListener('click', (e) => { e.preventDefault(); openModal(loginModal); });
+                document.getElementById('auth-container').innerHTML = `<button id="open-login-modal-btn" class="btn-login">Đăng Nhập</button>`;
+                document.getElementById('open-login-modal-btn').addEventListener('click', (e) => { e.preventDefault(); openModal(document.getElementById('login-modal')); });
                 document.getElementById('new-post-box').style.display = 'none';
+                document.getElementById('social-sidebar-container').innerHTML = '<p class="text-center">Đăng nhập để xem gợi ý.</p>';
             }
             
             // --- DATA LOADING & RENDERING ---
-            const productGrid = document.getElementById('product-grid');
-            const documentGrid = document.getElementById('document-grid');
-            const socialFeedContainer = document.getElementById('social-feed-container');
-
-            // Listen for Products
-            const productsCol = collection(db, `/artifacts/${appId}/public/data/products`);
-            onSnapshot(productsCol, (snapshot) => {
-                if(!productGrid) return;
-                productGrid.innerHTML = '';
-                snapshot.docs.forEach(doc => {
-                    const product = { id: doc.id, ...doc.data() };
+            function renderMarketplace(products) {
+                 const grid = document.getElementById('product-grid');
+                if(!grid) return;
+                grid.innerHTML = '';
+                if (products.length === 0) {
+                     grid.innerHTML = '<p class="text-center col-span-full">Chưa có sản phẩm nào được đăng bán.</p>';
+                     return;
+                }
+                products.forEach(product => {
                     const card = createProductCard(product);
-                    productGrid.appendChild(card);
+                    grid.appendChild(card);
                 });
-            });
+            }
 
-             // Listen for Documents
-            const documentsCol = collection(db, `/artifacts/${appId}/public/data/documents`);
-            onSnapshot(documentsCol, (snapshot) => {
-                if(!documentGrid) return;
-                documentGrid.innerHTML = '';
-                snapshot.docs.forEach(doc => {
-                    const documentData = { id: doc.id, ...doc.data() };
-                    const card = createDocumentCard(documentData);
-                    documentGrid.appendChild(card);
+            function renderLibrary(documents) {
+                const grid = document.getElementById('document-grid');
+                if(!grid) return;
+                grid.innerHTML = '';
+                if (documents.length === 0) {
+                     grid.innerHTML = '<p class="text-center col-span-full">Thư viện hiện đang trống.</p>';
+                     return;
+                }
+                documents.forEach(docData => {
+                    const card = createDocumentCard(docData);
+                    grid.appendChild(card);
                 });
-            });
+            }
 
-            // Load Social Feed
-            function loadSocialFeed() {
-                const postsCol = collection(db, `/artifacts/${appId}/public/data/posts`);
-                onSnapshot(postsCol, (snapshot) => {
-                    const feedContainer = document.getElementById('social-feed-container');
-                    if(!feedContainer) return;
-                    // Clear only post cards, not the new post box
-                    feedContainer.querySelectorAll('.insta-post-card').forEach(el => el.remove());
-                    snapshot.docs.sort((a,b) => b.data().createdAt?.toMillis() - a.data().createdAt?.toMillis()).forEach(doc => {
-                        const post = { id: doc.id, ...doc.data() };
-                        const card = createPostCard(post);
-                        feedContainer.appendChild(card);
-                    });
+            function renderSocialFeed(posts) {
+                const feedContainer = document.getElementById('social-feed-container');
+                if(!feedContainer) return;
+                feedContainer.innerHTML = '';
+                if (posts.length === 0) {
+                    feedContainer.innerHTML = '<p class="text-center col-span-full bg-white p-8 rounded-lg">Chưa có bài viết nào. Hãy là người đầu tiên đăng bài!</p>';
+                    return;
+                }
+                posts.forEach(post => {
+                    const card = createPostCard(post);
+                    feedContainer.appendChild(card);
                 });
-                
-                // Load sidebar (profile + suggestions)
                 loadSocialSidebar();
             }
 
             // --- UI ELEMENT CREATION FUNCTIONS ---
             function createProductCard(product) {
                 const card = document.createElement('div');
-                card.className = 'product-card flex flex-col';
-                // Add data attributes for filtering
-                card.dataset.category = product.category || 'all';
-                card.dataset.mainSpecTag = product.mainSpec || '';
-                card.dataset.subSpecTag = product.subSpec || '';
+                card.className = 'product-card flex flex-col transition-all duration-300';
+                card.dataset.category = product.category || 'khac';
 
                 card.innerHTML = `
-                    <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-52 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E2E8F0/2D3748?text=Ảnh+Lỗi';">
+                    <div class="relative overflow-hidden rounded-t-lg">
+                        <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/400x300/FFEBD9/9A3412?text=Ảnh+SP';">
+                    </div>
                     <div class="p-5 flex flex-col flex-grow">
-                        <h3 class="text-lg font-semibold mb-2 text-gray-800">${product.name}</h3>
-                        <p class="text-xl mb-2" style="color: #d90429; font-weight: 700;">${product.price.toLocaleString('vi-VN')} VNĐ</p>
-                        <p class="text-xs text-gray-500 mb-1"><i class="fas fa-user-circle mr-1"></i> ${product.seller}</p>
-                        <p class="text-xs text-gray-500 mb-3"><i class="fas fa-tag mr-1"></i> ${product.tags.join(' / ')}</p>
+                        <h3 class="text-lg font-bold mb-2 text-gray-800 leading-tight">${product.name}</h3>
+                        <p class="text-xl font-extrabold mb-3 text-red-600">${parseInt(product.price).toLocaleString('vi-VN')} VNĐ</p>
+                        <div class="text-xs text-gray-500 mb-3 space-y-1">
+                            <p><i class="fas fa-user-circle mr-1.5 text-gray-400"></i> ${product.seller || 'Người bán ẩn danh'}</p>
+                            <p><i class="fas fa-tag mr-1.5 text-gray-400"></i> ${product.tags ? product.tags.join(', ') : 'Chưa gắn thẻ'}</p>
+                        </div>
                         <p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">${product.description}</p>
-                        <button class="mt-auto w-full font-semibold py-2.5 px-4 rounded-lg text-sm" style="background-color: #2a9d8f; color: white;"><i class="fas fa-cart-plus mr-2"></i>Thêm vào giỏ</button>
+                        <button class="mt-auto w-full font-semibold py-2.5 px-4 rounded-lg text-sm bg-orange-500 text-white hover:bg-orange-600 transition-colors"><i class="fas fa-cart-plus mr-2"></i>Thêm vào giỏ</button>
                     </div>
                 `;
                 return card;
@@ -940,13 +1006,15 @@
             
             function createDocumentCard(docData) {
                 const card = document.createElement('div');
-                card.className = 'document-card p-6 text-center hover:shadow-sky-200/50';
+                card.className = 'document-card flex flex-col p-6 text-center hover:shadow-sky-200/50 transition-all duration-300';
+                card.dataset.category = docData.category || 'all';
                 card.innerHTML = `
-                    <img src="https://placehold.co/150x200/E0F2FE/0EA5E9?text=${docData.type}" alt="${docData.title}" class="w-24 h-32 object-contain rounded-lg mb-4 mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/150x200/E2E8F0/2D3748?text=Ảnh+Lỗi';">
-                    <h3 class="text-lg font-semibold mb-2 text-gray-800">${docData.title}</h3>
-                    <p class="text-xs text-gray-500 mb-1">${docData.author}</p>
-                    <p class="text-xs text-gray-500 mb-3"><span class="bg-sky-100 text-sky-700 py-0.5 px-2 rounded-full">${docData.type}</span></p>
-                    <a href="${docData.url}" target="_blank" class="w-full block font-semibold py-2 px-4 rounded-lg text-sm" style="background-color: #0096c7; color: white;"><i class="fas fa-eye mr-2"></i>Xem / Tải</a>
+                    <div class="w-24 h-32 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-file-alt text-6xl text-sky-400"></i>
+                    </div>
+                    <h3 class="text-base font-bold mb-2 text-gray-800 flex-grow">${docData.title}</h3>
+                    <p class="text-xs text-gray-500 mb-3"><span class="bg-sky-100 text-sky-700 py-0.5 px-2 rounded-full font-medium">${docData.type}</span></p>
+                    <a href="${docData.url}" target="_blank" class="w-full block font-semibold py-2 px-4 rounded-lg text-sm bg-sky-500 text-white hover:bg-sky-600 transition-colors"><i class="fas fa-download mr-2"></i>Tải Về</a>
                 `;
                 return card;
             }
@@ -956,117 +1024,142 @@
                 article.className = 'insta-post-card';
                 article.dataset.postId = post.id;
                 
-                const isLiked = currentUserData?.likedPosts?.includes(post.id);
-                const isSaved = currentUserData?.savedPosts?.includes(post.id);
+                const isLiked = currentUserData && currentUserData.likedPosts && currentUserData.likedPosts.includes(post.id);
+                const isSaved = currentUserData && currentUserData.savedPosts && currentUserData.savedPosts.includes(post.id);
 
                 article.innerHTML = `
                     <header class="insta-post-header">
-                        <img src="${post.authorAvatar}" alt="${post.authorName} Avatar" class="avatar">
-                        <div><a href="#" class="username">${post.authorUsername}</a><div class="location">${post.location}</div></div>
+                        <img src="${post.authorAvatar}" alt="${post.authorName} Avatar" class="avatar object-cover">
+                        <div><a href="#" class="username">${post.authorUsername}</a><div class="location">${post.location || 'HUB, TP.HCM'}</div></div>
                         <button class="options-btn"><i class="fas fa-ellipsis-h"></i></button>
                     </header>
-                    <img src="${post.imageUrl}" alt="Post image" class="insta-post-image">
+                    ${post.imageUrl ? `<img src="${post.imageUrl}" alt="Post image" class="insta-post-image" onerror="this.style.display='none'">` : ''}
+                    <div class="px-4 pt-3 pb-1"><p class="text-gray-800">${post.caption}</p></div>
                     <section class="insta-post-actions">
-                        <button class="like-btn ${isLiked ? 'liked' : ''}"><i class="fa${isLiked ? 's' : 'r'} fa-heart"></i></button>
-                        <button class="comment-btn"><i class="far fa-comment"></i></button>
-                        <button class="share-btn"><i class="far fa-paper-plane"></i></button>
-                        <button class="save-btn ${isSaved ? 'saved' : ''}"><i class="fa${isSaved ? 's' : 'r'} fa-bookmark"></i></button>
+                        <button class="like-btn ${isLiked ? 'liked' : ''}" title="Thích"><i class="fa-${isLiked ? 'solid' : 'regular'} fa-heart"></i></button>
+                        <button class="comment-btn" title="Bình luận"><i class="far fa-comment"></i></button>
+                        <button class="share-btn" title="Chia sẻ"><i class="far fa-paper-plane"></i></button>
+                        <button class="save-btn ${isSaved ? 'saved' : ''}"><i class="fa-${isSaved ? 'solid' : 'regular'} fa-bookmark"></i></button>
                     </section>
-                    <section class="insta-post-likes"><span class="like-count">${post.likes}</span> lượt thích</section>
-                    <section class="insta-post-caption"><a href="#" class="username">${post.authorUsername}</a><span>${post.caption}</span></section>
-                    <a href="#" class="insta-post-comments-link comment-btn">Xem tất cả <span class="comment-count">${post.comments?.length || 0}</span> bình luận</a>
-                    <section class="insta-post-add-comment"><input type="text" placeholder="Thêm bình luận..."><button>Đăng</button></section>
+                    <section class="px-4 pb-2 insta-post-likes"><span class="like-count font-semibold">${post.likes || 0}</span> lượt thích</section>
                 `;
                 
-                // Add event listeners for interactions
-                const likeBtn = article.querySelector('.like-btn');
-                likeBtn.addEventListener('click', () => handleLike(post.id, likeBtn));
-                
-                const saveBtn = article.querySelector('.save-btn');
-                saveBtn.addEventListener('click', () => handleSave(post.id, saveBtn));
+                article.querySelector('.like-btn').addEventListener('click', (e) => { e.preventDefault(); handleLike(post.id, e.currentTarget); });
+                article.querySelector('.save-btn').addEventListener('click', (e) => { e.preventDefault(); handleSave(post.id, e.currentTarget); });
 
                 return article;
             }
+            
+            // --- SOCIAL INTERACTIONS ---
+            async function handleCreatePost() {
+                const content = document.getElementById('new-post-content').value.trim();
+                if (!content) { showToast("Vui lòng nhập nội dung bài viết."); return; }
+                if (!currentUserData) { showToast("Lỗi: Không tìm thấy dữ liệu người dùng."); return; }
+
+                try {
+                    const newPost = {
+                        authorId: currentUser.uid,
+                        authorName: currentUserData.name,
+                        authorUsername: currentUserData.username,
+                        authorAvatar: currentUserData.avatar,
+                        caption: content,
+                        imageUrl: null,
+                        likes: 0,
+                        comments: [],
+                        createdAt: serverTimestamp()
+                    };
+                    const postsColRef = collection(db, `/artifacts/${appId}/public/data/posts`);
+                    await addDoc(postsColRef, newPost);
+                    document.getElementById('new-post-content').value = '';
+                    showToast("Đăng bài thành công!");
+                } catch (error) {
+                    console.error("Error creating post:", error);
+                    showToast("Đã có lỗi xảy ra khi đăng bài.");
+                }
+            }
 
             async function handleLike(postId, button) {
-                if (!currentUser) {
-                    showToast("Vui lòng đăng nhập để thích bài viết.");
-                    openModal(loginModal);
-                    return;
-                }
+                if (!currentUser) { showToast("Vui lòng đăng nhập để thích bài viết."); openModal(document.getElementById('login-modal')); return; }
+                
                 const postRef = doc(db, `/artifacts/${appId}/public/data/posts`, postId);
                 const userRef = doc(db, `/artifacts/${appId}/users`, currentUser.uid);
 
-                const currentlyLiked = button.classList.contains('liked');
+                const postSnap = await getDoc(postRef);
+                const currentlyLiked = currentUserData.likedPosts?.includes(postId);
+                
+                // For demo, we manipulate mock data. In real app, we'd only use Firestore.
+                const postInMock = mockPosts.find(p => p.id === postId);
+                if (postInMock) {
+                     postInMock.likes = currentlyLiked ? postInMock.likes - 1 : postInMock.likes + 1;
+                }
 
                 try {
+                    const currentLikes = (postSnap.exists() ? postSnap.data().likes : postInMock?.likes) || 0;
                     if (currentlyLiked) {
-                        await updateDoc(postRef, { likes: (await getDoc(postRef)).data().likes - 1 });
                         await updateDoc(userRef, { likedPosts: arrayRemove(postId) });
+                        if(postSnap.exists()) await updateDoc(postRef, { likes: Math.max(0, currentLikes - 1) });
+                        currentUserData.likedPosts = currentUserData.likedPosts.filter(id => id !== postId);
                     } else {
-                        await updateDoc(postRef, { likes: (await getDoc(postRef)).data().likes + 1 });
                         await updateDoc(userRef, { likedPosts: arrayUnion(postId) });
+                        if(postSnap.exists()) await updateDoc(postRef, { likes: currentLikes + 1 });
+                        currentUserData.likedPosts.push(postId);
                     }
-                    // The onSnapshot will automatically update the UI
+                    renderSocialFeed(mockPosts); // Re-render to show updated like state
                 } catch(error) {
                     console.error("Error liking post: ", error);
                     showToast("Có lỗi xảy ra, vui lòng thử lại.");
+                    if(postInMock) postInMock.likes = currentlyLiked ? postInMock.likes + 1 : postInMock.likes -1; //revert mock data
                 }
             }
             
             async function handleSave(postId, button) {
-                 if (!currentUser) {
-                    showToast("Vui lòng đăng nhập để lưu bài viết.");
-                    openModal(loginModal);
-                    return;
-                }
+                 if (!currentUser) { showToast("Vui lòng đăng nhập để lưu bài viết."); openModal(document.getElementById('login-modal')); return; }
+                
                 const userRef = doc(db, `/artifacts/${appId}/users`, currentUser.uid);
-                const currentlySaved = button.classList.contains('saved');
+                const currentlySaved = currentUserData.savedPosts?.includes(postId);
 
                 try {
-                     if (currentlySaved) {
+                    if (currentlySaved) {
                         await updateDoc(userRef, { savedPosts: arrayRemove(postId) });
+                        currentUserData.savedPosts = currentUserData.savedPosts.filter(id => id !== postId);
                         showToast("Đã bỏ lưu bài viết.");
                     } else {
                         await updateDoc(userRef, { savedPosts: arrayUnion(postId) });
+                        currentUserData.savedPosts.push(postId);
                         showToast("Đã lưu bài viết.");
                     }
+                     renderSocialFeed(mockPosts); // Re-render to show updated save state
                 } catch(error) {
-                     console.error("Error saving post: ", error);
-                     showToast("Có lỗi xảy ra, vui lòng thử lại.");
+                    console.error("Error saving post: ", error);
+                    showToast("Có lỗi xảy ra, vui lòng thử lại.");
                 }
             }
 
             function loadSocialSidebar() {
                 const container = document.getElementById('social-sidebar-container');
                 if (!container) return;
-
+                
                 let profileHtml = '';
                 if(currentUserData) {
                     profileHtml = `
                     <div class="bg-white p-5 rounded-lg shadow border border-gray-200 insta-sidebar-profile">
                         <div class="flex items-center mb-4">
-                            <img src="${currentUserData.avatar}" alt="Your Avatar" class="avatar rounded-full mr-4">
+                            <img src="${currentUserData.avatar}" alt="Your Avatar" class="avatar rounded-full mr-4 object-cover">
                             <div>
                                 <p class="font-semibold text-base text-gray-800">${currentUserData.name}</p>
                                 <p class="text-sm text-gray-500">@${currentUserData.username}</p>
                             </div>
                         </div>
-                        <div class="flex justify-around text-center text-sm text-gray-600 mb-4">
-                            <div><span class="font-bold block text-gray-800 text-base">0</span><span class="text-xs">bài viết</span></div>
-                            <div><span class="font-bold block text-gray-800 text-base">${currentUserData.friends?.length || 0}</span><span class="text-xs">bạn bè</span></div>
-                        </div>
                     </div>`;
                 }
 
                 container.innerHTML = profileHtml + `
-                    <div class="bg-white p-5 rounded-lg shadow border border-gray-200">
-                        <h4 class="text-sm font-semibold text-gray-500 mb-3">Gợi ý cho bạn</h4>
-                        <div class="space-y-3" id="suggested-friends-list">
-                            <!-- Suggested friends loaded here -->
-                        </div>
+                <div class="bg-white p-5 rounded-lg shadow border border-gray-200">
+                    <h4 class="text-sm font-semibold text-gray-500 mb-3">Gợi ý cho bạn</h4>
+                    <div class="space-y-3" id="suggested-friends-list">
+                        <p class="text-xs text-gray-400">Tính năng đang được phát triển.</p>
                     </div>
-                `;
+                </div>`;
             }
             
             // --- GEMINI CHATBOT ---
@@ -1075,28 +1168,27 @@
             const geminiSendButton = document.getElementById('gemini-send-button');
             let chatHistory = [];
             
-            function loadChatHistory() {
+            async function loadChatHistory() {
                  if (!currentUser) {
-                    geminiChatMessages.innerHTML = `<div class="gemini-chat-bubble ai"><div class="avatar avatar-ai"><i class="fas fa-brain"></i></div><div class="message-content"><p>Xin chào! Đăng nhập để xem lại lịch sử trò chuyện và bắt đầu nhé!</p></div></div>`;
-                    return;
-                }
+                     geminiChatMessages.innerHTML = `<div class="gemini-chat-bubble ai"><div class="avatar avatar-ai"><i class="fas fa-brain"></i></div><div class="message-content"><p>Xin chào! Đăng nhập để xem lại lịch sử trò chuyện và bắt đầu nhé!</p></div></div>`;
+                     return;
+                 }
                 const chatRef = doc(db, `/artifacts/${appId}/users/${currentUser.uid}/private/chatHistory`);
-                 onSnapshot(chatRef, (docSnap) => {
-                     if (docSnap.exists() && docSnap.data().messages) {
-                         chatHistory = docSnap.data().messages;
-                         geminiChatMessages.innerHTML = '';
-                         chatHistory.forEach(msg => addGeminiMessage(msg.parts[0].text, msg.role === 'model' ? 'ai' : 'user'));
-                     } else {
-                         // Start a new chat history
-                         const initialMessage = "Xin chào! Mình là HUB AI, người bạn đồng hành học tập của bạn. Bạn cần hỗ trợ gì hôm nay?";
-                         chatHistory = [{ role: "model", parts: [{text: initialMessage}]}];
-                         geminiChatMessages.innerHTML = '';
-                         addGeminiMessage(initialMessage, 'ai');
-                     }
-                 });
+                 const docSnap = await getDoc(chatRef);
+                 if (docSnap.exists() && docSnap.data().messages) {
+                     chatHistory = docSnap.data().messages;
+                     geminiChatMessages.innerHTML = '';
+                     chatHistory.forEach(msg => addGeminiMessage(msg.parts[0].text, msg.role === 'model' ? 'ai' : 'user'));
+                 } else {
+                     const initialMessage = "Xin chào! Mình là HUB AI, người bạn đồng hành học tập của bạn. Bạn cần hỗ trợ gì hôm nay?";
+                     chatHistory = [{ role: "model", parts: [{text: initialMessage}]}];
+                     geminiChatMessages.innerHTML = '';
+                     addGeminiMessage(initialMessage, 'ai');
+                     await setDoc(chatRef, { messages: chatHistory });
+                 }
             }
 
-            function addGeminiMessage(message, sender) {
+            function addGeminiMessage(message, sender, isLoading = false) {
                 if (!geminiChatMessages) return;
                 const bubbleDiv = document.createElement('div');
                 bubbleDiv.classList.add('gemini-chat-bubble', sender);
@@ -1105,7 +1197,7 @@
                 avatarDiv.classList.add('avatar');
                 if (sender === 'user') {
                     avatarDiv.classList.add('avatar-user');
-                    avatarDiv.textContent = currentUserData ? currentUserData.name.charAt(0) : 'SV';
+                    avatarDiv.textContent = currentUserData ? currentUserData.name.charAt(0).toUpperCase() : 'SV';
                 } else {
                     avatarDiv.classList.add('avatar-ai');
                     avatarDiv.innerHTML = `<i class="fas fa-brain"></i>`;
@@ -1113,36 +1205,31 @@
 
                 const messageContentDiv = document.createElement('div');
                 messageContentDiv.classList.add('message-content');
-                messageContentDiv.innerHTML = `<p>${message.replace(/\n/g, '<br>')}</p>`;
-
-                if (sender === 'user') {
-                    bubbleDiv.appendChild(messageContentDiv);
-                    bubbleDiv.appendChild(avatarDiv);
+                if (isLoading) {
+                    messageContentDiv.innerHTML = `<p class="animate-pulse">Đang suy nghĩ...</p>`;
+                    bubbleDiv.id = 'loading-bubble';
                 } else {
-                    bubbleDiv.appendChild(avatarDiv);
-                    bubbleDiv.appendChild(messageContentDiv);
+                    messageContentDiv.innerHTML = `<p>${message.replace(/\n/g, '<br>')}</p>`;
                 }
-                
+
+                bubbleDiv.append(avatarDiv, messageContentDiv);
                 geminiChatMessages.appendChild(bubbleDiv);
                 geminiChatMessages.scrollTop = geminiChatMessages.scrollHeight;
             }
             
             async function handleSendMessage() {
-                if (!currentUser) {
-                    showToast("Vui lòng đăng nhập để sử dụng chatbot.");
-                    openModal(loginModal);
-                    return;
-                }
+                if (!currentUser) { showToast("Vui lòng đăng nhập để sử dụng chatbot."); openModal(document.getElementById('login-modal')); return; }
                 const userMessage = geminiChatInput.value.trim();
                 if (!userMessage) return;
 
                 addGeminiMessage(userMessage, 'user');
                 geminiChatInput.value = '';
+                addGeminiMessage('', 'ai', true);
 
                 chatHistory.push({ role: "user", parts: [{ text: userMessage }] });
 
                 const payload = { contents: chatHistory };
-                const apiKey = ""; // Provided by Canvas environment
+                const apiKey = ""; 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
                 try {
@@ -1153,101 +1240,82 @@
                     });
                     const result = await response.json();
                     
+                    const loadingBubble = document.getElementById('loading-bubble');
+                    if (loadingBubble) loadingBubble.remove();
+                    
                     if (result.candidates && result.candidates[0]?.content?.parts[0]) {
                         const aiResponse = result.candidates[0].content.parts[0].text;
                         addGeminiMessage(aiResponse, 'ai');
                         chatHistory.push({ role: "model", parts: [{ text: aiResponse }] });
                         
-                        // Save chat history to Firestore
                         const chatRef = doc(db, `/artifacts/${appId}/users/${currentUser.uid}/private/chatHistory`);
                         await setDoc(chatRef, { messages: chatHistory });
-
                     } else {
+                         console.error("Gemini API Error Response:", result);
                         addGeminiMessage("Xin lỗi, tôi không thể tạo phản hồi lúc này.", 'ai');
                     }
                 } catch (error) {
-                    console.error("Gemini API Error:", error);
-                    addGeminiMessage("Đã có lỗi xảy ra. Vui lòng thử lại.", 'ai');
+                    console.error("Gemini API Fetch Error:", error);
+                    const loadingBubble = document.getElementById('loading-bubble');
+                    if (loadingBubble) loadingBubble.remove();
+                    addGeminiMessage("Đã có lỗi mạng xảy ra. Vui lòng kiểm tra kết nối và thử lại.", 'ai');
                 }
             }
             
             geminiSendButton.addEventListener('click', handleSendMessage);
             geminiChatInput.addEventListener('keypress', (e) => {
-                if(e.key === 'Enter' && !e.shiftKey) {
-                    e.preventDefault();
-                    handleSendMessage();
-                }
+                if(e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage(); }
             });
 
-
-            // --- STATIC & UI SCRIPT (MODALS, PAGE ROUTING, ETC.) ---
+            // --- PAGE ROUTING & UI INTERACTIONS ---
             document.getElementById('currentYear').textContent = new Date().getFullYear();
             
-            // Page Router
             const pageRouterLinks = document.querySelectorAll('.page-router-link');
-            const pageContentSections = document.querySelectorAll('.page-content-section');
+            const mainContentArea = document.getElementById('main-content-area');
             const mainNavLinks = document.querySelectorAll('header nav .nav-link');
 
             function showPage(targetPageId) {
-                pageContentSections.forEach(s => { s.classList.remove('active-page'); s.style.display = 'none'; });
+                mainContentArea.querySelectorAll('.page-content-section').forEach(s => s.style.display = 'none');
                 mainNavLinks.forEach(l => l.classList.remove('active-nav-link'));
 
                 if (targetPageId === 'home') {
                     document.getElementById('hero-section').style.display = 'block';
                     document.getElementById('features-overview').style.display = 'block';
                     document.getElementById('team-section').style.display = 'block';
-                    document.querySelector('header nav .nav-link[data-target-page="home"]').classList.add('active-nav-link');
                 } else {
                     const targetSection = document.getElementById(targetPageId);
-                    if (targetSection) {
-                        targetSection.style.display = 'block';
-                        const activeNavLink = document.querySelector(`header nav .nav-link[data-target-page="${targetPageId}"]`);
-                        if (activeNavLink) activeNavLink.classList.add('active-nav-link');
-                    } else {
-                        showPage('home'); // Fallback
-                    }
+                    if (targetSection) targetSection.style.display = 'block';
                 }
+                const activeNavLink = document.querySelector(`header nav .nav-link[data-target-page="${targetPageId}"]`);
+                if (activeNavLink) activeNavLink.classList.add('active-nav-link');
                 window.scrollTo(0,0);
             }
 
             pageRouterLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetPage = this.dataset.targetPage;
-                    if (targetPage) showPage(targetPage);
-                });
+                link.addEventListener('click', (e) => { e.preventDefault(); showPage(e.currentTarget.dataset.targetPage); });
             });
-            showPage('home'); // Initial page
-
-            // Modal Logic
+            
             const loginModal = document.getElementById('login-modal');
             const registerModal = document.getElementById('register-modal');
-            const openLoginBtn = document.getElementById('open-login-modal');
-            const closeLoginBtn = document.getElementById('close-login-modal');
             const openRegisterBtnCTA = document.getElementById('open-register-modal-cta');
-            const closeRegisterBtn = document.getElementById('close-register-modal');
             const showRegisterFromLogin = document.getElementById('show-register-from-login');
             const showLoginFromRegister = document.getElementById('show-login-from-register');
 
             function openModal(modal) { if (modal) modal.classList.add('active'); }
             function closeModal(modal) { if (modal) modal.classList.remove('active'); }
             
-            if (openLoginBtn) openLoginBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(loginModal); });
-            if (openRegisterBtnCTA) openRegisterBtnCTA.addEventListener('click', (e) => { e.preventDefault(); openModal(registerModal); });
+            document.body.addEventListener('click', e => {
+                if(e.target.id === 'open-login-modal-btn') { e.preventDefault(); openModal(loginModal); }
+            });
+            openRegisterBtnCTA.addEventListener('click', (e) => { e.preventDefault(); openModal(registerModal); });
 
-            [closeLoginBtn, closeRegisterBtn].forEach(btn => {
-                if(btn) btn.addEventListener('click', () => { closeModal(loginModal); closeModal(registerModal); });
+            [loginModal, registerModal].forEach(modal => {
+                if (modal) modal.addEventListener('click', e => { if (e.target === modal || e.target.classList.contains('modal-close-btn')) closeModal(modal); });
             });
             
             showRegisterFromLogin.addEventListener('click', (e) => { e.preventDefault(); closeModal(loginModal); openModal(registerModal); });
             showLoginFromRegister.addEventListener('click', (e) => { e.preventDefault(); closeModal(registerModal); openModal(loginModal); });
 
-            // Close modal on overlay click
-            [loginModal, registerModal].forEach(modal => {
-                if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(modal); });
-            });
-
-            // Smooth scroll for "Khám phá" button
             document.getElementById('explore-now-btn').addEventListener('click', function(e) {
                 e.preventDefault();
                 this.classList.add('magic-effect');
@@ -1256,8 +1324,42 @@
                     document.getElementById('features-overview').scrollIntoView({ behavior: 'smooth' });
                 }, 800);
             });
+            
+            const newsTabsMenu = document.querySelector('.news-events-tabs-menu');
+            const newsContentPanes = document.querySelectorAll('.news-event-content-pane');
+            newsTabsMenu.addEventListener('click', (e) => {
+                if (e.target && e.target.classList.contains('news-event-tab-button')) {
+                    newsTabsMenu.querySelector('.active-news-tab').classList.remove('active-news-tab');
+                    e.target.classList.add('active-news-tab');
+                    const targetId = e.target.dataset.target;
+                    newsContentPanes.forEach(pane => pane.classList.toggle('active', pane.id === targetId));
+                }
+            });
 
-             // Three.js Hero Animation
+            function setupFilter(tabContainerId, gridId, data) {
+                 const filterTabs = document.getElementById(tabContainerId);
+                 if(!filterTabs) return;
+                 filterTabs.addEventListener('click', (e) => {
+                     if (e.target.classList.contains('filter-tab-item')) {
+                         filterTabs.querySelector('.active-tab').classList.remove('active-tab');
+                         e.target.classList.add('active-tab');
+                         const filter = e.target.dataset.filter;
+                         const filteredData = (filter === 'all') ? data : data.filter(item => item.category === filter);
+                         if(gridId === 'product-grid') renderMarketplace(filteredData);
+                         if(gridId === 'document-grid') renderLibrary(filteredData);
+                     }
+                 });
+            }
+            setupFilter('marketplace-filter-tabs', 'product-grid', mockProducts);
+            setupFilter('library-filter-tabs', 'document-grid', mockDocuments);
+
+            // --- INITIAL RENDER CALLS ---
+            renderMarketplace(mockProducts);
+            renderLibrary(mockDocuments);
+            renderSocialFeed(mockPosts);
+            showPage('home');
+
+            // Three.js Hero Animation
             const heroSection = document.querySelector('.hero-section');
             const canvas = document.getElementById('hero-3d-canvas');
             if (heroSection && canvas && typeof THREE !== 'undefined') {
@@ -1269,10 +1371,7 @@
 
                 const starVertices = [];
                 for (let i = 0; i < 5000; i++) {
-                    const x = (Math.random() - 0.5) * 2000;
-                    const y = (Math.random() - 0.5) * 2000;
-                    const z = (Math.random() - 0.5) * 2000;
-                    starVertices.push(x, y, z);
+                    starVertices.push((Math.random() - 0.5) * 2000, (Math.random() - 0.5) * 2000, (Math.random() - 0.5) * 2000);
                 }
                 const starGeometry = new THREE.BufferGeometry();
                 starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
@@ -1281,7 +1380,7 @@
                 scene.add(stars);
                 camera.position.z = 5;
 
-                function animate() {
+                const animate = () => {
                     requestAnimationFrame(animate);
                     stars.rotation.x += 0.0001;
                     stars.rotation.y += 0.0002;
