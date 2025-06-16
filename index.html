@@ -126,6 +126,9 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid #e0e0e0;
         }
+        .team-card {
+            cursor: pointer;
+        }
         .feature-card:hover, .product-card:hover, .document-card:hover, .event-card:hover, .post-card:hover, .team-card:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
@@ -147,17 +150,30 @@
 
         /* Team Section Styles */
         #team-section {
-            background: #0f172a; /* Dark blue, almost black */
-            background-image: radial-gradient(circle at 10% 10%, rgba(147, 51, 234, 0.15) 0%, transparent 40%),
-                              radial-gradient(circle at 80% 90%, rgba(59, 130, 246, 0.15) 0%, transparent 40%);
+            background: #000000;
+            position: relative;
+            overflow: hidden;
+        }
+        .team-section-content {
+            position: relative;
+            z-index: 2;
+        }
+        #team-3d-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
         .team-card {
-            background-color: #1e293b; /* Darker card background */
+            background-color: rgba(30, 41, 59, 0.8); /* Darker card background with transparency */
             border: 1px solid #334155;
             text-align: center;
             padding: 2rem;
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(5px);
         }
         .team-card:hover .team-avatar-container::before {
              animation: spin 6s linear infinite;
@@ -194,8 +210,8 @@
         /* Unique planet glows */
         #team-hoai .team-avatar-container::before { background: radial-gradient(circle, #f43f5e, transparent 70%); }
         #team-duyen .team-avatar-container::before { background: radial-gradient(circle, #38bdf8, transparent 70%); }
-        #team-tran .team-avatar-container::before { background: radial-gradient(circle, #34d399, transparent 70%); }
-        #team-ngan .team-avatar-container::before { background: radial-gradient(circle, #facc15, transparent 70%); }
+        #team-ngan .team-avatar-container::before { background: radial-gradient(circle, #4ade80, transparent 70%); } /* Green for Web Ops */
+        #team-tran .team-avatar-container::before { background: radial-gradient(circle, #facc15, transparent 70%); } /* Yellow for Design */
         #team-huong .team-avatar-container::before { background: radial-gradient(circle, #a78bfa, transparent 70%); }
 
         .team-name {
@@ -214,8 +230,8 @@
         /* Role-specific colors */
         #team-hoai .team-role { color: #fb7185; } /* Rose */
         #team-duyen .team-role { color: #60a5fa; } /* Blue */
-        #team-tran .team-role { color: #4ade80; } /* Green */
-        #team-ngan .team-role { color: #fde047; } /* Yellow */
+        #team-tran .team-role { color: #fde047; } /* Yellow for Design */
+        #team-ngan .team-role { color: #4ade80; } /* Green for Web Ops */
         #team-huong .team-role { color: #c4b5fd; } /* Violet */
 
         @keyframes spin {
@@ -327,6 +343,13 @@
         .notification-toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: #2d3748; color: white; padding: 12px 24px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 2000; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; }
         .notification-toast.show { opacity: 1; visibility: visible; transform: translate(-50%, -10px); }
         
+        /* Team Letter Modal */
+        #team-letter-modal .modal-content { max-width: 600px; background: #fffcf2; }
+        #team-letter-modal .letter-header { display: flex; align-items: center; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px dashed #ccc; }
+        #team-letter-modal .letter-header img { width: 80px; height: 80px; }
+        #team-letter-modal .letter-header h3 { font-size: 1.75rem; color: #333; }
+        #team-letter-modal .letter-body { font-family: 'Quicksand', sans-serif; font-size: 1.1rem; }
+
         /* Page simulation */
         .page-content-section { display: none; }
         .page-content-section.active-page { display: block; }
@@ -376,16 +399,18 @@
 
         <!-- TEAM SECTION -->
         <section id="team-section" class="py-16 md:py-24 page-content-section active-page">
-            <div class="container mx-auto px-6">
+            <div class="team-section-content container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 section-title text-white" style="border-color: #38bdf8;">Phi Hành Đoàn HUBverse</h2>
+                <p class="text-center text-slate-300 mb-12 md:mb-20 max-w-2xl mx-auto text-lg">Chúng mình là những sinh viên HUB bình thường, với một ước mơ không-bình-thường: tạo ra một không gian số 'của nhà trồng được' dành riêng cho cộng đồng HUBers. Mỗi thành viên là một mảnh ghép, cùng nhau chèo lái con tàu HUBverse với một chút code, một chút sáng tạo và rất nhiều đam mê. Hãy làm quen với tụi mình nhé!</p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mt-20">
-                    <div id="team-hoai" class="team-card"><div class="team-avatar-container"><img src="https://placehold.co/150x150/fecaca/991b1b?text=H" alt="Lê Hồng Hoài" class="team-avatar"></div><h3 class="team-name">Lê Hồng Hoài</h3><p class="team-role">COO</p></div>
-                    <div id="team-duyen" class="team-card"><div class="team-avatar-container"><img src="https://placehold.co/150x150/bae6fd/0c4a6e?text=D" alt="Đỗ Trần Mỹ Duyên" class="team-avatar"></div><h3 class="team-name">Đỗ Trần Mỹ Duyên</h3><p class="team-role">Head of Marketing</p></div>
-                    <div id="team-tran" class="team-card"><div class="team-avatar-container"><img src="https://placehold.co/150x150/bbf7d0/14532d?text=T" alt="Nguyễn Thị Bảo Trân" class="team-avatar"></div><h3 class="team-name">Nguyễn Thị Bảo Trân</h3><p class="team-role">Web Operations Manager</p></div>
-                    <div id="team-ngan" class="team-card"><div class="team-avatar-container"><img src="https://placehold.co/150x150/fef08a/854d0e?text=N" alt="Trần Thiên Ngân" class="team-avatar"></div><h3 class="team-name">Trần Thiên Ngân</h3><p class="team-role">Creative Design Director</p></div>
-                    <div id="team-huong" class="team-card"><div class="team-avatar-container"><img src="https://placehold.co/150x150/ddd6fe/5b21b6?text=H" alt="Nguyễn Thị Kim Hường" class="team-avatar"></div><h3 class="team-name">Nguyễn Thị Kim Hường</h3><p class="team-role">Content Strategist</p></div>
+                    <div id="team-hoai" class="team-card" data-name="Lê Hồng Hoài" data-role="COO" data-color="#fb7185" data-avatar="https://placehold.co/150x150/fecaca/991b1b?text=H" data-message="Coucou, mình là Hồng Hoài – một sinh viên năm 2 ngành Kinh doanh số tại Trường Đại học Ngân hàng TP.HCM, đồng thời là COO của “chiếc web” thú vị này . Là một người luôn khao khát phát triển bản thân và yêu thích việc học hỏi, mình đặc biệt quan tâm đến việc làm sao để các bạn sinh viên có thể tiếp cận kiến thức một cách dễ dàng, hiệu quả và kết nối với nhau nhiều hơn trong khoảng thời gian đại học quý giá này!<br><br>Xuất phát từ chính nhu cầu thực tế khi đi học – khi việc tìm kiếm tài liệu học tập, chia sẻ kinh nghiệm hay kết nối với bạn bè trong trường còn khá rời rạc và thiếu hệ thống – mình đã cùng một số bạn xây dựng HUBverse một trang web hỗ trợ sinh viên Ngân hàng dễ dàng tiếp cận với tài liệu học tập, chia sẻ thông tin và tạo nên một cộng đồng sinh viên năng động, gắn kết hơn."><div class="team-avatar-container"><img src="https://placehold.co/150x150/fecaca/991b1b?text=H" alt="Lê Hồng Hoài" class="team-avatar"></div><h3 class="team-name">Lê Hồng Hoài</h3><p class="team-role">COO</p></div>
+                    <div id="team-duyen" class="team-card" data-name="Đỗ Trần Mỹ Duyên" data-role="Head of Marketing" data-color="#60a5fa" data-avatar="https://placehold.co/150x150/bae6fd/0c4a6e?text=D" data-message="Hii, mình là Đỗ Trần Mỹ Duyên – sinh viên năm 2 ngành Kinh tế và Kinh doanh số tại Đại học Ngân hàng TP.HCM, hiện giữ vai trò Head of Marketing tại HUBverse.<br><br>Marketing chọn mình vì mình không thể ngồi yên khi thấy một ý tưởng hay chưa được kể đúng cách, và càng không thể làm ngơ trước cộng đồng sinh viên còn thiếu sự kết nối. Đó cũng là lý do mình đồng hành cùng HUBverse – một “vũ trụ sinh viên” giúp sinh viên HUB dễ dàng tìm tài liệu, kết nối bạn bè trong một hệ sinh thái gần gũi và chuẩn Gen Z.<br><br>Trong vai trò hiện tại, mình không chỉ làm truyền thông hay nội dung, mà là người kể câu chuyện của HUBverse – đưa những tiện ích nhỏ bé đến gần hơn với từng bạn sinh viên, bằng sự chỉn chu, sáng tạo và chất riêng.<br><br>HUBverse là nơi mình phát triển, trưởng thành và sống đúng với đam mê. Hành trình còn dài, và mình mong được gặp các bạn ở những chiến dịch bùng nổ tiếp theo!"><div class="team-avatar-container"><img src="https://placehold.co/150x150/bae6fd/0c4a6e?text=D" alt="Đỗ Trần Mỹ Duyên" class="team-avatar"></div><h3 class="team-name">Đỗ Trần Mỹ Duyên</h3><p class="team-role">Head of Marketing</p></div>
+                    <div id="team-ngan" class="team-card" data-name="Trần Thiên Ngân" data-role="Web Operations Manager" data-color="#4ade80" data-avatar="https://placehold.co/150x150/fef08a/854d0e?text=N" data-message="🎧 Chào bạn, mình là Ngân – người đứng sau những dòng code, tính năng và... vài lần web “chập chờn” của HUBverse.<br><br>Mình không phải siêu nhân công nghệ, mình là một người sinh viên như bạn – cũng từng loay hoay giữa việc học, làm, deadline, và cảm giác lạc lõng giữa một trường đại học đông người.<br><br>Thế nên mình (và cả team nữa) đã tạo ra HUBverse – không phải là một website cho vui, mà là một nơi để bạn có thể tìm thấy một góc nhỏ cho chính mình giữa không gian số của Đại học Ngân Hàng. Mình biết, web không hoàn hảo. Có lúc nó sẽ chậm, có khi nút bấm không nghe lời. Nhưng mình hứa là từng dòng code mình viết, từng tính năng được thêm vào – đều là để bạn có một nơi phù hợp thuộc về mình, vừa giúp bạn sáng tạo, phát triển lại vừa mở rộng thêm &quot;safe zone&quot; của chính mình, kết nối với nhiều HUBers khác. <br><br>Cảm ơn vì bạn đã ở đây. Bây giờ thì...<br>Đăng nhập đi, vũ trụ đang chờ bạn làm điều gì đó hay ho!"><div class="team-avatar-container"><img src="https://placehold.co/150x150/fef08a/854d0e?text=N" alt="Trần Thiên Ngân" class="team-avatar"></div><h3 class="team-name">Trần Thiên Ngân</h3><p class="team-role">Web Operations Manager</p></div>
+                    <div id="team-tran" class="team-card" data-name="Nguyễn Thị Bảo Trân" data-role="Creative Design Director" data-color="#fde047" data-avatar="https://placehold.co/150x150/bbf7d0/14532d?text=T" data-message="Dear loverss,<br>Mình là Bảo Trân Nguyễn, vừa lên chức Creative Design Director – người đứng sau những ý tưởng thị giác và trải nghiệm sáng tạo của trang web học tập dành cho trường mình.<br><br>Trang web này được bọn mình xây dựng với 4 trụ cột chính: Tài liệu học tập; AI chat box; Hoạt động ngoại khóa và Kết bạn bốn phương.<br>Bọn mình tin rằng: Clarity is Power – sự rõ ràng là sức mạnh, không lo lơ ngơ vì đã có Hubverse.<br><br>A little bit about me: Mê thiên nhiên, động vật và những điều giản dị. Mình thích chạy nhảy, đôi lúc năng lượng hơi cao Và mình thích single vì chưa eo ai hẹ hẹ.<br><br>Rất vui được đồng hành cùng các bạn trên hành trình học tập đầy cảm hứng này!<br>Cheers!"><div class="team-avatar-container"><img src="https://placehold.co/150x150/bbf7d0/14532d?text=T" alt="Nguyễn Thị Bảo Trân" class="team-avatar"></div><h3 class="team-name">Nguyễn Thị Bảo Trân</h3><p class="team-role">Creative Design Director</p></div>
+                    <div id="team-huong" class="team-card" data-name="Nguyễn Thị Kim Hường" data-role="Content Strategist" data-color="#c4b5fd" data-avatar="https://placehold.co/150x150/ddd6fe/5b21b6?text=H" data-message="Chào bạn, mình là Hường - cô gái chuyên “dệt mộng” giữa thế giới kinh tế số!<br><br>Tên đầy đủ là Nguyễn Thị Kim Hường, sinh viên năm hai ngành Kinh tế Quốc tế của Trường Đại học Ngân hàng TP.HCM. Nhưng nếu bạn hỏi mình là ai, mình sẽ nói: “Mình là người đã biến những ngày chật vật năm nhất thành động lực để tạo ra điều gì đó có ích cho cả một cộng đồng sinh viên.”<br><br>Ngày ấy, giữa hàng chồng slide và bài giảng tưởng chừng không bao giờ hết, mình nhận ra không chỉ riêng mình cảm thấy bối rối. Thế là HUBver ra đời – một góc nhỏ trên mạng, nơi mình đóng vai content strategist, vừa chia sẻ kinh nghiệm học tập, vừa truyền cảm hứng cho những ai đang loay hoay với hành trình đại học.<br><br>Mình tin rằng học tập không chỉ là chinh phục kiến thức, mà còn là hành trình tìm thấy chính mình, theo cách thật riêng và đầy cảm hứng."><div class="team-avatar-container"><img src="https://placehold.co/150x150/ddd6fe/5b21b6?text=H" alt="Nguyễn Thị Kim Hường" class="team-avatar"></div><h3 class="team-name">Nguyễn Thị Kim Hường</h3><p class="team-role">Content Strategist</p></div>
                 </div>
             </div>
+            <canvas id="team-3d-canvas"></canvas>
         </section>
 
         <!-- OTHER PAGES (MARKETPLACE, LIBRARY, ETC.) -->
@@ -440,7 +465,7 @@
                  <div class="gemini-chat-container">
                      <div id="gemini-chat-messages" class="gemini-chat-messages"></div>
                      <div class="mt-4">
-                        <div id="ai-question-limit" class="hidden"><p>Số lượt hỏi còn lại: <span id="question-limit-count">3</span>. <a href="#" id="login-for-more" class="text-indigo-600 hover:underline">Đăng nhập</a> để hỏi không giới hạn.</p></div>
+                        <div id="ai-question-limit" class="hidden"><p>Bạn có <strong><span id="question-limit-count">3</span></strong> lượt hỏi thử. <a href="#" id="login-for-more" class="text-indigo-600 font-semibold hover:underline">Đăng nhập</a> để hỏi không giới hạn.</p></div>
                         <div class="gemini-chat-input-area"><input type="text" id="gemini-chat-input" placeholder="Nhắn tin cho HUB AI..." class="gemini-chat-input"><button id="gemini-send-button" class="gemini-send-button"><i class="fas fa-paper-plane"></i></button></div>
                      </div>
                  </div>
@@ -448,14 +473,24 @@
         </section>
         <section id="social-networking" class="py-16 md:py-24 bg-pink-50 page-content-section">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title" style="border-color: #ec4899;">HUB Connection</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                    <aside class="lg:col-span-3 lg:order-1 order-2 space-y-6" id="social-friends-sidebar"></aside>
-                    <div class="lg:col-span-6 lg:order-2 order-1 space-y-6">
-                         <div id="new-post-box" class="bg-white p-4 rounded-lg shadow hidden"></div>
-                         <div id="social-feed-container"></div>
+                <div id="social-guest-view" class="hidden">
+                    <div class="text-center bg-white p-12 rounded-xl shadow-lg">
+                        <i class="fas fa-users-slash text-6xl text-pink-300 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Kết Nối Cùng Cộng Đồng HUBverse</h3>
+                        <p class="text-gray-600 mb-6">Đăng nhập để xem bài viết từ bạn bè, chia sẻ khoảnh khắc và nhắn tin nhé!</p>
+                        <button id="login-from-social-prompt" class="btn-login bg-pink-500 hover:bg-pink-600">Đăng Nhập / Đăng Ký</button>
                     </div>
-                    <aside class="lg:col-span-3 lg:order-3 order-3 space-y-6" id="social-profile-sidebar"></aside>
+                </div>
+                <div id="social-user-view" class="hidden">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title" style="border-color: #ec4899;">HUB Connection</h2>
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        <aside class="lg:col-span-3 lg:order-1 order-2 space-y-6" id="social-friends-sidebar"></aside>
+                        <div class="lg:col-span-6 lg:order-2 order-1 space-y-6">
+                            <div id="new-post-box" class="bg-white p-4 rounded-lg shadow hidden"></div>
+                            <div id="social-feed-container"></div>
+                        </div>
+                        <aside class="lg:col-span-3 lg:order-3 order-3 space-y-6" id="social-profile-sidebar"></aside>
+                    </div>
                 </div>
             </div>
         </section>
@@ -481,6 +516,21 @@
     </div>
     <div id="notification-toast" class="notification-toast"></div>
     <div id="chat-boxes-container" class="fixed bottom-0 right-4 space-x-4 z-[1001] flex items-end"></div>
+    <div id="team-letter-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 600px; background: #fffcf2;">
+            <button id="close-letter-modal" class="modal-close-btn">&times;</button>
+            <div class="letter-header flex items-center gap-4 pb-4 border-b border-dashed border-gray-300">
+                <img id="letter-avatar" src="" alt="Avatar" class="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md">
+                <div>
+                    <h3 id="letter-name" class="text-2xl font-bold text-gray-800" style="font-family: 'Quicksand', sans-serif;"></h3>
+                    <p id="letter-role" class="font-semibold" style="font-family: 'Poppins', sans-serif;"></p>
+                </div>
+            </div>
+            <div id="letter-body" class="mt-6 text-gray-700 leading-relaxed" style="font-family: 'Quicksand', sans-serif; font-size: 1.1rem;">
+                <!-- Dynamic content goes here -->
+            </div>
+        </div>
+    </div>
 
     <script type="module">
         // Firebase Imports
@@ -527,8 +577,8 @@
                 { id: 'post5', authorName: 'Boss Hoài', authorUsername: 'le.hong.hoai', authorAvatar: 'https://placehold.co/40x40/fecaca/991b1b?text=H', caption: 'Thông báo: Ai là chủ nhân của con mèo tam thể đang ngủ trong phòng họp ban điều hành? Deadline đang dí mà nó nằm đó sao tôi làm việc?', imageUrl: 'https://placehold.co/600x400/fecaca/991b1b?text=Mèo+Tìm+Chủ', location: 'Văn phòng HUBverse', likes: 555 },
                 { id: 'post6', authorName: 'Kim Hường', authorUsername: 'kim.huong.content', authorAvatar: 'https://placehold.co/40x40/ddd6fe/5b21b6?text=H', caption: 'Sau 7749 lần nghĩ caption, mình quyết định... không nghĩ nữa. Mọi người tự xem ảnh và cảm nhận nhé. #cạn_ý_tưởng', imageUrl: 'https://placehold.co/600x400/ddd6fe/5b21b6?text=Hết+chất+xám', location: 'Quán cà phê quen', likes: 123 },
                 { id: 'post7', authorName: 'Duyên dáng', authorUsername: 'my.duyen.mkt', authorAvatar: 'https://placehold.co/40x40/bae6fd/0c4a6e?text=D', caption: 'Chạy quảng cáo cho HUBverse tốn bao nhiêu không biết, chứ một ly trà sữa cho team mỗi ngày là có thật. #worklifebalance', imageUrl: 'https://placehold.co/600x400/bae6fd/0c4a6e?text=Trà+Sữa+Marketing', location: 'Trà sữa Ông Thọ', likes: 456 },
-                { id: 'post8', authorName: 'Báo Trân', authorUsername: 'bao.tran.web', authorAvatar: 'https://placehold.co/40x40/bbf7d0/14532d?text=T', caption: 'Fix xong cái bug thứ 100 trong ngày. Tóc rụng hết rồi, ai có địa chỉ bán tóc giả uy tín không?', imageUrl: 'https://placehold.co/600x400/bbf7d0/14532d?text=Code+Bay+Màu', location: 'Một nơi tăm tối', likes: 789 },
-                { id: 'post9', authorName: 'Thiên Ngân', authorUsername: 'nganana23', authorAvatar: 'https://placehold.co/40x40/fef08a/854d0e?text=N', caption: 'Chụp ảnh "sống ảo" tại thư viện. Xin thề là mình có đọc sách, không phải chỉ vào để chụp ảnh đâu nha. #studygram', imageUrl: 'https://placehold.co/600x400/fef08a/854d0e?text=Sống+ảo+tri+thức', location: 'Thư viện HUB', likes: 1024 },
+                { id: 'post9', authorName: 'Báo Trân', authorUsername: 'bao.tran.web', authorAvatar: 'https://placehold.co/40x40/bbf7d0/14532d?text=T', caption: 'Chụp ảnh "sống ảo" tại thư viện. Xin thề là mình có đọc sách, không phải chỉ vào để chụp ảnh đâu nha. #studygram', imageUrl: 'https://placehold.co/600x400/fef08a/854d0e?text=Sống+ảo+tri+thức', location: 'Thư viện HUB', likes: 1024 },
+                { id: 'post8', authorName: 'Thiên Ngân', authorUsername: 'nganana23', authorAvatar: 'https://placehold.co/40x40/fef08a/854d0e?text=N', caption: 'Fix xong cái bug thứ 100 trong ngày. Tóc rụng hết rồi, ai có địa chỉ bán tóc giả uy tín không?', imageUrl: 'https://placehold.co/600x400/bbf7d0/14532d?text=Code+Bay+Màu', location: 'Một nơi tăm tối', likes: 789 },
                 { id: 'post1', authorName: 'Phước Nguyễn', authorUsername: 'phuoc.nguyen', authorAvatar: 'https://placehold.co/40x40/dbeafe/1e40af?text=P', caption: 'Trà đá cổng sau cơ sở Hoàng Diệu 2 vẫn là chân ái mọi người ạ. 3k một ly, chỗ ngồi "view" triệu đô nhìn dòng người hối hả.', location: 'Thủ Đức, TP.HCM', likes: 102 },
                 { id: 'post2', authorName: 'Minh Anh', authorUsername: 'minhanh.hub', authorAvatar: 'https://placehold.co/40x40/fce7f3/9d174d?text=M', caption: 'Điểm danh team K20 chuẩn bị chạy deadline ngập mặt nào :)) Ai có bí kíp qua môn Tư tưởng không chia sẻ với...', imageUrl: 'https://placehold.co/600x400/FFF7ED/C2410C?text=Deadline', location: 'Thư viện HUB', likes: 256 },
                 { id: 'post3', authorName: 'Bảo Trân Foodie', authorUsername: 'baotran.foodie', authorAvatar: 'https://placehold.co/40x40/ecfdf5/047857?text=B', caption: 'Mới phát hiện quán bún đậu mắm tôm gần cơ sở Hàm Nghi siêu đỉnh, đầy đặn mà có 45 cành. Ai cần review chi tiết không?', location: 'Quận 1, TP.HCM', likes: 312 },
@@ -565,7 +615,6 @@
             }
             
             onAuthStateChanged(auth, async (user) => {
-                const aiQuestionLimitEl = document.getElementById('ai-question-limit');
                 if (user && !user.isAnonymous) {
                     currentUser = user;
                     // Prevent demo user from being overwritten by auth state
@@ -579,37 +628,35 @@
                         
                         if (userDocSnap.exists()) {
                             currentUserData = { id: user.uid, ...userDocSnap.data() };
-                            updateUIAfterLogin();
-                            loadDynamicContent();
-                            if(aiQuestionLimitEl) aiQuestionLimitEl.classList.add('hidden');
                         } else {
                             console.warn(`User doc for ${user.uid} not found immediately after auth change. This can happen on registration.`);
                         }
-                    } else {
-                        // Demo user is active, just update UI
-                        updateUIAfterLogin();
-                        loadDynamicContent();
-                        if(aiQuestionLimitEl) aiQuestionLimitEl.classList.add('hidden');
                     }
-
+                    updateUIAfterLogin();
+                    loadDynamicContentForUser();
                 } else { // User is null, anonymous, or logged out
                     currentUser = null;
                     currentUserData = null;
                     updateUIAfterLogout();
-                    loadDynamicContent();
-
-                    if(aiQuestionLimitEl) {
-                        aiQuestionLimitEl.classList.remove('hidden');
-                        document.getElementById('question-limit-count').textContent = guestQuestionCount;
-                    }
-                    document.getElementById('chat-boxes-container').innerHTML = ''; // Clear chat boxes on logout
+                    loadDynamicContentForGuest();
                 }
             });
             
-            function loadDynamicContent() {
+            function loadDynamicContentForUser() {
+                document.getElementById('social-guest-view').classList.add('hidden');
+                document.getElementById('social-user-view').classList.remove('hidden');
+                document.getElementById('ai-question-limit').classList.add('hidden');
                 renderSocialFeed(mockPosts.sort((a, b) => (b.likes || 0) - (a.likes || 0)));
                 renderSocialSidebars();
                 loadChatHistory();
+            }
+
+            function loadDynamicContentForGuest() {
+                document.getElementById('social-user-view').classList.add('hidden');
+                document.getElementById('social-guest-view').classList.remove('hidden');
+                document.getElementById('ai-question-limit').classList.remove('hidden');
+                document.getElementById('question-limit-count').textContent = guestQuestionCount;
+                loadChatHistory(); // Will show guest prompt
             }
 
             document.getElementById('login-form').addEventListener('submit', async (e) => {
@@ -622,7 +669,7 @@
                 if (email === 'nganana23@gmail.com' && password === '12345678') {
                     currentUserData = { id: 'demo-user-ngan', name: 'Thiên Ngân', username: 'nganana23', email: 'nganana23@gmail.com', avatar: 'https://placehold.co/40x40/fef08a/854d0e?text=N', friends: demoUserFriends, conversations: demoUserConversations, savedPosts: ['post8', 'post2'], likedPosts: ['post9', 'post8', 'post7']};
                     updateUIAfterLogin();
-                    loadDynamicContent();
+                    loadDynamicContentForUser();
                     closeModal(document.getElementById('login-modal'));
                     showToast("Đăng nhập thành công với tài khoản Demo!");
                     return;
@@ -747,8 +794,7 @@
                 const container = document.getElementById('social-friends-sidebar');
                 if(!container) return;
                 if (!currentUserData) {
-                    container.innerHTML = `<div class="bg-white p-5 rounded-lg shadow border text-center"><p class="text-sm text-gray-600">Vui lòng <a href="#" id="login-from-friends-list" class="text-indigo-600 font-semibold hover:underline">đăng nhập</a> để kết nối bạn bè.</p></div>`;
-                    document.getElementById('login-from-friends-list').addEventListener('click', (e) => { e.preventDefault(); openModal(document.getElementById('login-modal')); });
+                    container.innerHTML = "";
                     return;
                 }
                 
@@ -786,8 +832,60 @@
             // --- AI CHATBOT LOGIC ---
             const geminiChatInput = document.getElementById('gemini-chat-input');
             const geminiSendButton = document.getElementById('gemini-send-button');
-            async function loadChatHistory() { /* ... unchanged ... */ }
-            function addGeminiMessage(message, sender, isLoading = false) { /* ... unchanged ... */ }
+            let chatHistory = [];
+            const systemInstruction = {
+                role: "system",
+                parts: [{ text: "You are a friendly and helpful study assistant for students at HUB (Ho Chi Minh City University of Banking). Be encouraging, provide clear explanations for academic questions, and keep a positive tone. Your name is HUB AI." }]
+            };
+
+            async function loadChatHistory() {
+                 const initialMessage = "Xin chào! Mình là HUB AI, người bạn đồng hành học tập của bạn. Bạn cần hỗ trợ gì hôm nay?";
+                 const welcomeMessage = { role: "model", parts: [{text: initialMessage}] };
+                 
+                 chatHistory = [welcomeMessage]; // Reset history for display
+                 
+                 if (currentUserData) {
+                    const chatRef = doc(db, `/artifacts/${appId}/users/${currentUserData.id}/private/chatHistory`);
+                    const docSnap = await getDoc(chatRef);
+                    if (docSnap.exists() && docSnap.data().messages) {
+                        chatHistory = docSnap.data().messages;
+                    } else {
+                        await setDoc(chatRef, { messages: chatHistory });
+                    }
+                 }
+
+                 const geminiChatMessages = document.getElementById('gemini-chat-messages');
+                 if(geminiChatMessages) {
+                    geminiChatMessages.innerHTML = '';
+                    chatHistory.forEach(msg => addGeminiMessage(msg.parts[0].text, msg.role));
+                 }
+            }
+            function addGeminiMessage(message, sender, isLoading = false) {
+                const geminiChatMessages = document.getElementById('gemini-chat-messages');
+                if (!geminiChatMessages) return;
+                const bubbleDiv = document.createElement('div');
+                const senderClass = sender === 'model' ? 'ai' : 'user';
+                bubbleDiv.classList.add('gemini-chat-bubble', senderClass);
+
+                const avatarDiv = document.createElement('div');
+                avatarDiv.classList.add('avatar');
+                if (senderClass === 'user') {
+                    avatarDiv.classList.add('avatar-user');
+                    avatarDiv.textContent = currentUserData ? currentUserData.name.charAt(0).toUpperCase() : 'B';
+                } else {
+                    avatarDiv.classList.add('avatar-ai');
+                    avatarDiv.innerHTML = `<i class="fas fa-brain"></i>`;
+                }
+
+                const messageContentDiv = document.createElement('div');
+                messageContentDiv.classList.add('message-content');
+                messageContentDiv.innerHTML = isLoading ? `<p class="animate-pulse">Đang suy nghĩ...</p>` : `<p>${message.replace(/\n/g, '<br>')}</p>`;
+                if (isLoading) bubbleDiv.id = 'loading-bubble';
+                
+                bubbleDiv.append(avatarDiv, messageContentDiv);
+                geminiChatMessages.appendChild(bubbleDiv);
+                geminiChatMessages.scrollTop = geminiChatMessages.scrollHeight;
+            }
             async function handleSendMessage() {
                 const isGuest = !currentUserData;
                 if (isGuest && guestQuestionCount <= 0) {
@@ -797,26 +895,45 @@
                 }
                 const userMessage = geminiChatInput.value.trim();
                 if (!userMessage) return;
+
                 addGeminiMessage(userMessage, 'user');
                 geminiChatInput.value = '';
-                addGeminiMessage('', 'ai', true);
-                if(isGuest) { guestQuestionCount--; document.getElementById('question-limit-count').textContent = guestQuestionCount; }
-                const payload = { contents: [{ role: "user", parts: [{ text: userMessage }] }] };
+                addGeminiMessage('', 'model', true); // Show loading indicator
+
+                if(isGuest) {
+                    guestQuestionCount--;
+                    document.getElementById('question-limit-count').textContent = guestQuestionCount;
+                }
+
+                // Add system instruction to the beginning of the payload
+                const currentConversation = [systemInstruction, ...chatHistory, { role: "user", parts: [{ text: userMessage }] }];
+                const payload = { contents: currentConversation };
                 const apiKey = ""; 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                
                 try {
                     const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
                     const result = await response.json();
-                    const loadingBubble = document.getElementById('loading-bubble');
-                    if (loadingBubble) loadingBubble.remove();
+                    
+                    document.getElementById('loading-bubble')?.remove();
+
                     if (result.candidates && result.candidates[0]?.content?.parts[0]) {
-                        addGeminiMessage(result.candidates[0].content.parts[0].text, 'ai');
-                    } else { addGeminiMessage("Xin lỗi, tôi không thể tạo phản hồi lúc này.", 'ai'); }
+                        const aiResponse = result.candidates[0].content.parts[0].text;
+                        addGeminiMessage(aiResponse, 'model');
+                        chatHistory.push({ role: "user", parts: [{ text: userMessage }] });
+                        chatHistory.push({ role: "model", parts: [{ text: aiResponse }] });
+                        if (!isGuest) {
+                            const chatRef = doc(db, `/artifacts/${appId}/users/${currentUserData.id}/private/chatHistory`);
+                            await setDoc(chatRef, { messages: chatHistory });
+                        }
+                    } else { 
+                        console.error("Gemini API Error Response:", result);
+                        addGeminiMessage("Xin lỗi, tôi không thể tạo phản hồi lúc này.", 'model'); 
+                    }
                 } catch (error) {
-                    console.error("Gemini API Error:", error);
-                    const loadingBubble = document.getElementById('loading-bubble');
-                    if (loadingBubble) loadingBubble.remove();
-                    addGeminiMessage("Đã có lỗi mạng. Vui lòng thử lại.", 'ai');
+                    console.error("Gemini API Fetch Error:", error);
+                    document.getElementById('loading-bubble')?.remove();
+                    addGeminiMessage("Đã có lỗi mạng. Vui lòng thử lại.", 'model');
                 }
             }
             if (geminiSendButton) geminiSendButton.addEventListener('click', handleSendMessage);
@@ -846,10 +963,11 @@
             document.getElementById('currentYear').textContent = new Date().getFullYear();
             const pageRouterLinks = document.querySelectorAll('.page-router-link');
             const mainContentArea = document.getElementById('main-content-area');
+            const pageSections = document.querySelectorAll('.page-content-section');
             const navLinks = document.querySelectorAll('header nav .nav-link');
 
             function showPage(targetPageId) {
-                mainContentArea.querySelectorAll('.page-content-section').forEach(s => s.classList.remove('active-page'));
+                pageSections.forEach(s => s.classList.remove('active-page'));
                 navLinks.forEach(l => l.classList.remove('active-nav-link'));
 
                 if (targetPageId === 'home') {
@@ -861,7 +979,7 @@
                     if (targetSection) {
                         targetSection.classList.add('active-page');
                     } else {
-                         // Fallback to home if target doesn't exist
+                        // Fallback to home if target doesn't exist
                         document.getElementById('hero-section').classList.add('active-page');
                         document.getElementById('features-overview').classList.add('active-page');
                         document.getElementById('team-section').classList.add('active-page');
@@ -879,7 +997,11 @@
             function closeModal(modal) { if (modal) modal.classList.remove('active'); }
             document.body.addEventListener('click', e => { if(e.target.id === 'open-login-modal-btn') { e.preventDefault(); openModal(document.getElementById('login-modal')); } });
             document.getElementById('open-register-modal-cta').addEventListener('click', (e) => { e.preventDefault(); openModal(document.getElementById('register-modal')); });
-            [document.getElementById('login-modal'), document.getElementById('register-modal')].forEach(modal => { if (modal) modal.addEventListener('click', e => { if (e.target === modal || e.target.classList.contains('modal-close-btn')) closeModal(modal); }); });
+            document.getElementById('login-from-social-prompt')?.addEventListener('click', (e) => { e.preventDefault(); openModal(document.getElementById('login-modal')); });
+
+            [document.getElementById('login-modal'), document.getElementById('register-modal'), document.getElementById('team-letter-modal')].forEach(modal => { 
+                if (modal) modal.addEventListener('click', e => { if (e.target === modal || e.target.classList.contains('modal-close-btn')) closeModal(modal); }); 
+            });
             document.getElementById('show-register-from-login').addEventListener('click', (e) => { e.preventDefault(); closeModal(document.getElementById('login-modal')); openModal(document.getElementById('register-modal')); });
             document.getElementById('show-login-from-register').addEventListener('click', (e) => { e.preventDefault(); closeModal(document.getElementById('register-modal')); openModal(document.getElementById('login-modal')); });
             document.getElementById('explore-now-btn').addEventListener('click', function(e) { e.preventDefault(); document.getElementById('features-overview').scrollIntoView({ behavior: 'smooth' }); });
@@ -887,7 +1009,7 @@
             const newsTabsMenu = document.querySelector('.news-events-tabs-menu');
             if(newsTabsMenu) {
                 newsTabsMenu.addEventListener('click', (e) => {
-                    if (e.target && e.target.classList.contains('news-event-tab-button')) {
+                    if (e.target.tagName === 'BUTTON') {
                         newsTabsMenu.querySelector('.active-news-tab').classList.remove('active-news-tab');
                         e.target.classList.add('active-news-tab');
                         const targetId = e.target.dataset.target;
@@ -914,17 +1036,35 @@
             setupFilter('library-filter-tabs', 'document-grid', mockDocuments);
             renderMarketplace(mockProducts);
             renderLibrary(mockDocuments);
-            showPage('home');
+            
+            // Team letter modal logic
+            const teamLetterModal = document.getElementById('team-letter-modal');
+            document.querySelectorAll('.team-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const { name, role, avatar, message, color } = card.dataset;
+                    document.getElementById('letter-name').textContent = name;
+                    const roleEl = document.getElementById('letter-role');
+                    roleEl.textContent = role;
+                    roleEl.style.color = color;
+                    document.getElementById('letter-avatar').src = avatar;
+                    document.getElementById('letter-body').innerHTML = `<p>${message.replace(/\n/g, '<br>')}</p>`;
+                    openModal(teamLetterModal);
+                });
+            });
 
             // --- THREE.JS HERO ANIMATION ---
             const heroSection = document.querySelector('.hero-section');
-            const canvas = document.getElementById('hero-3d-canvas');
-            if (heroSection && canvas && typeof THREE !== 'undefined') {
+            const heroCanvas = document.getElementById('hero-3d-canvas');
+            const teamSection = document.getElementById('team-section');
+            const teamCanvas = document.getElementById('team-3d-canvas');
+            
+            function createStarField(container, canvas) {
+                if (!container || !canvas || typeof THREE === 'undefined') return;
                 const scene = new THREE.Scene();
-                const camera = new THREE.PerspectiveCamera(60, heroSection.offsetWidth / heroSection.offsetHeight, 1, 1000);
+                const camera = new THREE.PerspectiveCamera(60, container.offsetWidth / container.offsetHeight, 1, 1000);
                 camera.position.z = 1;
                 const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
-                renderer.setSize(heroSection.offsetWidth, heroSection.offsetHeight);
+                renderer.setSize(container.offsetWidth, container.offsetHeight);
                 
                 const starGeo = new THREE.BufferGeometry();
                 const starCount = 6000;
@@ -934,9 +1074,11 @@
                 const starMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.7, transparent: true });
                 const stars = new THREE.Points(starGeo, starMaterial);
                 scene.add(stars);
+                
                 let mouseX = 0, mouseY = 0;
-                heroSection.addEventListener('mousemove', (e) => { mouseX = e.clientX - window.innerWidth / 2; mouseY = e.clientY - window.innerHeight / 2; });
-                const animate = () => {
+                container.addEventListener('mousemove', (e) => { mouseX = e.clientX - window.innerWidth / 2; mouseY = e.clientY - window.innerHeight / 2; });
+                
+                function animate() {
                     requestAnimationFrame(animate);
                     stars.rotation.y = -mouseX * 0.00005;
                     stars.rotation.x = -mouseY * 0.00005;
@@ -944,12 +1086,18 @@
                     renderer.render(scene, camera);
                 }
                 animate();
+
                 window.addEventListener('resize', () => {
-                    camera.aspect = heroSection.offsetWidth / heroSection.offsetHeight;
+                    camera.aspect = container.offsetWidth / container.offsetHeight;
                     camera.updateProjectionMatrix();
-                    renderer.setSize(heroSection.offsetWidth, heroSection.offsetHeight);
+                    renderer.setSize(container.offsetWidth, container.offsetHeight);
                 });
             }
+
+            createStarField(heroSection, heroCanvas);
+            createStarField(teamSection, teamCanvas);
+            
+            showPage('home');
         });
     </script>
 </body>
